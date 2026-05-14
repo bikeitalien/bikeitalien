@@ -20,6 +20,7 @@
 // }
 
 import TravelCard from "@/app/components/TravelCard";
+import Footer from "@/app/components/Footer";
 
 import { Suspense } from "react";
 // import Image from "next/image";
@@ -85,18 +86,9 @@ export default function AlleRejser({ searchParams }) {
           <TravelCardContainer searchParams={searchParams} />
         </Suspense>
       </main>
-
-      {/* <footer className="col-[full] grid grid-cols-subgrid">
-        <Image
-          src={Footerbg}
-          alt="Footer baggrund"
-          className="col-span-full row-span-full h-full w-full object-cover opacity-10"
-        />
-
-        <div className="col-[content] row-start-1 grid justify-center">
-          <Footer />
-        </div>
-      </footer> */}
+      <footer className="col-[full] grid grid-cols-subgrid">
+        <Footer />
+      </footer>
     </>
   );
 }

@@ -24,35 +24,35 @@ body {
   min-height: 100svh;
 }
 
-ol[role="list"],
+/* ol[role="list"],
 ul[role="list"] {
   list-style: none;
   padding: 0;
   margin: 0;
-}
+} */
 
-p,
+/* p,
 figure,
 blockquote,
 dl,
 dd {
   margin: 0;
-}
+} */
 
-h1,
+/* h1,
 h2,
 button,
 input,
 label {
   line-height: 1.1;
-}
+} */
 
-b,
+/* b,
 strong {
   font-weight: bolder;
-}
+} */
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -62,30 +62,30 @@ h6 {
   font-size: inherit;
   font-weight: inherit;
   margin: 0;
-}
+} */
 
-p {
+/* p {
   text-wrap: pretty;
-}
+} */
 
-a[class]:any-link {
+/* a[class]:any-link {
   color: currentColor;
   text-decoration: none;
-}
+} */
 
-pre {
+/* pre {
   white-space: pre-wrap;
-}
+} */
 
-hr {
+/* hr {
   border-style: solid;
   border-width: 1px 0 0;
   color: inherit;
   height: 0;
   overflow: visible;
-}
+} */
 
-svg,
+/* svg,
 canvas,
 audio,
 iframe,
@@ -94,7 +94,7 @@ picture,
 video {
   max-inline-size: 100%;
   display: block;
-}
+} */
 
 /* img,
 svg,
@@ -103,77 +103,77 @@ canvas {
   block-size: auto;
 } */
 
-audio:not([controls]) {
+/* audio:not([controls]) {
   display: none;
-}
+} */
 
-audio {
+/* audio {
   width: 100%;
-}
+} */
 
-picture {
+/* picture {
   display: contents;
-}
+} */
 
-source {
+/* source {
   display: none;
-}
-
+} */
+/* 
 table {
   border-collapse: collapse;
   table-layout: fixed;
   inline-size: 100%;
-}
+} */
 
-fieldset {
+/* fieldset {
   margin: 0;
   padding: 0;
   min-width: 0;
-}
+} */
 
-legend {
+/* legend {
   padding: 0;
-}
+} */
 
-input,
+/* input,
 button,
 textarea,
 select {
   font: inherit;
   border-radius: 0;
-  /* color: inherit; */
+  color: inherit;
   background: transparent;
   font-size: max(1em, 16px);
-}
+} */
 
-button * {
+/* button * {
   pointer-events: none;
-}
+} */
 
-button,
+/* button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
   cursor: pointer;
-}
+} */
 
-textarea {
+/* textarea {
   resize: none;
-}
+} */
 
-textarea:not([rows]) {
+/* textarea:not([rows]) {
   min-height: 10em;
-}
+} */
 
-:target {
+/* :target {
   scroll-margin-block: 2rlh;
-}
+} */
 
-[hidden] {
+/* [hidden] {
   display: none !important;
-}
+} */
 
-.visually-hidden {
+/* .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   width: 1px;
@@ -181,7 +181,7 @@ textarea:not([rows]) {
   overflow: hidden;
   position: absolute;
   white-space: nowrap;
-}
+} */
 
 @media (prefers-reduced-motion: reduce) {
   *,

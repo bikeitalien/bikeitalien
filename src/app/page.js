@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Footer from "./components/Footer";
 import ImageCardSection from "./components/ImageCardSection";
 // import CardGridSection from "./index/components/CardGridSection";
 
@@ -9,21 +10,15 @@ export default function Home() {
         {/* <Header /> */}
       </header>
 
-      <main>
+      <main className="flex w-full max-w-3xl flex-1 flex-col items-center justify-between bg-white px-16 py-32 sm:items-start dark:bg-black">
+        <h1>Index</h1>
         <ImageCardSection />
         {/* <CardGridSection /> */}
       </main>
 
       <footer className="col-[full] grid grid-cols-subgrid">
-        {/* <Image
-          src={Footerbg}
-          alt="Footerbg"
-          className="z-0 col-span-full row-span-full h-full w-full object-cover opacity-10"
-        />
-        <div className="col-[content] row-start-1 grid justify-center">
-          <Footer />
-        </div> */}
-      </footer>
+        <Footer />
+      <footer className="col-[full] grid grid-cols-subgrid">
     </>
   );
 }
