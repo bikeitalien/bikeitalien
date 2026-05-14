@@ -3,7 +3,7 @@ import Link from "next/link";
 const TravelCard = ({ rejse }) => {
   return (
     <Link href={`/rejser/${rejse.id}`}>
-      <article className="bg- grid grid-rows-2 rounded-lg border border-gray-300 shadow-sm hover:shadow-md">
+      <article className="bg- grid grid-rows-2 rounded-lg border border-[var(--grey-100)] bg-[var(--card-background)] shadow-2xs shadow-[var(--card-background)] hover:shadow-md">
         <img src={rejse.image} alt={rejse.title} />
         <section className="flex flex-col gap-2 p-4">
           <div className="flex gap-1">
