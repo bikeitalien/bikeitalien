@@ -1,4 +1,5 @@
 import { supabase } from "@/lib/supabase";
+import ImageCardSection from "@/app/components/ImageCardSection";
 
 export default async function RejseDetalje({ params }) {
   const { id } = await params;
@@ -13,12 +14,11 @@ export default async function RejseDetalje({ params }) {
     return <p>Rejsen blev ikke fundet.</p>;
   }
 
+    console.log(rejse);
+
   return (
     <main>
-      <h1>{rejse.titel}</h1>
-      <p>{rejse.land}</p>
-      <p>{rejse.antal_dage} dage</p>
-      <p>{rejse.pris} kr.</p>
+      <ImageCardSection rejse={rejse} />
     </main>
   );
 }
