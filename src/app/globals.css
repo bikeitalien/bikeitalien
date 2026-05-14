@@ -61,9 +61,9 @@ body {
   font-family: var(--font-family);
   display: grid;
   grid-template-columns:
-    [full-start] 1fr
-    [content-start] minmax(0, 100%)
-    [content-end] 1fr
+    [full-start] 40px
+    [content-start] 1fr
+    [content-end] 40px
     [full-end];
   grid-template-rows: auto 1fr auto;
 }
@@ -71,10 +71,10 @@ body {
 @media (min-width: 768px) {
   body {
     grid-template-columns:
-      [full-start] 1fr
-      [content-start] minmax(0, 600px)
-      [middel] minmax(0, 600px)
-      [content-end] 1fr
+      [full-start] max(64px, calc((100% - 1384px) / 2))
+      [content-start] minmax(0, 692px)
+      [middel] minmax(0, 692px)
+      [content-end] max(64px, calc((100% - 1384px) / 2))
       [full-end];
   }
 }
@@ -87,38 +87,54 @@ main {
   font-family: var(--font-family);
 }
 
+footer {
+  grid-column: full;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+footer p {
+  color: inherit;
+}
+
 h1 {
-  font-size: var(--step-1);
+  font-size: var(--step-5);
   font-family: var(--font-inter);
   color: var(--text-primary);
 }
 
 h2 {
-  font-size: var(--step--1);
+  font-size: var(--step-4);
   font-family: var(--font-inter);
   color: var(--text-primary);
 }
 
 h3 {
-  font-size: var(--step--2);
+  font-size: var(--step-4);
   font-family: var(--font-inter);
   color: var(--text-primary);
 }
 
 h4 {
-  font-size: var(--step--2);
+  font-size: var(--step-3);
   font-family: var(--font-inter);
   color: var(--text-primary);
 }
 
 h5 {
-  font-size: var(--step--2);
+  font-size: var(--step-2);
+  font-family: var(--font-inter);
+  color: var(--text-primary);
+}
+
+h6 {
+  font-size: var(--step-1);
   font-family: var(--font-inter);
   color: var(--text-primary);
 }
 
 p {
-  font-size: var(--step--2);
+  font-size: var(--step-0);
   font-family: var(--font-inter);
   color: var(--text-primary);
 }
