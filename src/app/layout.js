@@ -1,6 +1,8 @@
 import { Inter } from "next/font/google";
+
 import "./globals.css";
-import Header from "./components/Header";
+import "./reset.css";
+
 import Footer from "./components/Footer";
 
 const inter = Inter({
@@ -15,12 +17,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </body>
+        
+    // <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    //   <body className="flex min-h-full flex-col">{children}</body>
+    // </html>
+    <html lang="da">
+      <body
+        suppressHydrationWarning
+        className={`${inter.variable} antialiased`}
+      >
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
