@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 
-import "./reset.css";
+// import "./reset.css";
 import "./globals.css";
 
 const inter = Inter({
