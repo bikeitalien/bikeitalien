@@ -1,5 +1,6 @@
 import { supabase } from "@/lib/supabase";
 import Footer from "@/app/components/Footer";
+import ImageCardSection from "@/app/components/ImageCardSection";
 
 export default async function RejseDetalje({ params }) {
   const { id } = await params;
@@ -14,6 +15,8 @@ export default async function RejseDetalje({ params }) {
     return <p>Rejsen blev ikke fundet.</p>;
   }
 
+    console.log(rejse);
+
   return (
     <>
       <main>
@@ -21,6 +24,7 @@ export default async function RejseDetalje({ params }) {
         <p>{rejse.land}</p>
         <p>{rejse.antal_dage} dage</p>
         <p>{rejse.pris} kr.</p>
+     <ImageCardSection rejse={rejse} />
       </main>
       <footer className="col-[full] grid grid-cols-subgrid">
         <Footer />
