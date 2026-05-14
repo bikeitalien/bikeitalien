@@ -46,14 +46,14 @@
   --grey-300: #979893;
   --grey-400: #72736f;
 
-  --step--2: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
-  --step--1: clamp(0.9375rem, 0.9119rem + 0.1136vw, 1rem);
-  --step-0: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
-  --step-1: clamp(1.35rem, 1.2631rem + 0.3864vw, 1.5625rem);
-  --step-2: clamp(1.62rem, 1.4837rem + 0.6057vw, 1.9531rem);
-  --step-3: clamp(1.944rem, 1.7405rem + 0.9044vw, 2.4414rem);
-  --step-4: clamp(2.3328rem, 2.0387rem + 1.3072vw, 3.0518rem);
-  --step-5: clamp(2.7994rem, 2.384rem + 1.8461vw, 3.8147rem);
+  --tag-size: clamp(0.6875rem, 0.5597rem + 0.5682vw, 1rem); /* 11px - 16px */
+  --p-size: clamp(0.75rem, 0.5966rem + 0.6818vw, 1.125rem); /* 12px - 18px */
+  --h6-size: clamp(1.125rem, 0.9716rem + 0.6818vw, 1.5rem); /* 18px - 24px */
+  --h5-size: clamp(1.25rem, 0.9943rem + 1.1364vw, 1.875rem); /* 20px - 30px */
+  --h4-size: clamp(1.5625rem, 1.179rem + 1.7045vw, 2.5rem); /* 25px - 40px */
+  --h3-size: clamp(1.875rem, 1.4148rem + 2.0455vw, 3rem); /* 30px - 48px */
+  --h2-size: clamp(2.1rem, 1.36rem + 2.2727vw, 3.125rem); /* 34px - 50px */
+  --h1-size: clamp(2.5rem, 1.8864rem + 2.7273vw, 4rem); /* 40px - 64px */
 }
 
 body {
@@ -98,43 +98,43 @@ footer p {
 }
 
 h1 {
-  font-size: var(--step-5);
+  font-size: var(--h1-size);
   font-family: var(--font-inter);
   color: var(--text-primary);
 }
 
 h2 {
-  font-size: var(--step-4);
+  font-size: var(--h2-size);
   font-family: var(--font-inter);
   color: var(--text-primary);
 }
 
 h3 {
-  font-size: var(--step-4);
+  font-size: var(--h3-size);
   font-family: var(--font-inter);
   color: var(--text-primary);
 }
 
 h4 {
-  font-size: var(--step-3);
+  font-size: var(--h4-size);
   font-family: var(--font-inter);
   color: var(--text-primary);
 }
 
 h5 {
-  font-size: var(--step-2);
+  font-size: var(--h5-size);
   font-family: var(--font-inter);
   color: var(--text-primary);
 }
 
 h6 {
-  font-size: var(--step-1);
+  font-size: var(--h6-size);
   font-family: var(--font-inter);
   color: var(--text-primary);
 }
 
 p {
-  font-size: var(--step-0);
+  font-size: var(--p-size);
   font-family: var(--font-inter);
   color: var(--text-primary);
 }

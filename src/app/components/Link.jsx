@@ -13,7 +13,7 @@ const Link = ({
     return (
       <a
         href={href}
-        className={`inline-flex items-center gap-1 [font-size:var(--step-0)] underline decoration-current underline-offset-4 ${base} ${className}`}
+        className={`inline-flex items-center gap-1 [font-size:var(--p-size)] underline decoration-current decoration-1 underline-offset-4 ${base} ${className}`}
         {...props}
       >
         {children}
@@ -26,7 +26,7 @@ const Link = ({
     return (
       <a
         href={href}
-        className={`[font-size:var(--step--1)] no-underline ${base} ${className}`}
+        className={`[font-size:var(--tag-size)] no-underline ${base} ${className}`}
         {...props}
       >
         {children}
@@ -38,7 +38,7 @@ const Link = ({
     return (
       <a
         href={href}
-        className={`[font-size:var(--step-0)] underline decoration-current underline-offset-4 ${base} ${className}`}
+        className={`[font-size:var(--p-size)] underline decoration-current decoration-1 underline-offset-4 ${base} ${className}`}
         {...props}
       >
         {children}
@@ -49,7 +49,7 @@ const Link = ({
   return (
     <a
       href={href}
-      className={`[font-size:var(--step-0)] no-underline ${base} ${className}`}
+      className={`[font-size:var(--p-size)] no-underline ${base} ${className}`}
       {...props}
     >
       {children}
