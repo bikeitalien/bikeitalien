@@ -12,13 +12,12 @@ export default function Home() {
 
       <main className="flex w-full max-w-3xl flex-1 flex-col items-center justify-between bg-white px-16 py-32 sm:items-start dark:bg-black">
         <h1>Index</h1>
-        <ImageCardSection />
+        {/* <ImageCardSection /> */}
         {/* <CardGridSection /> */}
       </main>
-
       <footer className="col-[full] grid grid-cols-subgrid">
         <Footer />
-      <footer className="col-[full] grid grid-cols-subgrid">
+      </footer>
     </>
   );
 }
