@@ -1,6 +1,6 @@
 import Newsletter from "./Newsletter";
 import Link from "./Link";
-import { IoLogoFacebook } from "react-icons/io5";
+import { FaSquareFacebook } from "react-icons/fa6";
 import { BsInstagram } from "react-icons/bs";
 
 const Footer = () => {
@@ -14,8 +14,16 @@ const Footer = () => {
             <p>Logo</p>
             <div>
               <p>Adresse:</p>
-              <p>Via Umberto I, 24</p>
-              <p>T- 37014 Castelnuovo del Garda</p>
+              <Link
+                href="https://www.google.com/maps/search/?api=1&query=Via+Umberto+I+24+37014+Castelnuovo+del+Garda"
+                variant="default"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <p>Via Umberto I, 24</p>
+                <p>T- 37014 Castelnuovo del Garda</p>
+              </Link>
             </div>
             <div>
               <p className="">Kontakt:</p>
@@ -31,14 +39,14 @@ const Footer = () => {
             </div>
             <p className="mb-4">Copyright © 2026 bikeitalien</p>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-end gap-3">
               <a
                 href="https://www.facebook.com/bikeitalien/?locale=da_DK"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-(--text-secondary) transition-opacity hover:opacity-70"
               >
-                <IoLogoFacebook size={22} />
+                <FaSquareFacebook size={21} />
               </a>
               <a
                 href="https://www.instagram.com/joachimjerichow/"
@@ -67,7 +75,7 @@ const Footer = () => {
             ].map((item) => (
               <Link
                 key={item}
-                href="#"
+                href="/rejser"
                 variant="default"
                 className="mb-3 block"
               >
@@ -99,7 +107,7 @@ const Footer = () => {
       <div className="col-[content] flex justify-center gap-8 border-t border-(--text-secondary) pt-6 pb-13 text-(--text-secondary)">
         {["Privacy Policy", "Terms of Service", "Cookies Settings"].map(
           (item) => (
-            <Link key={item} href="#" variant="small" className="">
+            <Link key={item} href="/" variant="small" className="">
               {item}
             </Link>
           ),
