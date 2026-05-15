@@ -5,8 +5,7 @@ import Link from "./Link";
 const ContactSection = () => {
   return (
     <section className="col-[full] grid grid-cols-subgrid bg-(--background-alternate)">
-      <div className="col-[content] grid items-start gap-6 py-13 md:grid-cols-2 md:py-16 lg:gap-28">
-        {/* Venstre side */}
+      <div className="col-[content] grid items-start gap-8 py-13 md:py-16 xl:grid-cols-2 xl:gap-28">
         <div className="flex flex-col gap-6">
           <div>
             <p className="mb-2 text-(length:--tag-size)! font-medium">
@@ -19,9 +18,8 @@ const ContactSection = () => {
           </Button>
         </div>
 
-        {/* Højre side */}
-        <div className="grid items-start gap-6 lg:grid-cols-[1fr_1fr]">
-          <div className="order-last overflow-hidden rounded-xl md:-order-1 md:aspect-3/4">
+        <div className="grid items-start gap-6 md:grid-cols-[1fr_1fr]">
+          <div className="overflow-hidden rounded-xl md:-order-1 xl:aspect-4/5">
             <Image
               src="/joachim/joachim_portræt1.webp"
               alt="Johan Joachim Jerichow"
@@ -31,7 +29,7 @@ const ContactSection = () => {
             />
           </div>
 
-          <div className="flex h-full flex-col items-start justify-between gap-6 sm:flex-row md:flex-col">
+          <div className="flex h-full flex-col items-start justify-between gap-6">
             <div>
               <h6 className="[font-size:var(--h6-size)] font-medium">
                 Johan Joachim Jerichow
@@ -39,7 +37,7 @@ const ContactSection = () => {
               <p className="text-(--grey-400)">Ejer af Bike Italien</p>
             </div>
 
-            <div className="flex flex-col gap-1 sm:items-end md:items-start">
+            <div className="flex flex-col gap-1">
               <Link
                 href="mailto:joachimjerichow@hotmail.com"
                 variant="underline"
