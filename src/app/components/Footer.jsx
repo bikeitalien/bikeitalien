@@ -16,23 +16,27 @@ const Footer = () => {
               <p>Adresse:</p>
               <Link
                 href="https://www.google.com/maps/search/?api=1&query=Via+Umberto+I+24+37014+Castelnuovo+del+Garda"
-                variant="default"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"
+                variant="external"
               >
-                <p>Via Umberto I, 24</p>
-                <p>T- 37014 Castelnuovo del Garda</p>
+                <p>Via Umberto I, 24 T- 37014 Castelnuovo del Garda</p>
               </Link>
             </div>
             <div>
-              <p className="">Kontakt:</p>
-              <Link href="tel:+3939493672104" className="block">
+              <p>Kontakt:</p>
+              <Link
+                href="tel:+3939493672104"
+                className="block"
+                variant="underline"
+              >
                 +39-3493672104
               </Link>
               <Link
                 href="mailto:joachimjerichow@hotmail.com"
                 className="mb-4 block"
+                variant="underline"
               >
                 joachimjerichow@hotmail.com
               </Link>
