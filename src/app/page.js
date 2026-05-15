@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import ImageCardSection from "./components/ImageCardSection";
 // import CardGridSection from "./index/components/CardGridSection";
@@ -10,11 +11,12 @@ export default function Home() {
         {/* <Header /> */}
       </header>
 
-      <main className="flex w-full max-w-3xl flex-1 flex-col items-center justify-between bg-white px-16 py-32 sm:items-start dark:bg-black">
-        <h1>Index</h1>
+      <main className="flex w-full flex-1 flex-col items-center justify-between bg-white py-32 sm:items-start dark:bg-black">
         {/* <ImageCardSection /> */}
         {/* <CardGridSection /> */}
+        <ContactSection />
       </main>
+
       <footer className="col-[full] grid grid-cols-subgrid">
         <Footer />
       </footer>
