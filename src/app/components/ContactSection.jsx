@@ -2,9 +2,11 @@ import Button from "./Button";
 import Image from "next/image";
 import Link from "./Link";
 
-const ContactSection = () => {
+const ContactSection = ({ className = "" }) => {
   return (
-    <section className="col-[full] grid grid-cols-subgrid bg-(--background-alternate)">
+    <section
+      className={`col-[full] grid grid-cols-subgrid bg-(--background-alternate) ${className || ""}`}
+    >
       <div className="col-[content] grid items-start gap-8 py-13 md:py-16 xl:grid-cols-2 xl:gap-28">
         <div className="flex flex-col gap-6">
           <div>
