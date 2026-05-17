@@ -24,8 +24,8 @@ export default async function RejseDetalje({ params }) {
 return (
   <>
     <main className="py-32">
-      <ImageCardSection rejse={rejse} />
-      <Testimonials testimonials={rejse.testimonials.testimonials} />
+      <ImageCardSection rejse={rejse ?? []} />
+      <Testimonials testimonials={rejse.testimonials.testimonials ?? []} />
       <ContactSection />
       <IconGrid
         title="Hvad har vi styr på for dig?"
