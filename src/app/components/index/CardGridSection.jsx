@@ -1,15 +1,28 @@
 import { Suspense } from "react";
-import TravelCard from "./TravelCard";
+import TravelCard from "../TravelCard";
 import { supabase } from "@/lib/supabase";
+import HeadingSection from "../HeadingSection";
+import Button from "../Button";
 
 const ImageCardSection = () => {
   return (
-    <section className="col-[content]">
-      <div className="grid gap-4">
-        <div>
-          <p className="max-w-[65ch]">
-            Her finder du tre særligt udvalgte rejser, som vi anbefaler.
-          </p>
+    <section className="col-[content] md:mt-20 md:mb-20 mt-10 mb-10">
+      <div className="grid gap-8">
+        <div className="flex flex-col items-baseline justify-between gap-4 md:flex-row">
+          <HeadingSection
+            tagline="Udvalgte rejser"
+            title="Rejser til enhver rytter"
+          >
+            <p>
+              Fra familieferier til bjergpas og eventyr her er et lille udpluk
+              af de cykelferier jeg har skabt til mine gæster
+            </p>
+          </HeadingSection>
+          <div className="mt-auto">
+            <Button variant="primary" href="/rejser">
+              Se alle rejser
+            </Button>
+          </div>
         </div>
         <Suspense fallback={<div className="p-4">Loading rejser…</div>}>
           <FetchSelectedTravels />

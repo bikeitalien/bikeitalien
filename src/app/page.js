@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import ImageCardSection from "./components/ImageCardSection";
 import Testimonials from "./components/Testimonials";
 import CategoryGridSection from "./components/index/CategoryGridSection";
-// import CardGridSection from "./index/components/CardGridSection";
+import CardGridSection from "./components/index/CardGridSection";
 
 export default function Home() {
   return (
@@ -15,9 +15,9 @@ export default function Home() {
 
       <main className="flex w-full flex-1 flex-col items-center justify-between bg-white sm:items-start dark:bg-black">
         {/* <ImageCardSection /> */}
-        {/* <CardGridSection /> */}
         <CategoryGridSection />
         <Testimonials />
+        <CardGridSection />
         <ContactSection className="my-32" />
       </main>
 
