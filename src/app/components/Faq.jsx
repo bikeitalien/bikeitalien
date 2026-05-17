@@ -34,12 +34,12 @@ const Faq = ({ items, className = "" }) => {
             >
               <div className="cursor-pointer py-4">
                 <AccordionTrigger className="align-center cursor-pointer items-center px-2 text-left text-(length:--p-size)! font-semibold hover:bg-(--card-background)! hover:no-underline">
-                  {item.question}
+                  <p className="font-bold">{item.question}</p>
                 </AccordionTrigger>
               </div>
 
               <AccordionContent className="px-2 pb-6 text-(length:--p-size)!">
-                {item.answer}
+                <p>{item.answer}</p>
               </AccordionContent>
             </AccordionItem>
           ))}
