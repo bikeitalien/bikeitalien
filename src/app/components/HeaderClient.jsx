@@ -60,7 +60,7 @@ const HeaderClient = ({ rejse }) => {
                               href={`/rejser/${item.id}`}
                               className="flex items-center justify-between rounded-[10px] px-2 py-1.5 hover:bg-(--card-background)"
                             >
-                              {item.titel}
+                              <p>{item.titel}</p>
 
                               <IoIosArrowForward color="var(--text-primary)" />
                             </Link>
@@ -80,7 +80,7 @@ const HeaderClient = ({ rejse }) => {
                               href={`/rejser/${item.id}`}
                               className="flex items-center justify-between rounded-[10px] px-2 py-1.5 hover:bg-(--card-background)"
                             >
-                              {item.titel}
+                              <p>{item.titel}</p>
 
                               <IoIosArrowForward color="var(--text-primary)" />
                             </Link>
@@ -100,7 +100,7 @@ const HeaderClient = ({ rejse }) => {
                               href={`/rejser/${item.id}`}
                               className="flex items-center justify-between rounded-[10px] px-2 py-1.5 hover:bg-(--card-background)"
                             >
-                              {item.titel}
+                              <p>{item.titel}</p>
 
                               <IoIosArrowForward color="var(--text-primary)" />
                             </Link>
@@ -127,7 +127,7 @@ const HeaderClient = ({ rejse }) => {
                               href={`/rejser/${item.id}`}
                               className="flex items-center justify-between rounded-[10px] px-2 py-1.5 hover:bg-(--card-background)"
                             >
-                              {item.titel}
+                              <p>{item.titel}</p>
 
                               <IoIosArrowForward color="var(--text-primary)" />
                             </Link>
@@ -147,7 +147,7 @@ const HeaderClient = ({ rejse }) => {
                               href={`/rejser/${item.id}`}
                               className="flex items-center justify-between rounded-[10px] px-2 py-1.5 hover:bg-(--card-background)"
                             >
-                              {item.titel}
+                              <p>{item.titel}</p>
 
                               <IoIosArrowForward color="var(--text-primary)" />
                             </Link>
@@ -167,7 +167,7 @@ const HeaderClient = ({ rejse }) => {
                               href={`/rejser/${item.id}`}
                               className="flex items-center justify-between rounded-[10px] px-2 py-1.5 hover:bg-(--card-background)"
                             >
-                              {item.titel}
+                              <p>{item.titel}</p>
 
                               <IoIosArrowForward color="var(--text-primary)" />
                             </Link>
