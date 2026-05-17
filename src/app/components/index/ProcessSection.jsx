@@ -27,36 +27,34 @@ const steps = [
 const ProcessSection = ({ className = "" }) => {
   return (
     <section className={`col-[full] grid grid-cols-subgrid ${className || ""}`}>
-      <div className="col-[content] flex flex-col gap-12 md:gap-12">
-        <div className="grid gap-20 md:grid-cols-2">
-          <div className="flex flex-col gap-12">
-            <HeadingSection
-              title="Sådan kommer du afsted"
-              children="Det er enkelt at komme afsted på cykelferie! Her kan du se, hvordan det foregår fra første klik til du sidder i sadlen."
+      <div className="col-[content] grid gap-12 lg:grid-cols-2 lg:gap-20">
+        <div className="flex flex-col gap-12">
+          <HeadingSection
+            title="Sådan kommer du afsted"
+            children="Det er enkelt at komme afsted på cykelferie! Her kan du se, hvordan det foregår fra første klik til du sidder i sadlen."
+          />
+          <div className="overflow-hidden rounded-[20px]">
+            <Image
+              src="/assets/processbillede.webp"
+              alt="Processen"
+              width={800}
+              height={600}
+              className="aspect-5/3 h-full w-full object-cover"
             />
-            <div className="overflow-hidden rounded-[20px]">
-              <Image
-                src="/assets/processbillede.webp"
-                alt="Processen"
-                width={800}
-                height={600}
-                className="aspect-5/3 h-full w-full object-cover"
-              />
-            </div>
           </div>
-          <div className="flex flex-col gap-8">
-            {steps.map((step) => (
-              <div key={step.number} className="flex gap-6">
-                <span className="text-(length:--h3-size) leading-none font-semibold text-(--text-primary)">
-                  {step.number}
-                </span>
-                <div className="flex flex-col gap-4">
-                  <h5 className="font-medium">{step.undertitle}</h5>
-                  <p>{step.text}</p>
-                </div>
+        </div>
+        <div className="flex flex-col gap-8">
+          {steps.map((step) => (
+            <div key={step.number} className="flex gap-6">
+              <span className="text-(length:--h3-size) leading-none font-semibold text-(--text-primary)">
+                {step.number}
+              </span>
+              <div className="flex flex-col gap-4">
+                <h5 className="font-medium">{step.undertitle}</h5>
+                <p>{step.text}</p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

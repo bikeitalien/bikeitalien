@@ -63,9 +63,9 @@ export default function Home() {
         <ProcessSection className="my-32" />
         <AboutSection />
         <Testimonials />
-        <CardGridSection />
-        <ContactSection className="my-32" />
-        <Faq items={faqItems} />
+        <CardGridSection className="my-32" />
+        <ContactSection />
+        <Faq items={faqItems} className="my-32" />
       </main>
 
       <footer className="col-[full] grid grid-cols-subgrid">

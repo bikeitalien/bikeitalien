@@ -7,13 +7,15 @@ import {
 
 import Button from "./Button";
 
-const Faq = ({ items }) => {
+const Faq = ({ items, className = "" }) => {
   return (
     <>
-      <section className="text-primary bg-primary col-[content] grid grid-cols-1 gap-20 pt-30 pb-40 md:grid-cols-2">
+      <section
+        className={`text-primary bg-primary col-[content] grid grid-cols-1 gap-20 md:grid-cols-2 ${className || ""}`}
+      >
         <div>
           <div className="flex flex-col gap-6 pb-8">
-            <h3>Ofte stillede spørgsmål</h3>
+            <h3 className="font-semibold">Ofte stillede spørgsmål</h3>
             <p>
               Har du spørgsmål om cykelferierne? Her finder du de vigtigste svar
               og ellers hjælper jeg dig gerne videre.
@@ -28,15 +30,15 @@ const Faq = ({ items }) => {
             <AccordionItem
               key={index}
               value={`item-${index}`}
-              className="border-(primary) border-b"
+              className="border-(primary) border-t"
             >
               <div className="cursor-pointer py-4">
-                <AccordionTrigger className="cursor-pointer p-2 text-left font-semibold hover:bg-(--card-background) hover:no-underline">
+                <AccordionTrigger className="align-center cursor-pointer items-center px-2 text-left text-(length:--p-size)! font-semibold hover:bg-(--card-background)! hover:no-underline">
                   {item.question}
                 </AccordionTrigger>
               </div>
 
-              <AccordionContent className="pb-5">
+              <AccordionContent className="px-2 pb-6 text-(length:--p-size)!">
                 {item.answer}
               </AccordionContent>
             </AccordionItem>

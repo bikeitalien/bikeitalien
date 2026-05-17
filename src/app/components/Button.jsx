@@ -30,9 +30,9 @@ const Button = ({
       className={`flex cursor-pointer items-center gap-2 rounded-[20px] px-4 py-3 font-medium transition-opacity ${variants[variant]} ${className}`}
       {...props}
     >
-      {iconPosition === "left" && <Icon size={18} />}
+      {iconPosition === "left" && <Icon size={24} />}
       {children}
-      {iconPosition === "right" && <Icon size={18} />}
+      {iconPosition === "right" && <Icon size={24} />}
     </a>
   );
 };

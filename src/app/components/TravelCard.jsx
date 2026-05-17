@@ -6,35 +6,35 @@ import Button from "./Button";
 const TravelCard = ({ rejse }) => {
   return (
     <Link href={`/rejser/${rejse.id}`} className="h-full">
-      <article className="grid h-full grid-rows-2 rounded-[20px] border border-[var(--grey-100)] bg-[var(--card-background)] shadow-2xs shadow-[var(--card-background)] hover:shadow-md">
+      <article className="flex h-full flex-col rounded-[20px] border border-[var(--grey-100)] bg-[var(--card-background)] shadow-2xs shadow-[var(--card-background)] hover:shadow-md">
         <div className="grid">
           <Image
             src="/assets/apulien.webp"
             alt="Test Card Image"
             width={800}
             height={400}
-            className="col-start-1 row-start-1 h-56 w-full rounded-tl-[20px] rounded-tr-[20px] object-cover"
+            className="col-start-1 row-start-1 aspect-4/3 w-full rounded-tl-[20px] rounded-tr-[20px] object-cover"
           />
 
           <div className="col-start-1 row-start-1 self-start justify-self-start p-4">
-            <div className="rounded-full bg-[var(--accent)] px-3 py-1">
+            <div className="rounded-full bg-[var(--background-primary)]! px-3 py-1">
               <p>Populær</p>
             </div>
           </div>
         </div>
-        <section className="flex flex-col justify-between gap-2 p-4">
+        <section className="flex flex-col justify-between gap-8 p-6">
           <div className="grid gap-2">
             <div className="flex items-center gap-2">
-              <p className="text-[var(--grey-400)]!">{rejse.land}</p>
-              <div className="h-1 w-1 rounded-full bg-[var(--grey-400)]" />
-              <p className="text-[var(--grey-400)]!">{rejse.kategori}</p>
-              <div className="h-1 w-1 rounded-full bg-[var(--grey-400)]" />
-              <p className="text-[var(--grey-400)]!">{rejse.niveau}</p>
+              <p className="text-(--grey-400)!">{rejse.land}</p>
+              <div className="mx-1 h-1 w-1 rounded-full bg-[var(--grey-400)]" />
+              <p className="text-(--grey-400)!">{rejse.kategori}</p>
+              <div className="mx-1 h-1 w-1 rounded-full bg-[var(--grey-400)]" />
+              <p className="text-(--grey-400)!">{rejse.niveau}</p>
             </div>
             <h6 className="font-semibold">{rejse.titel}</h6>
             <div className="flex items-center gap-2">
               <p>{rejse.dato}</p>
-              <div className="h-1 w-1 rounded-full bg-[var(--text-primary)]" />
+              <div className="mx-1 h-1 w-1 rounded-full bg-[var(--text-primary)]" />
               <p>{rejse.antal_dage} dage</p>
             </div>
           </div>
@@ -45,7 +45,6 @@ const TravelCard = ({ rejse }) => {
               <p>inkl. fly</p>
             </div>
             <Button>Se rejse</Button>
-            {/* <button>Book nu</button> */}
           </div>
         </section>
       </article>
