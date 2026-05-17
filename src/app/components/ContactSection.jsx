@@ -21,7 +21,7 @@ const ContactSection = ({ className = "" }) => {
         <div className="grid items-start gap-6 md:grid-cols-[1fr_1fr]">
           <div className="overflow-hidden rounded-xl md:-order-1 xl:aspect-3/4">
             <Image
-              src="/assets/joachim2.webp"
+              src="/assets/joachimContact.webp"
               alt="Johan Joachim Jerichow"
               width={900}
               height={1500}
