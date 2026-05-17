@@ -50,14 +50,44 @@
   --grey-300: #979893;
   --grey-400: #72736f;
 
-  --tag-size: clamp(0.6875rem, 0.5597rem + 0.5682vw, 1rem); /* 11px - 16px */
-  --p-size: clamp(0.75rem, 0.5966rem + 0.6818vw, 1.125rem); /* 12px - 18px */
-  --h6-size: clamp(1.125rem, 0.9716rem + 0.6818vw, 1.5rem); /* 18px - 24px */
-  --h5-size: clamp(1.25rem, 0.9943rem + 1.1364vw, 1.875rem); /* 20px - 30px */
-  --h4-size: clamp(1.5625rem, 1.179rem + 1.7045vw, 2.5rem); /* 25px - 40px */
-  --h3-size: clamp(1.875rem, 1.4148rem + 2.0455vw, 3rem); /* 30px - 48px */
-  --h2-size: clamp(2.1rem, 1.36rem + 2.2727vw, 3.125rem); /* 34px - 50px */
-  --h1-size: clamp(2.5rem, 1.8864rem + 2.7273vw, 4rem); /* 40px - 64px */
+
+ --h1-size: 40px;
+  --h2-size: 34px;
+  --h3-size: 30px;
+  --h4-size: 25px;
+  --h5-size: 20px;
+  --h6-size: 18px;
+
+  --p-size: 16px;
+  --tag-size: 14px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --h1-size: clamp(40px, 3vw, 64px);
+    --h2-size: clamp(34px, 2.5vw, 50px);
+    --h3-size: clamp(30px, 2.4vw, 48px);
+    --h4-size: clamp(25px, 2vw, 40px);
+    --h5-size: clamp(20px, 1.5vw, 30px);
+    --h6-size: clamp(18px, 1.2vw, 24px);
+
+    --p-size: clamp(12px, 1vw, 18px);
+    --tag-size: clamp(11px, 0.9vw, 16px);
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --h1-size: 64px;
+    --h2-size: 50px;
+    --h3-size: 48px;
+    --h4-size: 40px;
+    --h5-size: 30px;
+    --h6-size: 24px;
+
+    --p-size: 18px;
+    --tag-size: 16px;
+  }
 }
 
 body {
