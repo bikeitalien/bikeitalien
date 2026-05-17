@@ -10,7 +10,7 @@ import Button from "./Button";
 const Faq = ({ items }) => {
   return (
     <>
-      <section className="text-primary bg-primary col-[content] grid grid-cols-2 gap-20 pt-30 pb-40">
+      <section className="text-primary bg-primary col-[content] grid grid-cols-1 gap-20 pt-30 pb-40 md:grid-cols-2">
         <div>
           <div className="flex flex-col gap-6 pb-8">
             <h3>Ofte stillede spørgsmål</h3>
