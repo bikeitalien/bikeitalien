@@ -1,60 +1,31 @@
-// import { supabase } from "@/lib/supabase";
-
-// export default async function RejserPage() {
-//   const { data, error } = await supabase
-//     .from("cykelrejser")
-//     .select("*")
-//     .eq("id", 1)
-//     .single();
-
-//   if (error) return <p>Der skete en fejl</p>;
-
-//   return (
-//     <div className={"flex flex-col gap-4"}>
-//       <h1>{data.titel}</h1>
-//       <p>{data.dato}</p>
-//       <p>{data.beskrivelse}</p>
-//       <p>{data.pris}</p>
-//     </div>
-//   );
-// }
-
 import TravelCard from "@/app/components/TravelCard";
 import Footer from "@/app/components/Footer";
-
 import { Suspense } from "react";
-// import Image from "next/image";
-
-// import Footerbg from "@/assets/bg/footerbg.jpg";
-
+import PageHero from "@/app/components/PageHero";
 import { supabase } from "@/lib/supabase";
 
 export default function AlleRejser({ searchParams }) {
   return (
     <>
-      {/* <header className="sticky top-0 z-50 col-[full] grid grid-cols-subgrid">
-        <Header />
-      </header> */}
+      <header className="sticky top-0 z-50 col-[full] grid grid-cols-subgrid">
+        {/* <Header /> */}
+      </header>
 
       <main className="grid">
-        {/* HERO */}
-        <section className="col-[full] grid grid-cols-subgrid">
-          {/* <Image
-            src={Footerbg}
-            alt="Baggrund"
-            priority
-            className="col-span-full row-span-f ull h-30 w-full object-cover opacity-10"
-          /> */}
+        <PageHero
+          bgColor="bg-[var(--background-tertiary)]"
+          tagline="Alle rejser"
+          heading="Gå på opdagelse i alle vores cykelrejser"
+          image="/images/hero.jpg"
+          imageAlt="Cykelrejse"
+        />
 
-          <div className="col-[content] row-start-1 grid">
-            {/* <Hero>ALLE REJSER</Hero> */}
-          </div>
-        </section>
-
-        {/* FILTERS */}
         <section className="col-[content] grid py-10">
           <div className="flex flex-wrap gap-4">
-            <a href="/rejser?kategori=Cykelturisme" className="rounded-full border px-4 py-2">
+            <a
+              href="/rejser?kategori=Cykelturisme"
+              className="rounded-full border px-4 py-2"
+            >
               Kategori
             </a>
 
@@ -87,7 +58,6 @@ export default function AlleRejser({ searchParams }) {
           </div>
         </section>
 
-        {/* CARDS */}
         <Suspense fallback={<p>Indlæser rejser...</p>}>
           <TravelCardContainer searchParams={searchParams} />
         </Suspense>

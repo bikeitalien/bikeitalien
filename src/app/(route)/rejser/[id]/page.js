@@ -22,30 +22,29 @@ export default async function RejseDetalje({ params }) {
   }
 
 return (
-    <>
-      <main className="py-32">
-        {/* <h1>{rejse.titel}</h1>
-      <main>
-        <h1>{rejse.titel}</h1>
-        <p>{rejse.land}</p>
-        <p>{rejse.antal_dage} dage</p>
-        <p>{rejse.pris} kr.</p> */}
-        <ImageCardSection rejse={rejse} />
-        <Testimonials testimonials={rejse.testimonials.testimonials} />
-        <ContactSection />
-        <IconGrid
-          title="Hvad har vi styr på for dig?"
-          items={(rejse.praktisk?.praktisk ?? []).map((item, i) => ({
-            icon: [<IoAirplaneOutline size={30} />, <AiOutlineHome size={30} />, <IoRestaurantOutline size={30} />, <PiPersonSimpleBike size={30} />][i],
-            undertitle: item.undertitle,
-            beskrivelse: item.beskrivelse,
-          }))}
-        />
-        <ContactSection className="my-32" />
-      </main>
-      <footer className="col-[full] grid grid-cols-subgrid">
-        <Footer />
-      </footer>
-    </>
-  );
+  <>
+    <main className="py-32">
+      <ImageCardSection rejse={rejse} />
+      <Testimonials testimonials={rejse.testimonials.testimonials} />
+      <ContactSection />
+      <IconGrid
+        title="Hvad har vi styr på for dig?"
+        items={(rejse.praktisk?.praktisk ?? []).map((item, i) => ({
+          icon: [
+            <IoAirplaneOutline size={30} />,
+            <AiOutlineHome size={30} />,
+            <IoRestaurantOutline size={30} />,
+            <PiPersonSimpleBike size={30} />,
+          ][i],
+          undertitle: item.undertitle,
+          beskrivelse: item.beskrivelse,
+        }))}
+      />
+      <ContactSection className="my-32" />
+    </main>
+    <footer className="col-[full] grid grid-cols-subgrid">
+      <Footer />
+    </footer>
+  </>
+);
 }
