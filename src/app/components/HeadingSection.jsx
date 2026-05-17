@@ -4,8 +4,8 @@ const HeadingSection = ({ tagline, title, children, className = "" }) => {
       {tagline && (
         <p className="text-(length:--tag-size)! font-medium">{tagline}</p>
       )}
-      <div className="flex flex-col gap-4">
-        <h3>{title}</h3>
+      <div className="flex max-w-215 flex-col gap-4">
+        <h3 className="font-semibold">{title}</h3>
         {children}
       </div>
     </div>
