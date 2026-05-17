@@ -1,4 +1,5 @@
 import Button from "./Button";
+import HeadingSection from "./HeadingSection";
 import Image from "next/image";
 import Link from "./Link";
 
@@ -8,17 +9,14 @@ const ContactSection = ({ className = "" }) => {
       className={`col-[full] grid grid-cols-subgrid bg-(--background-alternate) ${className || ""}`}
     >
       <div className="col-[content] grid items-start gap-8 py-13 md:py-16 xl:grid-cols-2 xl:gap-28">
-        <div className="flex flex-col gap-6">
-          <div>
-            <p className="mb-2 text-(length:--tag-size)! font-medium">
-              Har du flere spørgsmål?
-            </p>
-            <h3>Kontakt mig her, så finder vi ud af det sammen</h3>
-          </div>
+        <HeadingSection
+          tagline="Har du flere spørgsmål?"
+          title="Kontakt mig her, så finder vi ud af det sammen"
+        >
           <Button href="/kontakt" variant="primary" className="w-fit">
             Kontakt mig
           </Button>
-        </div>
+        </HeadingSection>
 
         <div className="grid items-start gap-6 md:grid-cols-[1fr_1fr]">
           <div className="overflow-hidden rounded-xl md:-order-1 xl:aspect-4/5">
