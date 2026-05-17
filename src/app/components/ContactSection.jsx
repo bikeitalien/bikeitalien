@@ -19,13 +19,13 @@ const ContactSection = ({ className = "" }) => {
         </HeadingSection>
 
         <div className="grid items-start gap-6 md:grid-cols-[1fr_1fr]">
-          <div className="overflow-hidden rounded-xl md:-order-1 xl:aspect-4/5">
+          <div className="overflow-hidden rounded-xl md:-order-1 xl:aspect-3/4">
             <Image
               src="/assets/joachim2.webp"
               alt="Johan Joachim Jerichow"
-              width={600}
-              height={1000}
-              className="h-full w-full object-cover brightness-120"
+              width={900}
+              height={1500}
+              className="h-full w-full object-cover"
             />
           </div>
 
