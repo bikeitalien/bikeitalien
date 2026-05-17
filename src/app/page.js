@@ -5,6 +5,7 @@ import ImageCardSection from "./components/ImageCardSection";
 import Testimonials from "./components/Testimonials";
 import CategoryGridSection from "./components/index/CategoryGridSection";
 import CardGridSection from "./components/index/CardGridSection";
+import TextRevealSection from "./components/index/TextRevealSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       </header>
 
       <main className="flex w-full flex-1 flex-col items-center justify-between bg-white sm:items-start dark:bg-black">
+        <TextRevealSection />
         {/* <ImageCardSection /> */}
         <CategoryGridSection />
         <Testimonials />
