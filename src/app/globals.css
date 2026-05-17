@@ -6,6 +6,8 @@
   --background-tertiary: var(--background-tertiary);
   --background-alternate: var(--background-alternate);
 
+  --background-card: var(--background-card);
+
   --text-primary: var(--text-primary);
   --text-secondary: var(--text-secondary);
 
@@ -13,7 +15,7 @@
 
   --accent: var(--accent);
 
-  --card-background: var(--card-background);
+  --background-card: var(--card-background-secondary);
 
   --grey-100: var(--grey-100);
   --grey-200: var(--grey-200);
@@ -31,6 +33,8 @@
   --background-secondary: #21433d;
   --background-tertiary: #e5e6c6;
   --background-alternate: #d6ebff;
+  
+  --card-background-secondary: #88a6e2;
 
   --text-primary: #141937;
   --text-secondary: #fbf8f3;

@@ -2,6 +2,7 @@ import { supabase } from "@/lib/supabase";
 import Footer from "@/app/components/Footer";
 import ImageCardSection from "@/app/components/ImageCardSection";
 import ContactSection from "@/app/components/ContactSection";
+import Testimonials from "@/app/components/Testimonials";
 import IconGrid from "@/app/components/IconGrid";
 import { IoAirplaneOutline, IoRestaurantOutline } from "react-icons/io5";
 import { AiOutlineHome } from "react-icons/ai";
@@ -22,12 +23,16 @@ export default async function RejseDetalje({ params }) {
 
 return (
     <>
+      <main className="py-32">
+        {/* <h1>{rejse.titel}</h1>
       <main>
         <h1>{rejse.titel}</h1>
         <p>{rejse.land}</p>
         <p>{rejse.antal_dage} dage</p>
-        <p>{rejse.pris} kr.</p>
+        <p>{rejse.pris} kr.</p> */}
         <ImageCardSection rejse={rejse} />
+        <Testimonials testimonials={rejse.testimonials.testimonials} />
+        <ContactSection />
         <IconGrid
           title="Hvad har vi styr på for dig?"
           items={(rejse.praktisk?.praktisk ?? []).map((item, i) => ({

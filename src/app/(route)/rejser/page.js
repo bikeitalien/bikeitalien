@@ -43,7 +43,7 @@ export default function AlleRejser({ searchParams }) {
             src={Footerbg}
             alt="Baggrund"
             priority
-            className="col-span-full row-span-full h-30 w-full object-cover opacity-10"
+            className="col-span-full row-span-f ull h-30 w-full object-cover opacity-10"
           /> */}
 
           <div className="col-[content] row-start-1 grid">
@@ -54,29 +54,35 @@ export default function AlleRejser({ searchParams }) {
         {/* FILTERS */}
         <section className="col-[content] grid py-10">
           <div className="flex flex-wrap gap-4">
-            <a href="/alle-rejser" className="rounded-full border px-4 py-2">
-              Alle
+            <a href="/rejser?kategori=Cykelturisme" className="rounded-full border px-4 py-2">
+              Kategori
             </a>
 
             <a
               href="/alle-rejser?category=storby"
               className="rounded-full border px-4 py-2"
             >
-              Storby
+              Lokation
             </a>
 
             <a
               href="/alle-rejser?category=strand"
               className="rounded-full border px-4 py-2"
             >
-              Strand
+              Månede
             </a>
 
             <a
               href="/alle-rejser?category=natur"
               className="rounded-full border px-4 py-2"
             >
-              Natur
+              Niveau
+            </a>
+            <a
+              href="/alle-rejser?category=natur"
+              className="rounded-full border px-4 py-2"
+            >
+              Varighed
             </a>
           </div>
         </section>
