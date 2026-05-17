@@ -25,7 +25,7 @@ const AboutSection = () => {
         </HeadingSection>
         <div className="overflow-hidden rounded-[20px]">
           <Image
-            src="/assets/joachim3.webp"
+            src="/assets/joachimAbout.webp"
             alt="Joachim Jerichow"
             width={800}
             height={600}
