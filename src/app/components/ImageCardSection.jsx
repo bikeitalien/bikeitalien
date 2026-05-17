@@ -12,7 +12,7 @@ const ImageCardSection = ({ rejse }) => {
         </div>
 
         <div className="grid gap-5 md:grid-cols-3">
-          {rejse.oplevelse.oplevelse.map((oplevelse) => (
+          {rejse.oplevelse.map((oplevelse) => (
             <article key={oplevelse.id} className="flex flex-col gap-3">
               <h5 className="font-semibold">{oplevelse.titel}</h5>
               <p className="text-grey-400 text-sm leading-relaxed">

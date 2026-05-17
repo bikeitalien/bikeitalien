@@ -24,12 +24,12 @@ export default async function RejseDetalje({ params }) {
 return (
   <>
     <main className="py-32">
-      <ImageCardSection rejse={rejse ?? []} />
-      <Testimonials testimonials={rejse.testimonials.testimonials ?? []} />
+      <ImageCardSection rejse={rejse} />
+      <Testimonials testimonials={rejse.testimonials} />
       <ContactSection />
       <IconGrid
         title="Hvad har vi styr på for dig?"
-        items={(rejse.praktisk?.praktisk ?? []).map((item, i) => ({
+        items={(rejse.praktisk).map((item, i) => ({
           icon: [
             <IoAirplaneOutline size={30} />,
             <AiOutlineHome size={30} />,
