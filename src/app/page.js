@@ -12,11 +12,12 @@ export default function Home() {
         {/* <Header /> */}
       </header>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-between bg-white py-32 sm:items-start dark:bg-black">
+      <main className="flex w-full flex-1 flex-col items-center justify-between bg-white sm:items-start dark:bg-black">
         {/* <ImageCardSection /> */}
         {/* <CardGridSection /> */}
         <Testimonials />
         <ContactSection />
+        <ContactSection className="my-32" />
       </main>
 
       <footer className="col-[full] grid grid-cols-subgrid">
