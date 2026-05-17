@@ -47,10 +47,10 @@ const ProcessSection = ({ className = "" }) => {
           <div className="flex flex-col gap-8">
             {steps.map((step) => (
               <div key={step.number} className="flex gap-6">
-                <span className="text-(length:--h3-size) leading-none font-semibold">
+                <span className="text-(length:--h3-size) leading-none font-semibold text-(--text-primary)">
                   {step.number}
                 </span>
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-4">
                   <h5 className="font-medium">{step.undertitle}</h5>
                   <p>{step.text}</p>
                 </div>
