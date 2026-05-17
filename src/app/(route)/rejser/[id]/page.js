@@ -21,30 +21,29 @@ export default async function RejseDetalje({ params }) {
     return <p>Rejsen blev ikke fundet.</p>;
   }
 
-return (
-  <>
-    <main className="py-32">
-      <ImageCardSection rejse={rejse} />
-      <Testimonials testimonials={rejse.testimonials} />
-      <ContactSection />
-      <IconGrid
-        title="Hvad har vi styr på for dig?"
-        items={(rejse.praktisk).map((item, i) => ({
-          icon: [
-            <IoAirplaneOutline size={30} />,
-            <AiOutlineHome size={30} />,
-            <IoRestaurantOutline size={30} />,
-            <PiPersonSimpleBike size={30} />,
-          ][i],
-          undertitle: item.undertitle,
-          beskrivelse: item.beskrivelse,
-        }))}
-      />
-      <ContactSection className="my-32" />
-    </main>
-    <footer className="col-[full] grid grid-cols-subgrid">
-      <Footer />
-    </footer>
-  </>
-);
+  return (
+    <>
+      <main className="py-32">
+        <ImageCardSection rejse={rejse} />
+        <IconGrid
+          title="Hvad har vi styr på for dig?"
+          items={rejse.praktisk.map((item, i) => ({
+            icon: [
+              <IoAirplaneOutline size={30} />,
+              <AiOutlineHome size={30} />,
+              <IoRestaurantOutline size={30} />,
+              <PiPersonSimpleBike size={30} />,
+            ][i],
+            undertitle: item.undertitle,
+            beskrivelse: item.beskrivelse,
+          }))}
+        />
+        <Testimonials testimonials={rejse.testimonials} />
+        <ContactSection className="my-32" />
+      </main>
+      <footer className="col-[full] grid grid-cols-subgrid">
+        <Footer />
+      </footer>
+    </>
+  );
 }

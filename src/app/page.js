@@ -9,6 +9,7 @@ import TextRevealSection from "./components/index/TextRevealSection";
 import Faq from "./components/Faq";
 import Header from "./components/Header";
 import ProcessSection from "./components/index/ProcessSection";
+import AboutSection from "./components/index/AboutSection";
 
 export default function Home() {
   const faqItems = [
@@ -59,7 +60,8 @@ export default function Home() {
         <TextRevealSection />
         {/* <ImageCardSection /> */}
         <CategoryGridSection />
-        <ProcessSection />
+        <ProcessSection className="my-32" />
+        <AboutSection />
         <Testimonials />
         <CardGridSection />
         <ContactSection className="my-32" />

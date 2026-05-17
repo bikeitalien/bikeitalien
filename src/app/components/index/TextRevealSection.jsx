@@ -14,36 +14,34 @@ const TextRevealSection = () => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 30%", "end 50%"],
+    offset: ["start 30%", "end 60%"],
   });
 
   return (
     <section ref={ref} className="col-[full] grid grid-cols-subgrid">
+      <Image
+        src="/assets/backgroundIllu.svg"
+        alt=""
+        width={2000}
+        height={1200}
+        className="col-[full] row-start-1 h-full w-full object-cover"
+      />
 
-        <Image
-          src="/assets/backgroundIllu.svg"
-          alt=""
-          width={2000}
-          height={1200}
-          className="col-[full] row-start-1 h-full w-full object-cover"
-        />
+      <div className="col-[content] row-start-1 grid max-w-2xl gap-6 py-18 md:py-24">
+        <p>Hvad er BikeItalien?</p>
 
-        <div className="col-[content] row-start-1 grid max-w-2xl gap-6 py-32">
-          <p>Hvad er BikeItalien?</p>
-
-          <h5 className="text-[var(--h2-size)]">
-            {words.map((word, index) => (
-              <WordReveal
-                key={`${word}-${index}`}
-                word={word}
-                index={index}
-                totalWords={words.length}
-                scrollYProgress={scrollYProgress}
-              />
-            ))}
-          </h5>
-        </div>
-      
+        <h5 className="text-[var(--h2-size)]">
+          {words.map((word, index) => (
+            <WordReveal
+              key={`${word}-${index}`}
+              word={word}
+              index={index}
+              totalWords={words.length}
+              scrollYProgress={scrollYProgress}
+            />
+          ))}
+        </h5>
+      </div>
     </section>
   );
 };

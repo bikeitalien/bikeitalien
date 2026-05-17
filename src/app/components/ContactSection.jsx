@@ -8,7 +8,7 @@ const ContactSection = ({ className = "" }) => {
     <section
       className={`col-[full] grid grid-cols-subgrid bg-(--background-alternate) ${className || ""}`}
     >
-      <div className="col-[content] grid items-start gap-8 py-13 md:py-16 xl:grid-cols-2 xl:gap-28">
+      <div className="col-[content] grid items-start gap-8 py-18 md:py-24 xl:grid-cols-2 xl:gap-28">
         <HeadingSection
           tagline="Har du flere spørgsmål?"
           title="Kontakt mig her, så finder vi ud af det sammen"
@@ -21,11 +21,11 @@ const ContactSection = ({ className = "" }) => {
         <div className="grid items-start gap-6 md:grid-cols-[1fr_1fr]">
           <div className="overflow-hidden rounded-xl md:-order-1 xl:aspect-4/5">
             <Image
-              src="/joachim/joachim_portræt1.webp"
+              src="/assets/joachim2.webp"
               alt="Johan Joachim Jerichow"
               width={600}
               height={1000}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover brightness-120"
             />
           </div>
 
