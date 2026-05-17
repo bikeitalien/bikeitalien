@@ -8,6 +8,7 @@ import CardGridSection from "./components/index/CardGridSection";
 import TextRevealSection from "./components/index/TextRevealSection";
 import Faq from "./components/Faq";
 import Header from "./components/Header";
+import ProcessSection from "./components/index/ProcessSection";
 
 export default function Home() {
   const faqItems = [
@@ -58,6 +59,7 @@ export default function Home() {
         <TextRevealSection />
         {/* <ImageCardSection /> */}
         <CategoryGridSection />
+        <ProcessSection />
         <Testimonials />
         <CardGridSection />
         <ContactSection className="my-32" />
