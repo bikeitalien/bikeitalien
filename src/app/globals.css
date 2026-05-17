@@ -58,8 +58,8 @@
   --h5-size: 20px;
   --h6-size: 18px;
 
-  --p-size: 12px;
-  --tag-size: 11px;
+  --p-size: 16px;
+  --tag-size: 14px;
 }
 
 @media (min-width: 768px) {
