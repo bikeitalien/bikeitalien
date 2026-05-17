@@ -4,9 +4,9 @@ import { supabase } from "@/lib/supabase";
 import HeadingSection from "../HeadingSection";
 import Button from "../Button";
 
-const ImageCardSection = () => {
+const CardGridSection = ({ className = "" }) => {
   return (
-    <section className="col-[content] md:mt-20 md:mb-20 mt-10 mb-10">
+    <section className={`col-[content] ${className || ""}`}>
       <div className="grid gap-8">
         <div className="flex flex-col items-baseline justify-between gap-4 md:flex-row">
           <HeadingSection
@@ -32,7 +32,7 @@ const ImageCardSection = () => {
   );
 };
 
-export default ImageCardSection;
+export default CardGridSection;
 
 const FetchSelectedTravels = async () => {
   const selectedIds = [1, 2, 3];
