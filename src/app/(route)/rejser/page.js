@@ -4,6 +4,7 @@ import Footer from "@/app/components/Footer";
 import { Suspense } from "react";
 import PageHero from "@/app/components/PageHero";
 import { supabase } from "@/lib/supabase";
+import IdPageHeading from "./components/IdPageHeading";
 
 export default function AlleRejser({ searchParams }) {
   return (

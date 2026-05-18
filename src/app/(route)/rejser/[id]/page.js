@@ -8,6 +8,7 @@ import IconGrid from "@/app/components/IconGrid";
 import { IoAirplaneOutline, IoRestaurantOutline } from "react-icons/io5";
 import { AiOutlineHome } from "react-icons/ai";
 import { PiPersonSimpleBike } from "react-icons/pi";
+import IdPageHeading from "../components/IdPageHeading";
 import Image from "next/image";
 
 export default async function RejseDetalje({ params }) {
@@ -28,7 +29,8 @@ export default async function RejseDetalje({ params }) {
       <header className="sticky top-0 z-60 col-[full] grid grid-cols-subgrid">
         <Header />
       </header>
-      <main className="py-32">
+      <main>
+        <IdPageHeading rejse={rejse} />
         <ImageCardSection rejse={rejse} />
         <IconGrid
           title="Hvad har vi styr på for dig?"

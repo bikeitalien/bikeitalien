@@ -69,15 +69,15 @@ html {
 
 @media (min-width: 768px) {
   :root {
-    --h1-size: clamp(40px, 3vw, 64px);
-    --h2-size: clamp(34px, 2.5vw, 50px);
-    --h3-size: clamp(30px, 2.4vw, 48px);
-    --h4-size: clamp(25px, 2vw, 40px);
-    --h5-size: clamp(20px, 1.5vw, 30px);
-    --h6-size: clamp(18px, 1.2vw, 24px);
+    --h1-size: clamp(40px, 3vw, 62px);
+    --h2-size: clamp(34px, 2.5vw, 48px);
+    --h3-size: clamp(30px, 2.4vw, 46px);
+    --h4-size: clamp(25px, 2vw, 38px);
+    --h5-size: clamp(20px, 1.5vw, 28px);
+    --h6-size: clamp(18px, 1.2vw, 22px);
 
-    --p-size: clamp(12px, 1vw, 18px);
-    --tag-size: clamp(11px, 0.9vw, 16px);
+    --p-size: clamp(12px, 1vw, 16px);
+    --tag-size: clamp(11px, 0.9vw, 14px);
   }
 }
 
