@@ -1,3 +1,4 @@
+import Header from "@/app/components/Header";
 import TravelCard from "@/app/components/TravelCard";
 import Footer from "@/app/components/Footer";
 import { Suspense } from "react";
@@ -7,8 +8,8 @@ import { supabase } from "@/lib/supabase";
 export default function AlleRejser({ searchParams }) {
   return (
     <>
-      <header className="sticky top-0 z-50 col-[full] grid grid-cols-subgrid">
-        {/* <Header /> */}
+      <header className="sticky top-0 z-60 col-[full] grid grid-cols-subgrid">
+        <Header />
       </header>
 
       <main className="grid">
@@ -88,7 +89,7 @@ async function TravelCardContainer({ searchParams }) {
 
   return (
     <section className="col-[content] grid py-10">
-      <div className="grid grid-cols-1 gap-8 items-stretch md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 xl:grid-cols-3">
         {travels.map((rejse) => (
           <TravelCard key={rejse.id} rejse={rejse} />
         ))}

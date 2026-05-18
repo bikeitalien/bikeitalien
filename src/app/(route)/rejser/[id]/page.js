@@ -1,3 +1,4 @@
+import Header from "@/app/components/Header";
 import { supabase } from "@/lib/supabase";
 import Footer from "@/app/components/Footer";
 import ImageCardSection from "@/app/components/ImageCardSection";
@@ -23,6 +24,9 @@ export default async function RejseDetalje({ params }) {
 
   return (
     <>
+      <header className="sticky top-0 z-60 col-[full] grid grid-cols-subgrid">
+        <Header />
+      </header>
       <main className="py-32">
         <ImageCardSection rejse={rejse} />
         <IconGrid
