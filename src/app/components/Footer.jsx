@@ -11,7 +11,9 @@ const Footer = () => {
       <div className="col-[content] mb-13 grid gap-10 text-(--text-secondary) lg:grid-cols-[2fr_1fr]">
         <div>
           <div className="flex flex-col gap-6">
-            <p>Logo</p>
+            <h5 className="font-semibold text-(--text-secondary)!">
+              BikeItalien
+            </h5>
             <div>
               <p>Adresse:</p>
               <Link

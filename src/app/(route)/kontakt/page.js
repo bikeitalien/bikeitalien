@@ -1,3 +1,4 @@
+import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import IconGrid from "@/app/components/IconGrid";
 import { AiOutlineMail } from "react-icons/ai";
@@ -6,6 +7,9 @@ import { FiMapPin, FiPhone } from "react-icons/fi";
 const KontaktSide = () => {
   return (
     <>
+      <header className="sticky top-0 z-60 col-[full] grid grid-cols-subgrid">
+        <Header />
+      </header>
       <main className="flex w-full max-w-3xl flex-1 flex-col items-center justify-between bg-white sm:items-start dark:bg-black">
         <IconGrid
           className="my-32"
@@ -29,7 +33,8 @@ const KontaktSide = () => {
               rel: "noopener noreferrer",
               icon: <FiMapPin size={30} />,
               undertitle: "Adresse",
-              beskrivelse: "Via Umberto I, 24, IT-37014 Castelnuovo del Garda VR",
+              beskrivelse:
+                "Via Umberto I, 24, IT-37014 Castelnuovo del Garda VR",
             },
           ]}
         />

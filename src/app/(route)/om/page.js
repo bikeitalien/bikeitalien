@@ -95,9 +95,7 @@ export default async function OmSide() {
             },
           ]}
         />
-         <Testimonials
-        testimonials={rejse.testimonials}
-      />
+        <Testimonials testimonials={rejse.testimonials} />
         <ImageCardSection
           rejse={{
             oplevelse_tagline: "Vores historie",
@@ -120,7 +118,7 @@ export default async function OmSide() {
             ],
           }}
         />
-       
+
         <Faq items={faqItems} />
       </main>
       <footer className="col-[full] grid grid-cols-subgrid">
@@ -128,6 +126,4 @@ export default async function OmSide() {
       </footer>
     </>
   );
-};
-
-
+}
