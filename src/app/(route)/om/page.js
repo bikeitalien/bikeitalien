@@ -7,6 +7,7 @@ import Testimonials from "@/app/components/Testimonials";
 import Faq from "@/app/components/Faq";
 import { IoAirplaneOutline } from "react-icons/io5";
 import { supabase } from "@/lib/supabase";
+import AboutTimeline from "./components/AboutTimeline";
 
 export default async function OmSide() {
   const faqItems = [
@@ -66,6 +67,7 @@ export default async function OmSide() {
           image="/assets/joachimContact.webp"
           imageAlt="Cykelrejse"
         />
+        <AboutTimeline />
         <IconGrid
           title="Hvad gør BikeItalien unikt?"
           items={[
