@@ -10,6 +10,7 @@ import Faq from "./components/Faq";
 import Header from "./components/Header";
 import ProcessSection from "./components/index/ProcessSection";
 import AboutSection from "./components/index/AboutSection";
+import IndexHero from "./components/index/IndexHero";
 
 export default function Home() {
   const faqItems = [
@@ -57,7 +58,13 @@ export default function Home() {
       </header>
 
       <main className="flex w-full flex-1 flex-col items-center justify-between bg-white sm:items-start dark:bg-black">
-        <TextRevealSection />
+        <IndexHero />
+        <section
+          className="col-[full] grid grid-cols-subgrid"
+          id="next-section"
+        >
+          <TextRevealSection />
+        </section>
         {/* <ImageCardSection /> */}
         <CategoryGridSection />
         <ProcessSection className="my-32" />
