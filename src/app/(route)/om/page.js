@@ -108,12 +108,14 @@ export default async function OmSide() {
                 titel: "Johan Joachim Jerichow",
                 beskrivelse:
                   "Joachim er drivkraften bag Bike Italien. Han har boet i Italien i mange år og har gjort Gardasøen til sit hjem sammen med sin familie. Herfra har han skabt Bike Italien med en klar passion for cykling, bjergene, den italienske livsstil og gode oplevelser i naturen. I dag er han guide og vært på cykelferier i både Italien og resten af verden, hvor fokus altid er på fællesskab, lokalkendskab og oplevelser, der går lidt dybere end bare selve cyklingen.",
+                image: "/assets/joachimPortait.webp",
               },
               {
                 id: 4,
                 titel: "Bjarke Andersen",
                 beskrivelse:
                   "Bjarke Andersen fra Ikast har været fast med-guide hos Bike Italien næsten fra begyndelsen. Han har stor erfaring med motionscykling, en stærk passion for Italien og er kendt for sin gode humor og midtjyske lune i feltet. Bjarke har guidet på mange af Bike Italiens ture gennem årene og er en vigtig del af teamet både på og uden for cyklen. Han er gift med Lotte, som ofte deltager på rejserne og bidrager til den gode stemning blandt gæsterne.",
+                image: "/assets/bjarke.webp",
               },
             ],
           }}
