@@ -49,7 +49,7 @@ const FetchSelectedTravels = async () => {
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
       {rejser.map((rejse) => (
-        <TravelCard key={rejse.id} rejse={rejse} />
+        <TravelCard key={rejse.id} rejse={rejse} isPopular />
       ))}
     </div>
   );
