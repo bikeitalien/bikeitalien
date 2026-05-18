@@ -17,7 +17,7 @@ export default function AlleRejser({ searchParams }) {
           bgColor="bg-[var(--background-tertiary)]"
           tagline="Alle rejser"
           heading="Gå på opdagelse i alle vores cykelrejser"
-          image="/images/hero.jpg"
+          image="/assets/bjergsafaribrentadol.webp"
           imageAlt="Cykelrejse"
         />
 
@@ -90,8 +90,12 @@ async function TravelCardContainer({ searchParams }) {
   return (
     <section className="col-[content] grid py-10">
       <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 xl:grid-cols-3">
-        {travels.map((rejse) => (
-          <TravelCard key={rejse.id} rejse={rejse} />
+        {travels.map((rejse, index) => (
+          <TravelCard
+            key={rejse.id}
+            rejse={rejse}
+            isPopular={[1, 2, 3].includes(index)}
+          />
         ))}
       </div>
     </section>

@@ -8,6 +8,7 @@ import IconGrid from "@/app/components/IconGrid";
 import { IoAirplaneOutline, IoRestaurantOutline } from "react-icons/io5";
 import { AiOutlineHome } from "react-icons/ai";
 import { PiPersonSimpleBike } from "react-icons/pi";
+import Image from "next/image";
 
 export default async function RejseDetalje({ params }) {
   const { id } = await params;
@@ -42,6 +43,7 @@ export default async function RejseDetalje({ params }) {
             beskrivelse: item.beskrivelse,
           }))}
         />
+
         <Testimonials testimonials={rejse.testimonials} />
         <ContactSection className="my-32" />
       </main>
