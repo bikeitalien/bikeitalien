@@ -2,25 +2,28 @@ import Link from "next/link";
 import Image from "next/image";
 // import testCardImage from "../../public/assets/apulien.webp";
 import Button from "./Button";
+import { image } from "motion/react-client";
 
-const TravelCard = ({ rejse }) => {
+const TravelCard = ({ rejse, isPopular }) => {
   return (
     <Link href={`/rejser/${rejse.id}`} className="h-full">
       <article className="flex h-full flex-col rounded-[20px] border border-[var(--grey-100)] bg-[var(--card-background)] shadow-2xs shadow-[var(--card-background)] hover:shadow-md">
         <div className="grid">
           <Image
-            src="/assets/apulien.webp"
+            src={rejse.cardImage}
             alt="Test Card Image"
             width={800}
             height={400}
             className="col-start-1 row-start-1 aspect-4/3 w-full rounded-tl-[20px] rounded-tr-[20px] object-cover"
           />
 
-          <div className="col-start-1 row-start-1 self-start justify-self-start p-4">
-            <div className="rounded-full bg-[var(--background-primary)]! px-3 py-1">
-              <p>Populær</p>
+          {isPopular && (
+            <div className="col-start-1 row-start-1 self-start justify-self-start p-4">
+              <div className="rounded-full bg-[var(--accent)]! px-3 py-1">
+                <p>Populær</p>
+              </div>
             </div>
-          </div>
+          )}
         </div>
         <section className="flex flex-col justify-between gap-8 p-6">
           <div className="grid gap-2">
