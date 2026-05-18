@@ -19,7 +19,7 @@ const TravelCard = ({ rejse, isPopular }) => {
 
           {isPopular && (
             <div className="col-start-1 row-start-1 self-start justify-self-start p-4">
-              <div className="rounded-full bg-[var(--accent)]! px-3 py-1">
+              <div className="rounded-full bg-[var(--card-background)]! px-3 py-1">
                 <p>Populær</p>
               </div>
             </div>
