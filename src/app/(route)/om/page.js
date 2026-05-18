@@ -7,6 +7,7 @@ import Testimonials from "@/app/components/Testimonials";
 import Faq from "@/app/components/Faq";
 import { IoAirplaneOutline } from "react-icons/io5";
 import { supabase } from "@/lib/supabase";
+import AboutTimeline from "./components/AboutTimeline";
 
 export default async function OmSide() {
   const faqItems = [
@@ -66,6 +67,7 @@ export default async function OmSide() {
           image="/assets/joachimContact.webp"
           imageAlt="Cykelrejse"
         />
+        <AboutTimeline />
         <IconGrid
           title="Hvad gør BikeItalien unikt?"
           items={[
@@ -95,9 +97,7 @@ export default async function OmSide() {
             },
           ]}
         />
-         <Testimonials
-        testimonials={rejse.testimonials}
-      />
+        <Testimonials testimonials={rejse.testimonials} />
         <ImageCardSection
           rejse={{
             oplevelse_tagline: "Vores historie",
@@ -120,7 +120,7 @@ export default async function OmSide() {
             ],
           }}
         />
-       
+
         <Faq items={faqItems} />
       </main>
       <footer className="col-[full] grid grid-cols-subgrid">
@@ -128,6 +128,4 @@ export default async function OmSide() {
       </footer>
     </>
   );
-};
-
-
+}
