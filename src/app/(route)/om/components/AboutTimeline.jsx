@@ -29,10 +29,10 @@ const items = [
 const AboutTimeline = () => {
   return (
     <>
-      <section className="col-[content] my-36 grid grid-cols-2">
-        <div className="sticky top-24 h-fit">
+      <section className="col-[content] grid grid-cols-1 gap-20 py-18 md:my-26 md:grid-cols-2">
+        <div className="h-fit md:sticky md:top-24">
           <p className="mb-4 font-semibold">Vores historie</p>
-          <h3 className="mb-4">Historien bag BikeItalien</h3>
+          <h3 className="mb-4 font-semibold">Historien bag BikeItalien</h3>
           <p className="mb-7.5">
             Bike Italien blev startet i 2007. Det begyndte med cykelferier i
             Norditalien for familier og motionister, men er siden vokset til
