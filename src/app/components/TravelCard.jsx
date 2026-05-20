@@ -3,9 +3,19 @@ import Image from "next/image";
 // import testCardImage from "../../public/assets/apulien.webp";
 import Button from "./Button";
 
+const KATEGORI_ID = {
+  Mountainbike: 1,
+  Cykelturisme: 2,
+  Eventyrrejse: 3,
+  Familieferie: 1,
+  Gravel: 2,
+  Landevej: 3,
+};
+
 const TravelCard = ({ rejse }) => {
+  const destId = KATEGORI_ID[rejse.kategori] ?? rejse.id;
   return (
-    <Link href={`/rejser/${rejse.id}`} className="h-full">
+    <Link href={`/rejser/${destId}`} className="h-full">
       <article className="flex h-full flex-col rounded-[20px] border border-[var(--grey-100)] bg-[var(--card-background)] shadow-2xs shadow-[var(--card-background)] hover:shadow-md">
         <div className="grid">
           <Image
