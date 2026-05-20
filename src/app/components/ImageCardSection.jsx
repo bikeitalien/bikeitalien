@@ -2,7 +2,11 @@ import Image from "next/image";
 
 const ImageCardSection = ({ rejse }) => {
   return (
-    <section className="col-[content] py-18 md:py-36">
+    <section
+      className="col-[content] py-18 md:py-36"
+      id="oplevelser"
+      scroll-mt-32
+    >
       <div className="grid gap-10">
         <div className="grid grid-cols-2 items-center justify-between gap-6">
           <div>
