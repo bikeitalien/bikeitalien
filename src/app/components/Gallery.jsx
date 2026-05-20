@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { RxChevronLeft, RxChevronRight } from "react-icons/rx";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import {
   Carousel,
@@ -35,7 +36,7 @@ const Gallery = ({ images = [] }) => {
   return (
     <>
       <section className="col-[full] grid py-20" id="galleri">
-        <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-6 md:grid-rows-2">
+        <div className="grid w-full grid-cols-1 gap-4 md:max-h-[65vh] md:grid-cols-6 md:grid-rows-2">
           {images.map((img, index) => {
             const item = layout[index % layout.length];
             return (
@@ -43,7 +44,7 @@ const Gallery = ({ images = [] }) => {
                 key={index}
                 aria-label={`Åbn billede ${index + 1}`} //for accessibility
                 onClick={() => handleOpen(index)}
-                className={`${item.className} cursor-pointer overflow-hidden rounded-[20px]`}
+                className={`${item.className} h-48 cursor-pointer overflow-hidden rounded-[20px] md:h-auto`}
               >
                 <Image
                   src={img.src}
@@ -65,8 +66,12 @@ const Gallery = ({ images = [] }) => {
           >
             <DialogTitle className="hidden">Galleri</DialogTitle>
             <Carousel opts={{ startIndex: selectedIndex }}>
-              <CarouselPrevious className="z-50 cursor-pointer" />
-              <CarouselNext className="z-50 cursor-pointer" />
+              <CarouselPrevious className="z-50 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-(--background-secondary) text-(--text-secondary)">
+                <RxChevronLeft />
+              </CarouselPrevious>
+              <CarouselNext className="z-50 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-(--background-secondary) text-(--text-secondary)">
+                <RxChevronRight />
+              </CarouselNext>
               <CarouselContent className="max-h-[65vh] max-w-[70vw] md:max-h-[75vh] md:max-w-[55vw]">
                 {images.map((img, index) => (
                   <CarouselItem key={index}>
