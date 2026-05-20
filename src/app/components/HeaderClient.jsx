@@ -67,7 +67,7 @@ const HeaderClient = ({ rejse }) => {
   // --- Desktop dropdown: renders kategori-kolonner med rejser under hver ---
   const renderKategorier = (onClose) =>
     KOLONNER.map((kolonne, i) => (
-      <div key={i} className="flex w-full flex-col gap-4 px-0 md:gap-6">
+      <div key={i} className="flex w-full flex-col gap-4 px-0 md:gap-10.5">
         {kolonne.map((kategori) => {
           const alleRejser = kategori === "Se alle rejser";
           return (
@@ -98,10 +98,12 @@ const HeaderClient = ({ rejse }) => {
                     {kategori}
                   </span>
                 )}
-                {alleRejser && <IoIosArrowForward color="var(--text-primary)" />}
+                {alleRejser && (
+                  <IoIosArrowForward color="var(--text-primary)" />
+                )}
               </div>
               {!alleRejser && (
-                <div className="pt-1 pb-3 pl-1">
+                <div className="pt-1 pb-3 pl-1 md:pb-0">
                   <li className="border-t border-(--grey-200) py-1 pl-1">
                     <Link
                       href={`/rejser?kategori=${encodeURIComponent(kategori)}`}
@@ -227,8 +229,8 @@ const HeaderClient = ({ rejse }) => {
               style={{ color: "var(--text-primary)" }}
             >
               <div className="mt-1.5 overflow-hidden rounded-[20px] bg-(--background-primary) shadow-[0_0_20px_rgba(0,0,0,0.1)]">
-                <div className="px-16 py-4">
-                  <div className="flex gap-11.5">
+                <div className="p-7">
+                  <div className="flex gap-10.5">
                     {renderKategorier(() => setMenuOpen(false))}
                   </div>
                 </div>

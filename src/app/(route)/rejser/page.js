@@ -90,7 +90,7 @@ export default async function AlleRejser({ searchParams }) {
 
   return (
     <>
-      <header className="sticky top-0 z-30 col-[full] grid grid-cols-subgrid">
+      <header className="sticky top-0 z-60 col-[full] grid grid-cols-subgrid">
         <Header />
       </header>
 
@@ -156,16 +156,18 @@ async function TravelCardContainer({ aktivFiltre }) {
         <p style={{ fontSize: "var(--tag-size)", color: "var(--grey-300)" }}>
           {filtered.length} rejser
         </p>
-    <section className="col-[content] grid py-10">
-      <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 xl:grid-cols-3">
-        {travels.map((rejse, index) => (
-          <TravelCard
-            key={rejse.id}
-            rejse={rejse}
-            isPopular={[1, 2, 3].includes(index)}
-          />
-        ))}
       </div>
+      <section className="col-[content] grid py-10">
+        <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 xl:grid-cols-3">
+          {travels.map((rejse, index) => (
+            <TravelCard
+              key={rejse.id}
+              rejse={rejse}
+              isPopular={[1, 2, 3].includes(index)}
+            />
+          ))}
+        </div>
+      </section>
       <section className="col-[content] grid py-10">
         {filtered.length === 0 ? (
           <h6 className="text-(--grey-400)">

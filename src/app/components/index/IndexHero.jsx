@@ -1,19 +1,20 @@
 "use client";
 import Image from "next/image";
 import Button from "../Button";
-import { motion } from "framer-motion";
+import { motion, animate } from "framer-motion";
 
 const IndexHero = () => {
   const handleScroll = () => {
-    document.getElementById("next-section")?.scrollIntoView({
-      behavior: "smooth",
+    animate(window.scrollY, window.innerHeight * 0.7, {
+      duration: 0.8,
+      onUpdate: (position) => window.scrollTo(0, position),
     });
   };
   return (
     <>
-      <section className="relative col-[full] grid h-[700px] grid-cols-1 grid-rows-1 overflow-hidden">
+      <section className="relative col-[full] grid h-200 grid-cols-subgrid grid-rows-1 overflow-hidden">
         <Image
-          className="col-start-1 row-start-1 h-full w-full object-cover"
+          className="col-[full] row-start-1 h-full w-full object-cover"
           priority
           src="/assets/herobikeitalien.webp"
           alt="Hero Image"
@@ -21,23 +22,26 @@ const IndexHero = () => {
           height={1080}
         />
 
-        <div className="z-10 col-start-1 row-start-1 grid place-items-center items-center px-4 text-center">
-          <div className="max-w-xl space-y-4">
-            <h1 className="text-(--text-secondary)! italic md:flex md:justify-center md:whitespace-nowrap">
-              <span className="font-bold">Cykelferier</span> så livet kan mærkes
+        <div className="z-10 col-[content] row-start-1 grid place-items-center items-center text-center">
+          <div className="space-y-4">
+            <h1 className="text-(--text-secondary)! italic md:whitespace-nowrap">
+              <span className="font-bold">Cykelferier</span>
+              <span className="ml-[0.3em]">så livet kan mærkes</span>
             </h1>
-            <h6 className="text-(--text-secondary)!">
-              Oplev verden fra sadlen med håndplukkede ruter, stærkt fællesskab
-              og cykelferier ud over det sædvanlige.
-            </h6>
-            <div className="flex justify-center pt-11">
-              <Button
-                href="/rejser"
-                variant="accent"
-                className="w-fit place-content-center"
-              >
-                Se alle cykelrejser
-              </Button>
+            <div className="mx-auto max-w-xl space-y-4">
+              <h6 className="text-(--text-secondary)!">
+                Oplev verden fra sadlen med håndplukkede ruter, stærkt
+                fællesskab og cykelferier ud over det sædvanlige.
+              </h6>
+              <div className="flex justify-center pt-11">
+                <Button
+                  href="/rejser"
+                  variant="accent"
+                  className="w-fit place-content-center"
+                >
+                  Se alle cykelrejser
+                </Button>
+              </div>
             </div>
           </div>
         </div>
