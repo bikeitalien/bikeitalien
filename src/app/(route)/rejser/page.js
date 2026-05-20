@@ -99,8 +99,9 @@ export default async function AlleRejser({ searchParams }) {
           bgColor="bg-[var(--background-tertiary)]"
           tagline="Alle rejser"
           heading="Gå på opdagelse i alle vores cykelrejser"
-          image="/assets/bjergsafaribrentadol.webp"
+          image="/assets/rejseside-hero.webp"
           imageAlt="Cykelrejse"
+          className="h-0"
         />
 
         <section className="col-[content] grid py-8">

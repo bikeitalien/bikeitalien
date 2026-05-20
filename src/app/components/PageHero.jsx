@@ -20,7 +20,7 @@ const PageHero = ({
           <img
             src={image}
             alt={imageAlt}
-            className="max-h-[200px] w-full rounded-[20px] object-cover md:max-h-[300px]"
+            className="max-h-[200px] w-full rounded-[20px] object-cover object-top md:max-h-75"
           />
         )}
       </div>
