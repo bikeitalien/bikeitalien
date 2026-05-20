@@ -10,6 +10,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import { PiPersonSimpleBike } from "react-icons/pi";
 import IdPageHeading from "../components/IdPageHeading";
 import Image from "next/image";
+import Gallery from "@/app/components/Gallery";
 import AnchorNav from "../components/AnchorNav";
 import ItinerarySection from "../components/ItinerarySection";
 import Faq from "@/app/components/Faq";
@@ -64,6 +65,12 @@ export default async function RejseDetalje({ params }) {
     },
   ];
 
+  //fra array af strings (url) til array af objects
+  const galleryImages = rejse.gallery.map((src, index) => ({
+    src,
+    alt: `${rejse.title} billede ${index + 1}`,
+  }));
+
   return (
     <>
       <header className="sticky top-0 z-60 col-[full] grid grid-cols-subgrid">
@@ -89,6 +96,7 @@ export default async function RejseDetalje({ params }) {
         />
 
         <Testimonials testimonials={rejse.testimonials} />
+        <Gallery images={galleryImages} />
         {/* <Faq id="faq" /> */}
         <ContactSection className="my-32" />
         <Faq items={faqItems} className="my-32" />
