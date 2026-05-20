@@ -97,10 +97,11 @@ export default async function AlleRejser({ searchParams }) {
       <main className="grid">
         <PageHero
           bgColor="bg-[var(--background-tertiary)]"
-          tagline="Alle rejser"
+          tagline="Hvor skal turen gå hen?"
           heading="Gå på opdagelse i alle vores cykelrejser"
-          image="/assets/bjergsafaribrentadol.webp"
+          image="/assets/rejseside-hero.webp"
           imageAlt="Cykelrejse"
+          className="h-0"
         />
 
         <section className="col-[content] grid py-8">
@@ -134,7 +135,7 @@ async function TravelCardContainer({ aktivFiltre }) {
   if (aktivFiltre.varighed.length > 0)
     query = query.in("antal_dage", aktivFiltre.varighed.map(Number));
 
-  const { data: travels, error } = await query;
+  const { data: travels, error } = await query.order("id", { ascending: true });
 
   if (error) {
     return <p>Kunne ikke hente rejser.</p>;

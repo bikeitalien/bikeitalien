@@ -3,37 +3,37 @@ import CategoryCard from "./CategoryCard";
 
 const categories = [
   {
-    href: "/rejser",
+    href: "/rejser?kategori=Cykelturisme",
     src: "/assets/cykelturisme.webp",
     alt: "Cykelturisme",
     label: "Cykelturisme",
   },
   {
-    href: "/rejser",
+    href: "/rejser?kategori=Mountainbike",
     src: "/assets/mountainbike.webp",
     alt: "Mountainbike",
     label: "Mountainbike",
   },
   {
-    href: "/rejser",
+    href: "/rejser?kategori=Eventyrrejse",
     src: "/assets/eventyrrejser.webp",
     alt: "Eventyrrejser",
     label: "Eventyrrejser",
   },
   {
-    href: "/rejser",
+    href: "/rejser?kategori=Gravel",
     src: "/assets/gravel.webp",
     alt: "Gravel",
     label: "Gravel",
   },
   {
-    href: "/rejser",
+    href: "/rejser?kategori=Landevej",
     src: "/assets/landevej.webp",
     alt: "Landevej",
     label: "Landevej",
   },
   {
-    href: "/rejser",
+    href: "/rejser?kategori=Familieferie",
     src: "/assets/familieferie.webp",
     alt: "Familieferie",
     label: "Familieferie",
