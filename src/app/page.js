@@ -53,12 +53,13 @@ export default function Home() {
 
   return (
     <>
-      <header className="sticky top-0 z-60 col-[full] grid grid-cols-subgrid">
+      <header className="sticky top-0 z-60 col-[full] grid h-0 grid-cols-subgrid overflow-visible">
         <Header />
       </header>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-between bg-white sm:items-start dark:bg-black">
-        <IndexHero />
+
+      <main className="top-0 col-[full] grid">
+       <IndexHero />
         <section
           className="col-[full] grid grid-cols-subgrid"
           id="next-section"

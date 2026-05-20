@@ -136,6 +136,12 @@ footer p {
   color: inherit;
 }
 
+header p,
+header h5,
+header a {
+  color: inherit;
+}
+
 h1 {
   font-size: var(--h1-size);
   font-family: var(--font-inter);
