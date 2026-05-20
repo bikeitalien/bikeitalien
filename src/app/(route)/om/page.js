@@ -60,6 +60,17 @@ export default async function OmSide() {
     .eq("id", 2)
     .single();
 
+  const images = [
+    { src: "/assets/apulien.webp", alt: "Apulien" },
+    { src: "/assets/gardaverona.webp", alt: "Gardaverona" },
+    { src: "/assets/eventyrrejser.webp", alt: "Eventyrrejser" },
+    { src: "/assets/familieferie.webp", alt: "Familieferie" },
+    { src: "/assets/frankerstien.webp", alt: "Frankerstien" },
+    { src: "/assets/gravel.webp", alt: "Gravel biking" },
+    { src: "/assets/grandissimo.webp", alt: "Grandissimo" },
+    { src: "/assets/jordan.webp", alt: "Jordan" },
+  ];
+
   return (
     <>
       <header className="sticky top-0 z-60 col-[full] grid grid-cols-subgrid">
@@ -105,7 +116,7 @@ export default async function OmSide() {
           ]}
         />
         <Testimonials testimonials={rejse.testimonials} />
-        <Gallery />
+        <Gallery images={images} />
         <ImageCardSection
           rejse={{
             oplevelse_tagline: "Vores historie",

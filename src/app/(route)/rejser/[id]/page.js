@@ -10,6 +10,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import { PiPersonSimpleBike } from "react-icons/pi";
 import IdPageHeading from "../components/IdPageHeading";
 import Image from "next/image";
+import Gallery from "@/app/components/Gallery";
 
 export default async function RejseDetalje({ params }) {
   const { id } = await params;
@@ -23,6 +24,12 @@ export default async function RejseDetalje({ params }) {
   if (error) {
     return <p>Rejsen blev ikke fundet.</p>;
   }
+
+  //fra array af strings (url) til array af objects
+  const galleryImages = rejse.gallery.map((src, index) => ({
+    src,
+    alt: `${rejse.title} billede ${index + 1}`,
+  }));
 
   return (
     <>
@@ -47,6 +54,7 @@ export default async function RejseDetalje({ params }) {
         />
 
         <Testimonials testimonials={rejse.testimonials} />
+        <Gallery images={galleryImages} />
         <ContactSection className="my-32" />
       </main>
       <footer className="col-[full] grid grid-cols-subgrid">
