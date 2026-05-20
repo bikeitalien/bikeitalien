@@ -28,7 +28,7 @@ const IndexHero = () => {
               <span className="font-bold">Cykelferier</span>
               <span className="ml-[0.3em]">så livet kan mærkes</span>
             </h1>
-            <div className="mx-auto max-w-xl space-y-4">
+            <div className="mx-auto max-w-2xl space-y-4">
               <h6 className="text-(--text-secondary)!">
                 Oplev verden fra sadlen med håndplukkede ruter, stærkt
                 fællesskab og cykelferier ud over det sædvanlige.
