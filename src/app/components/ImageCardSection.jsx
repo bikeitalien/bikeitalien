@@ -8,7 +8,7 @@ const ImageCardSection = ({ rejse }) => {
       scroll-mt-32
     >
       <div className="grid gap-10">
-        <div className="grid grid-cols-2 items-center justify-between gap-6">
+        <div className="grid md:grid-cols-2 grid-cols-1  items-center justify-between gap-6">
           <div>
             <p>{rejse.oplevelse_tagline}</p>
             <h3 className="font-semi">{rejse.oplevelse_titel}</h3>

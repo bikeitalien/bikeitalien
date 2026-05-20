@@ -52,15 +52,14 @@ const AnchorNav = () => {
 
   return (
     <nav className="sticky top-0 z-60 col-[content] grid grid-cols-subgrid border-b border-[var(--grey-100)] bg-[var(--background-primary)]">
-      <div className="col-[content] flex justify-between gap-6 overflow-x-auto py-4">
+      <div className="col-[content] flex justify-between gap-6 overflow-x-auto pt-2.5">
         {links.map((link) => {
           const isActive = active === link.href;
-
           return (
             <button
               key={link.href}
               onClick={() => handleClick(link.href)}
-              className={`relative cursor-pointer pb-2 text-2xl font-medium whitespace-nowrap transition-colors ${
+              className={`relative cursor-pointer pb-4 px-4 text-[16px] font-medium whitespace-nowrap transition-colors md:text-[20px] ${
                 isActive
                   ? "text-[var(--text-primary)]"
                   : "text-[var(--grey-300)] hover:text-[var(--text-primary)]"
@@ -78,7 +77,9 @@ const AnchorNav = () => {
             </button>
           );
         })}
-        <Button>Book nu</Button>
+        <div className="pb-4">
+          <Button>Book nu</Button>
+        </div>
       </div>
     </nav>
   );

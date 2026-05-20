@@ -9,12 +9,15 @@ const IdPageHeading = ({ rejse }) => {
   const remainingImages = heroImages.filter((img) => img.id !== "1");
 
   return (
-    <section className="col-[content] scroll-mt-32" id="overblik">
+    <section
+      className="col-[content] scroll-mt-32"
+      id="overblik"
+    >
       <div className="py-4">
         <Breadcrumb current={rejse.titel} />
       </div>
       <div className="grid gap-8">
-        <div className="rounded-[20px grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 gap-2 rounded-[20px]">
           <Image
             src={firstImage.url}
             width={1200}
@@ -63,7 +66,7 @@ const IdPageHeading = ({ rejse }) => {
       <div className="mt-10 grid items-center justify-between gap-10 md:grid-cols-3">
         <div className="col-start-1 col-end-3 grid max-w-[80ch] gap-5">
           <h2 className="w-full font-semibold">{rejse.titel}</h2>
-          <p className="whitespace-pre-line">{rejse.beskrivelse}</p>
+          <p className="whitespace-pre-line pb-20">{rejse.beskrivelse}</p>
         </div>
         <div className="ml-auto">
           <BookingCard rejse={rejse} />

@@ -79,7 +79,7 @@ export default async function RejseDetalje({ params }) {
       <main>
         <IdPageHeading rejse={rejse} />
         <AnchorNav />
-        <ItinerarySection />
+        <ItinerarySection rejse={rejse} />
         <ImageCardSection rejse={rejse} />
         <IconGrid
           title="Hvad har vi styr på for dig?"
