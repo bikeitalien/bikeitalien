@@ -48,7 +48,7 @@ const AboutTimeline = () => {
           />
         </div>
 
-        <div className="flex flex-col">
+        <div className="relative flex flex-col">
           {items.map((item, index) => (
             <TimelineItem
               key={index}
@@ -56,32 +56,6 @@ const AboutTimeline = () => {
               index={index}
               length={items.length}
             />
-            // <motion.div
-            //   key={index}
-            //   initial={{ opacity: 1, y: 40 }}
-            //   whileInView={{ opacity: 1, y: 0 }}
-            //   transition={{ duration: 0.7, ease: "easeOut" }}
-            //   viewport={{ amount: 0.4 }}
-            //   className="grid min-h-[50vh] grid-cols-[40px_1fr] gap-8"
-            // >
-            //   <div className="flex flex-col items-center">
-            //     <div className="h-7 w-7 rounded-full bg-(--accent)" />
-
-            //     {index !== items.length && (
-            //       <div className="my-4 h-40 w-0.5 bg-(--background-secondary)" />
-            //     )}
-            //   </div>
-
-            //   <div className="sticky top-24 h-fit pb-24">
-            //     <p className="mb-4 text-sm font-semibold">{item.year}</p>
-
-            //     <h5 className="mb-4 leading-tight font-semibold">
-            //       {item.title}
-            //     </h5>
-
-            //     <p className="leading-relaxed">{item.text}</p>
-            //   </div>
-            // </motion.div>
           ))}
         </div>
       </section>

@@ -1,5 +1,4 @@
 "use client";
-
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
@@ -25,13 +24,15 @@ const TimelineItem = ({ item, index, length }) => {
       className="grid min-h-[50vh] grid-cols-[40px_1fr] gap-20"
     >
       <div className="flex flex-col items-center">
-        <div className="h-7 w-7 rounded-full bg-(--accent)" />
+        <div className="z-50 h-7 w-7 rounded-full bg-(--accent)" />
 
         {index !== length && (
-          <div className="relative my-4 h-40 w-0.5 overflow-hidden bg-(--background-secondary)">
+          <div className="relative w-0.5 flex-1 bg-transparent">
             <motion.div
-              style={{ scaleY: lineProgress }}
-              className="absolute top-0 left-0 h-full w-full origin-top bg-(--accent)"
+              style={{
+                height: useTransform(lineProgress, [0, 1], ["0%", "100%"]),
+              }}
+              className="absolute top-0 left-0 w-full bg-(--accent)"
             />
           </div>
         )}
