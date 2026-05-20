@@ -5,14 +5,14 @@ import { motion, animate } from "framer-motion";
 
 const IndexHero = () => {
   const handleScroll = () => {
-    animate(window.scrollY, window.innerHeight * 0.7, {
-      duration: 0.8,
+    animate(window.scrollY, window.innerHeight * 0.8, {
+      duration: 0.7,
       onUpdate: (position) => window.scrollTo(0, position),
     });
   };
   return (
     <>
-      <section className="relative col-[full] grid h-200 grid-cols-subgrid grid-rows-1 overflow-hidden">
+      <section className="relative col-[full] grid h-screen grid-cols-subgrid grid-rows-1 overflow-hidden">
         <Image
           className="col-[full] row-start-1 h-full w-full object-cover"
           priority
