@@ -35,7 +35,7 @@ const IndexHero = () => {
                 Oplev verden fra sadlen med håndplukkede ruter, stærkt
                 fællesskab og cykelferier ud over det sædvanlige.
               </h6>
-              <div className="flex justify-center pt-11">
+              <div className="flex justify-center pt-4">
                 <Button
                   href="/rejser"
                   variant="accent"
