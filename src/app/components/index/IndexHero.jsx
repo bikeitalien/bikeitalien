@@ -26,7 +26,9 @@ const IndexHero = () => {
           <div className="space-y-4">
             <h1 className="text-(--text-secondary)! italic md:whitespace-nowrap">
               <span className="font-bold">Cykelferier</span>
-              <span className="ml-[0.3em]">så livet kan mærkes</span>
+              <span className="ml-[0.3em] font-light!">
+                så livet kan mærkes
+              </span>
             </h1>
             <div className="mx-auto max-w-2xl space-y-4">
               <h6 className="text-(--text-secondary)!">
