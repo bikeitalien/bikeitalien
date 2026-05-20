@@ -11,7 +11,8 @@ const Faq = ({ items, className = "" }) => {
   return (
     <>
       <section
-        className={`text-primary bg-primary col-[content] grid grid-cols-1 gap-20 md:grid-cols-2 ${className || ""}`}
+        className={`text-primary bg-primary scroll-mt-32 md:grid-cols-2 col-[content] grid grid-cols-1 gap-20 ${className || ""}`}
+        id="faq"
       >
         <div>
           <div className="flex flex-col gap-6 pb-8">

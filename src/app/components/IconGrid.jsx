@@ -12,7 +12,8 @@ const IconGrid = ({
 
   return (
     <section
-      className={`relative col-[full] grid grid-cols-subgrid ${withBackground ? "bg-(--background-alternate)" : ""} ${className}`}
+      className={`relative col-[full] grid scroll-mt-32 grid-cols-subgrid ${withBackground ? "bg-(--background-alternate)" : ""} ${className}`}
+      id="praktisk"
     >
       {withBackground && (
         <Image

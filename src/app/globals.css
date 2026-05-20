@@ -2,6 +2,8 @@
 
 html {
   font-size: 15px;
+
+  scroll-behavior: smooth;
 }
 
 @theme inline {
@@ -37,7 +39,7 @@ html {
   --background-secondary: #21433d;
   --background-tertiary: #e5e6c6;
   --background-alternate: #d6ebff;
-  
+
   --card-background-secondary: #88a6e2;
 
   --text-primary: #141937;
@@ -54,8 +56,7 @@ html {
   --grey-300: #979893;
   --grey-400: #72736f;
 
-
- --h1-size: 40px;
+  --h1-size: 40px;
   --h2-size: 34px;
   --h3-size: 30px;
   --h4-size: 25px;
@@ -65,7 +66,6 @@ html {
   --p-size: 16px;
   --tag-size: 14px;
 }
-
 
 @media (min-width: 768px) {
   :root {
