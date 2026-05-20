@@ -3,14 +3,13 @@ import Image from "next/image";
 import Breadcrumb from "./Breadcrumb";
 
 const IdPageHeading = ({ rejse }) => {
+  const heroImages = rejse.hero_images;
 
-const heroImages = rejse.hero_images;
-
-const firstImage = heroImages.find((img) => img.id === "1");
-const remainingImages = heroImages.filter((img) => img.id !== "1");
+  const firstImage = heroImages.find((img) => img.id === "1");
+  const remainingImages = heroImages.filter((img) => img.id !== "1");
 
   return (
-    <section className="col-[content]">
+    <section className="col-[content] scroll-mt-32" id="overblik">
       <div className="py-4">
         <Breadcrumb current={rejse.titel} />
       </div>
@@ -58,15 +57,13 @@ const remainingImages = heroImages.filter((img) => img.id !== "1");
           </div>
         </div>
 
-        <hr className="h-px border-0 bg-[var(--grey-200)]" />
+        <hr className="h-px border-0 bg-[var(--grey-100)]" />
       </div>
 
-      <div className="mt-10 grid items-center justify-between md:grid-cols-3">
-        <div className="grid max-w-[80ch] gap-5 col-end-3 col-start-1">
+      <div className="mt-10 grid items-center justify-between gap-10 md:grid-cols-3">
+        <div className="col-start-1 col-end-3 grid max-w-[80ch] gap-5">
           <h2 className="w-full font-semibold">{rejse.titel}</h2>
-          <p className="whitespace-pre-line">
-            {rejse.beskrivelse}
-          </p>
+          <p className="whitespace-pre-line">{rejse.beskrivelse}</p>
         </div>
         <div className="ml-auto">
           <BookingCard rejse={rejse} />

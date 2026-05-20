@@ -9,7 +9,7 @@ import IdPageHeading from "./components/IdPageHeading";
 export default function AlleRejser({ searchParams }) {
   return (
     <>
-      <header className="sticky top-0 z-60 col-[full] grid grid-cols-subgrid">
+      <header className="sticky top-0 z-30 col-[full] grid grid-cols-subgrid">
         <Header />
       </header>
 
