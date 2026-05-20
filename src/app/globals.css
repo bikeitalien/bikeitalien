@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+html {
+  font-size: 15px;
+
+  scroll-behavior: smooth;
+}
+
 @theme inline {
   --background-primary: var(--background-primary);
   --background-secondary: var(--background-secondary);
@@ -33,7 +39,7 @@
   --background-secondary: #21433d;
   --background-tertiary: #e5e6c6;
   --background-alternate: #d6ebff;
-  
+
   --card-background-secondary: #88a6e2;
 
   --text-primary: #141937;
@@ -50,8 +56,7 @@
   --grey-300: #979893;
   --grey-400: #72736f;
 
-
- --h1-size: 40px;
+  --h1-size: 40px;
   --h2-size: 34px;
   --h3-size: 30px;
   --h4-size: 25px;
@@ -64,29 +69,29 @@
 
 @media (min-width: 768px) {
   :root {
-    --h1-size: clamp(40px, 3vw, 64px);
-    --h2-size: clamp(34px, 2.5vw, 50px);
-    --h3-size: clamp(30px, 2.4vw, 48px);
-    --h4-size: clamp(25px, 2vw, 40px);
-    --h5-size: clamp(20px, 1.5vw, 30px);
-    --h6-size: clamp(18px, 1.2vw, 24px);
+    --h1-size: clamp(40px, 3vw, 62px);
+    --h2-size: clamp(34px, 2.5vw, 48px);
+    --h3-size: clamp(30px, 2.4vw, 46px);
+    --h4-size: clamp(25px, 2vw, 38px);
+    --h5-size: clamp(20px, 1.5vw, 28px);
+    --h6-size: clamp(18px, 1.2vw, 22px);
 
-    --p-size: clamp(12px, 1vw, 18px);
-    --tag-size: clamp(11px, 0.9vw, 16px);
+    --p-size: clamp(12px, 1vw, 16px);
+    --tag-size: clamp(11px, 0.9vw, 14px);
   }
 }
 
 @media (min-width: 1440px) {
   :root {
-    --h1-size: 64px;
-    --h2-size: 50px;
-    --h3-size: 48px;
-    --h4-size: 40px;
-    --h5-size: 30px;
-    --h6-size: 24px;
+    --h1-size: 62px;
+    --h2-size: 48px;
+    --h3-size: 46px;
+    --h4-size: 38px;
+    --h5-size: 28px;
+    --h6-size: 22px;
 
-    --p-size: 18px;
-    --tag-size: 16px;
+    --p-size: 16px;
+    --tag-size: 14px;
   }
 }
 

@@ -10,6 +10,7 @@ import Faq from "./components/Faq";
 import Header from "./components/Header";
 import ProcessSection from "./components/index/ProcessSection";
 import AboutSection from "./components/index/AboutSection";
+import IndexHero from "./components/index/IndexHero";
 
 export default function Home() {
   const faqItems = [
@@ -56,8 +57,15 @@ export default function Home() {
         <Header />
       </header>
 
+
       <main className="top-0 col-[full] grid">
-        <TextRevealSection />
+       <IndexHero />
+        <section
+          className="col-[full] grid grid-cols-subgrid"
+          id="next-section"
+        >
+          <TextRevealSection />
+        </section>
         {/* <ImageCardSection /> */}
         <CategoryGridSection />
         <ProcessSection className="my-32" />

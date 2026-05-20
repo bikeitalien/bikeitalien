@@ -27,7 +27,7 @@ const Button = ({
 
   return (
     <a
-      className={`flex cursor-pointer items-center gap-2 rounded-[20px] px-4 py-3 font-medium transition-opacity ${variants[variant]} ${className}`}
+      className={`flex cursor-pointer items-center justify-center gap-2 rounded-[20px] px-4 py-3 font-medium transition-opacity ${variants[variant]} ${className}`}
       {...props}
     >
       {iconPosition === "left" && <Icon size={24} />}

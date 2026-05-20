@@ -33,14 +33,19 @@ export default function Testimonials({ testimonials }) {
   ];
 
   return (
-    <section className="col-[full] overflow-x-hidden py-16 md:py-24 lg:py-28">
+    <section
+      className="col-[full] overflow-x-hidden py-16 md:py-24 lg:py-28 scroll-mt-32"
+      id="anmeldelser"
+    >
       <div className="mx-auto max-w-7xl px-[5%]">
         <div className="mb-12 md:mb-10">
           <h3 className="mb-5 text-4xl font-semibold md:text-6xl">
             Det siger vores rejsende
           </h3>
-          <p>Her er et udsnit af hvad vores tidligere rejseglade kunder har at sige om deres rejser.</p>
-
+          <p>
+            Her er et udsnit af hvad vores tidligere rejseglade kunder har at
+            sige om deres rejser.
+          </p>
         </div>
       </div>
 
