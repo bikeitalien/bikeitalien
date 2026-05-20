@@ -159,17 +159,6 @@ async function TravelCardContainer({ aktivFiltre }) {
         </p>
       </div>
       <section className="col-[content] grid py-10">
-        <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {travels.map((rejse, index) => (
-            <TravelCard
-              key={rejse.id}
-              rejse={rejse}
-              isPopular={[1, 2, 3].includes(index)}
-            />
-          ))}
-        </div>
-      </section>
-      <section className="col-[content] grid py-10">
         {filtered.length === 0 ? (
           <h6 className="text-(--grey-400)">
             Ingen rejser matcher dit filter.
