@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-// import testCardImage from "../../public/assets/apulien.webp";
 import Button from "./Button";
-import { image } from "motion/react-client";
 
 const KATEGORI_ID = {
   Mountainbike: 1,
@@ -13,24 +11,23 @@ const KATEGORI_ID = {
   Landevej: 3,
 };
 
-
 const TravelCard = ({ rejse, isPopular }) => {
   const destId = KATEGORI_ID[rejse.kategori] ?? rejse.id;
   return (
     <Link href={`/rejser/${destId}`} className="h-full">
-      <article className="flex h-full flex-col rounded-[20px] border border-[var(--grey-100)] bg-[var(--card-background)] shadow-2xs shadow-[var(--card-background)] hover:shadow-md">
-        <div className="grid">
+      <article className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-(--grey-100) bg-(--card-background) shadow-(--card-background) hover:shadow-md">
+        <div className="grid overflow-hidden">
           <Image
             src={rejse.cardImage}
-            alt="Test Card Image"
+            alt={rejse.titel}
             width={800}
             height={400}
-            className="col-start-1 row-start-1 aspect-4/3 w-full rounded-tl-[20px] rounded-tr-[20px] object-cover"
+            className="col-start-1 row-start-1 aspect-4/3 w-full object-cover transition-transform duration-400 group-hover:scale-103"
           />
 
           {isPopular && (
-            <div className="col-start-1 row-start-1 self-start justify-self-start p-4">
-              <div className="rounded-full bg-[var(--card-background)]! px-3 py-1">
+            <div className="z-10 col-start-1 row-start-1 self-start justify-self-start p-4">
+              <div className="rounded-full bg-(--card-background)! px-3 py-1">
                 <p>Populær</p>
               </div>
             </div>
@@ -40,15 +37,15 @@ const TravelCard = ({ rejse, isPopular }) => {
           <div className="grid gap-2">
             <div className="flex items-center gap-2">
               <p className="text-(--grey-400)!">{rejse.land}</p>
-              <div className="mx-1 h-1 w-1 rounded-full bg-[var(--grey-400)]" />
+              <div className="mx-1 h-1 w-1 rounded-full bg-(--grey-400)" />
               <p className="text-(--grey-400)!">{rejse.kategori}</p>
-              <div className="mx-1 h-1 w-1 rounded-full bg-[var(--grey-400)]" />
+              <div className="mx-1 h-1 w-1 rounded-full bg-(--grey-400)" />
               <p className="text-(--grey-400)!">{rejse.niveau}</p>
             </div>
             <h6 className="font-semibold">{rejse.titel}</h6>
             <div className="flex items-center gap-2">
               <p>{rejse.dato}</p>
-              <div className="mx-1 h-1 w-1 rounded-full bg-[var(--text-primary)]" />
+              <div className="mx-1 h-1 w-1 rounded-full bg-(--text-primary)" />
               <p>{rejse.antal_dage} dage</p>
             </div>
           </div>

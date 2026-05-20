@@ -134,7 +134,7 @@ async function TravelCardContainer({ aktivFiltre }) {
   if (aktivFiltre.varighed.length > 0)
     query = query.in("antal_dage", aktivFiltre.varighed.map(Number));
 
-  const { data: travels, error } = await query;
+  const { data: travels, error } = await query.order("id", { ascending: true });
 
   if (error) {
     return <p>Kunne ikke hente rejser.</p>;
