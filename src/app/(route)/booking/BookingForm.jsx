@@ -195,9 +195,11 @@ export default function BookingForm({ rejse }) {
 
   const onSubmit = async (data) => {
     const formData = new FormData();
-    Object.entries({ ...data, rejseId: rejse?.id ?? "" }).forEach(([key, val]) => {
-      formData.append(key, val ?? "");
-    });
+    Object.entries({ ...data, rejseId: rejse?.id ?? "" }).forEach(
+      ([key, val]) => {
+        formData.append(key, val ?? "");
+      },
+    );
     const result = await submitBooking(formData);
     if (result.error) {
       setServerError(result.error);
@@ -238,7 +240,7 @@ export default function BookingForm({ rejse }) {
                   message: "Navn må kun indeholde bogstaver",
                 },
               })}
-              className="w-full capitalize rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 transition-colors outline-none focus:border-(--button-dark)"
+              className="w-full rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 capitalize transition-colors outline-none focus:border-(--button-dark)"
               style={{ fontSize: "var(--p-size)" }}
             />
           </Field>
@@ -300,7 +302,7 @@ export default function BookingForm({ rejse }) {
                     },
                   };
                 })()}
-                className="w-full capitalize rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 transition-colors outline-none focus:border-(--button-dark)"
+                className="w-full rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 transition-colors outline-none focus:border-(--button-dark)"
                 style={{ fontSize: "var(--p-size)" }}
               />
             </div>
@@ -322,7 +324,7 @@ export default function BookingForm({ rejse }) {
                   message: "Pasnummer skal være 6–9 bogstaver og/eller tal",
                 },
               })}
-              className="w-full capitalize rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 transition-colors outline-none focus:border-(--button-dark)"
+              className="w-full rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 uppercase transition-colors outline-none focus:border-(--button-dark)"
               style={{ fontSize: "var(--p-size)" }}
             />
           </Field>
@@ -337,7 +339,7 @@ export default function BookingForm({ rejse }) {
                   message: "Datoen skal skrives som dd/mm/åååå",
                 },
               })}
-              className="w-full capitalize rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 transition-colors outline-none focus:border-(--button-dark)"
+              className="w-full rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 transition-colors outline-none focus:border-(--button-dark)"
               style={{ fontSize: "var(--p-size)" }}
             />
           </Field>
@@ -352,7 +354,7 @@ export default function BookingForm({ rejse }) {
                   message: "Datoen skal skrives som dd/mm/åååå",
                 },
               })}
-              className="w-full capitalize rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 transition-colors outline-none focus:border-(--button-dark)"
+              className="w-full rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 transition-colors outline-none focus:border-(--button-dark)"
               style={{ fontSize: "var(--p-size)" }}
             />
           </Field>
@@ -362,20 +364,6 @@ export default function BookingForm({ rejse }) {
       {/* Trin 3: Cykel */}
       {step === 3 && (
         <div className="grid gap-6">
-          <Field
-            label="Cykelstørrelse (evt højde i cm)"
-            error={errors.cykelstorrelse}
-          >
-            <input
-              type="text"
-              placeholder="s/m/l/xl/xxl eller højde i cm"
-              {...register("cykelstorrelse", {
-                required: "Cykelstørrelse er påkrævet",
-              })}
-              className="w-full capitalize rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 transition-colors outline-none focus:border-(--button-dark)"
-              style={{ fontSize: "var(--p-size)" }}
-            />
-          </Field>
           <Field label="Medbringer du din egen cykel?" error={errors.egenCykel}>
             <div className="grid gap-3">
               {[
@@ -404,6 +392,25 @@ export default function BookingForm({ rejse }) {
               ))}
             </div>
           </Field>
+          {["nej", "nej-e-cykel"].includes(watch("egenCykel")) && (
+            <Field
+              label="Cykelstørrelse (evt højde i cm)"
+              error={errors.cykelstorrelse}
+            >
+              <input
+                type="text"
+                placeholder="s/m/l/xl/xxl eller højde i cm"
+                {...register("cykelstorrelse", {
+                  validate: (val) => {
+                    if (getValues("egenCykel") === "ja") return true;
+                    return val ? true : "Cykelstørrelse er påkrævet";
+                  },
+                })}
+                className="w-full rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 transition-colors outline-none focus:border-(--button-dark)"
+                style={{ fontSize: "var(--p-size)" }}
+              />
+            </Field>
+          )}
         </div>
       )}
 
@@ -425,7 +432,7 @@ export default function BookingForm({ rejse }) {
                   message: "Navn må kun indeholde bogstaver",
                 },
               })}
-              className="w-full capitalize rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 transition-colors outline-none focus:border-(--button-dark)"
+              className="w-full rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 capitalize transition-colors outline-none focus:border-(--button-dark)"
               style={{ fontSize: "var(--p-size)" }}
             />
           </Field>
@@ -491,7 +498,7 @@ export default function BookingForm({ rejse }) {
                     },
                   };
                 })()}
-                className="w-full capitalize rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 transition-colors outline-none focus:border-(--button-dark)"
+                className="w-full rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 transition-colors outline-none focus:border-(--button-dark)"
                 style={{ fontSize: "var(--p-size)" }}
               />
             </div>
@@ -507,7 +514,7 @@ export default function BookingForm({ rejse }) {
                   message: "Husk at inkludere husnummeret",
                 },
               })}
-              className="w-full capitalize rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 transition-colors outline-none focus:border-(--button-dark)"
+              className="w-full rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 capitalize transition-colors outline-none focus:border-(--button-dark)"
               style={{ fontSize: "var(--p-size)" }}
             />
           </Field>
@@ -523,7 +530,7 @@ export default function BookingForm({ rejse }) {
                     message: "Postnummer skal være 4-5 cifre",
                   },
                 })}
-                className="w-full capitalize rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 transition-colors outline-none focus:border-(--button-dark)"
+                className="w-full rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 transition-colors outline-none focus:border-(--button-dark)"
                 style={{ fontSize: "var(--p-size)" }}
               />
             </Field>
@@ -534,7 +541,7 @@ export default function BookingForm({ rejse }) {
                 {...register("kontaktBy", {
                   required: "By er påkrævet",
                 })}
-                className="w-full capitalize rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 transition-colors outline-none focus:border-(--button-dark)"
+                className="w-full rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 capitalize transition-colors outline-none focus:border-(--button-dark)"
                 style={{ fontSize: "var(--p-size)" }}
               />
             </Field>
@@ -553,7 +560,7 @@ export default function BookingForm({ rejse }) {
               {...register("bemaerkning")}
               placeholder="Skriv her..."
               rows={6}
-              className="w-full capitalize rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 transition-colors outline-none focus:border-(--button-dark)"
+              className="w-full rounded-[20px] border border-(--grey-100) bg-(--background-primary) px-4 py-3 transition-colors outline-none focus:border-(--button-dark)"
               style={{ fontSize: "var(--p-size)" }}
             />
           </Field>
@@ -580,6 +587,7 @@ export default function BookingForm({ rejse }) {
         )}
         {step < 5 ? (
           <Button
+            key="next"
             variant="primary"
             type="button"
             onClick={next}
@@ -589,7 +597,12 @@ export default function BookingForm({ rejse }) {
             Næste
           </Button>
         ) : (
-          <Button variant="primary" type="submit" className="flex-1">
+          <Button
+            key="submit"
+            variant="primary"
+            type="submit"
+            className="flex-1"
+          >
             Gå til betaling
           </Button>
         )}
