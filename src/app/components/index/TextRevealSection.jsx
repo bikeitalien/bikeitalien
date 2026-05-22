@@ -54,7 +54,7 @@ const TextRevealSection = () => {
 
       <div className="col-[content] row-start-1 grid py-18 md:pt-24">
         <div className="md::grid-cols-2 grid items-end gap-10">
-          <div className="grid w-2xl gap-3">
+          <div className="grid md:w-2xl gap-3">
             <p className="font-semibold">Hvad er BikeItalien?</p>
             <h5 className="font-medium text-[var(--h2-size)]">
               {words.map((word, index) => (

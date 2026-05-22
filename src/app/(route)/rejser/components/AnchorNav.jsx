@@ -59,7 +59,7 @@ const AnchorNav = ({ rejseId }) => {
             <button
               key={link.href}
               onClick={() => handleClick(link.href)}
-              className={`relative cursor-pointer pb-4 px-4 text-[16px] font-medium whitespace-nowrap transition-colors md:text-[20px] ${
+              className={`relative cursor-pointer md:pb-4 md:px-4 text-[16px] font-medium whitespace-nowrap transition-colors md:text-[20px] ${
                 isActive
                   ? "text-[var(--text-primary)]"
                   : "text-[var(--grey-300)] hover:text-[var(--text-primary)]"
