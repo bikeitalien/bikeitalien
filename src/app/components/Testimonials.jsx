@@ -10,6 +10,8 @@ export default function Testimonials({ testimonials }) {
 
   if (!testimonials || testimonials.length === 0) return null;
 
+  const cardWidth = 432; // 400px kort + 32px padding/gap
+
   const nextSlide = () => {
     setCurrent((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
   };
@@ -34,10 +36,10 @@ export default function Testimonials({ testimonials }) {
 
   return (
     <section
-      className="col-[full] overflow-x-hidden py-16 md:py-24 lg:py-28 scroll-mt-32"
+      className="col-[full] grid scroll-mt-32 grid-cols-subgrid overflow-x-hidden py-16 md:py-24 lg:py-28"
       id="anmeldelser"
     >
-      <div className="mx-auto max-w-7xl px-[5%]">
+      <div className="col-[content]">
         <div className="mb-12 md:mb-10">
           <h3 className="mb-5 text-4xl font-semibold md:text-6xl">
             Det siger vores rejsende
@@ -49,11 +51,11 @@ export default function Testimonials({ testimonials }) {
         </div>
       </div>
 
-      <div className="pl-[5%]">
-        <div className="overflow-hidden">
+      <div className="col-[content-start/full-end]">
+        <div className="overflow-x-auto overflow-y-visible">
           <motion.div
-            className="flex items-stretch gap-2 p-4 md:p-8"
-            animate={{ x: `-${current * 100}%` }}
+            className="flex w-max items-stretch gap-2 p-4 md:p-8"
+            animate={{ x: `-${current * 400}px` }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             {testimonials.map((item, index) => (

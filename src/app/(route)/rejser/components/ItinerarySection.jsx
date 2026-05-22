@@ -24,7 +24,7 @@ export default function RejseDageTimeline({ rejse }) {
       <div className="grid gap-12 md:grid-cols-2 md:items-center lg:gap-20">
         <div>
           <div className="relative">
-            <div className="custom-scroll h-[420px] overflow-y-auto pr-4 md:h-[400px]">
+            <div className="custom-scroll h-[200px] pb-10 overflow-y-auto pr-4 md:h-[400px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active}
@@ -34,7 +34,7 @@ export default function RejseDageTimeline({ rejse }) {
                   transition={{ duration: 0.35 }}
                 >
                   <h4 className="font-semibold">Dag {dag.dag}</h4>
-                  <h5 className="mb-3">{dag.dato || rejse.dato}</h5>
+                  <h5 className="mb-3">{dag.dato || rejse.dato}</h5> 
                   <h6 className="mb-5">{dag.heading}</h6>
                   <p className="max-w-[var(--text-max-width)] whitespace-pre-line">
                     {dag.beskrivelse}
@@ -51,19 +51,28 @@ export default function RejseDageTimeline({ rejse }) {
               onClick={prev}
               className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-[var(--background-secondary)]"
             >
-              <RxChevronLeft color="var(--text-secondary)" className="w-7 h-7"/>
+              <RxChevronLeft
+                color="var(--text-secondary)"
+                className="h-7 w-7"
+              />
             </button>
 
             <button
               onClick={next}
               className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-[var(--background-secondary)]"
             >
-              <RxChevronRight color="var(--text-secondary)" className="w-7 h-7" />
+              <RxChevronRight
+                color="var(--text-secondary)"
+                className="h-7 w-7"
+              />
             </button>
           </div>
+          <p className="mt-4 font-bold text-[var(--grey-400)]! md:hidden">
+            Dag {dag.dag} af {dage.length}
+          </p>
         </div>
 
-        <div className="relative w-full h-[500px] overflow-hidden rounded-[10px] md:rounded-[20px]">
+        <div className="relative h-[500px] w-full overflow-hidden rounded-[10px] md:rounded-[20px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={`img-${active}`}
@@ -85,7 +94,7 @@ export default function RejseDageTimeline({ rejse }) {
         </div>
       </div>
 
-      <div className="relative mt-16">
+      <div className="relative mt-16 hidden md:block">
         <div className="absolute top-[7px] h-[3px] w-full bg-[var(--grey-100)]" />
 
         <motion.div
@@ -111,7 +120,7 @@ export default function RejseDageTimeline({ rejse }) {
                       : "var(--grey-300)",
                     scale: index === active ? 1.1 : 1,
                   }}
-                  className="h-[15px] w-[15px] rounded-full"
+                  className="h-[15px] w-[15px] cursor-pointer rounded-full"
                   style={{
                     boxShadow: "0 0 0 8px var(--background-primary)",
                   }}
