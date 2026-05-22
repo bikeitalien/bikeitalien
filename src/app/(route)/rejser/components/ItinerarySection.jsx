@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { RxChevronLeft, RxChevronRight } from "react-icons/rx";
+// import { RxChevronLeft, RxChevronRight } from "react-icons/rx";
+import RoundButton from "../../../components/RoundButton";
 
 export default function RejseDageTimeline({ rejse }) {
   const dage = rejse?.dage || [];
@@ -24,7 +25,7 @@ export default function RejseDageTimeline({ rejse }) {
       <div className="grid gap-12 md:grid-cols-2 md:items-center lg:gap-20">
         <div>
           <div className="relative">
-            <div className="custom-scroll h-[200px] pb-10 overflow-y-auto pr-4 md:h-[400px]">
+            <div className="custom-scroll h-[200px] overflow-y-auto pr-4 pb-10 md:h-[400px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active}
@@ -34,7 +35,7 @@ export default function RejseDageTimeline({ rejse }) {
                   transition={{ duration: 0.35 }}
                 >
                   <h4 className="font-semibold">Dag {dag.dag}</h4>
-                  <h5 className="mb-3">{dag.dato || rejse.dato}</h5> 
+                  <h5 className="mb-3">{dag.dato || rejse.dato}</h5>
                   <h6 className="mb-5">{dag.heading}</h6>
                   <p className="max-w-[var(--text-max-width)] whitespace-pre-line">
                     {dag.beskrivelse}
@@ -47,26 +48,15 @@ export default function RejseDageTimeline({ rejse }) {
           </div>
 
           <div className="mt-10 flex gap-3">
-            <button
-              onClick={prev}
-              className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-[var(--background-secondary)]"
-            >
-              <RxChevronLeft
-                color="var(--text-secondary)"
-                className="h-7 w-7"
-              />
-            </button>
+            <RoundButton variant="primary" iconPosition="left" onClick={prev} />
 
-            <button
+            <RoundButton
+              variant="primary"
+              iconPosition="right"
               onClick={next}
-              className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-[var(--background-secondary)]"
-            >
-              <RxChevronRight
-                color="var(--text-secondary)"
-                className="h-7 w-7"
-              />
-            </button>
+            />
           </div>
+          
           <p className="mt-4 font-bold text-[var(--grey-400)]! md:hidden">
             Dag {dag.dag} af {dage.length}
           </p>
