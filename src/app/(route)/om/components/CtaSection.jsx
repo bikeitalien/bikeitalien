@@ -2,9 +2,9 @@ import LinkButton from "@/app/components/LinkButton";
 const CtaSection = () => {
   return (
     <>
-      <section className="col-[content] grid text-center">
+      <section className="col-[content] grid py-18 text-center md:py-36">
         <h2 className="mb-6 font-bold">Er du klar til dit næste eventyr?</h2>
-        <p className="mx-auto mb-6 w-[65ch] font-semibold">
+        <p className="mx-auto mb-6 font-semibold md:w-[65ch]">
           Oplev verden fra cykelsadlen og kom tættere på både naturen, kulturen
           og de skjulte perler undervejs. Hos Bikeitalien finder du nøje
           udvalgte cykelrejser for både motionister og livsnydere – klar til dit
