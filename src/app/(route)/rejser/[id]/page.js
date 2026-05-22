@@ -78,7 +78,7 @@ export default async function RejseDetalje({ params }) {
       </header>
       <main>
         <IdPageHeading rejse={rejse} />
-        <AnchorNav />
+        <AnchorNav rejseId={id} />
         <ItinerarySection rejse={rejse} />
         <ImageCardSection rejse={rejse} />
         <IconGrid

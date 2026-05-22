@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import Button from "../Button";
+import LinkButton from "../LinkButton";
 import { motion, animate } from "framer-motion";
 
 const IndexHero = () => {
@@ -36,13 +36,13 @@ const IndexHero = () => {
                 fællesskab og cykelferier ud over det sædvanlige.
               </h6>
               <div className="flex justify-center pt-4">
-                <Button
+                <LinkButton
                   href="/rejser"
                   variant="accent"
                   className="w-fit place-content-center"
                 >
                   Se alle cykelrejser
-                </Button>
+                </LinkButton>
               </div>
             </div>
           </div>

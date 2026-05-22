@@ -1,6 +1,6 @@
 import Image from "next/image";
 import HeadingSection from "../HeadingSection";
-import Button from "../Button";
+import LinkButton from "../LinkButton";
 
 const AboutSection = () => {
   return (
@@ -21,7 +21,7 @@ const AboutSection = () => {
             Fælles for alle mine rejser er kærligheden til cykling, et højt
             serviceniveau og det gode fællesskab, der opstår undervejs.
           </p>
-          <Button className="w-fit">Læs mere om mig</Button>
+          <LinkButton href="/om" className="w-fit">Læs mere om mig</LinkButton>
         </HeadingSection>
         <div className="overflow-hidden rounded-[20px]">
           <Image
