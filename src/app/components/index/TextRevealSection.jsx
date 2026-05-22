@@ -4,9 +4,10 @@ import { useRef } from "react";
 import Image from "next/image";
 import { useScroll } from "framer-motion";
 import WordReveal from "./WordReveal";
+import { motion } from "framer-motion";
 
 const text =
-  "BikeItalien arrangerer personlige cykelrejser for mennesker, der søger mere end bare en ferie. Fra de italienske bjergpas til eventyr i Jordan og Nepal skabes oplevelser med fokus på fællesskab, natur og kultur. Turene er planlagt ned til detaljen, så du kan slippe bekymringerne og nyde rejsen, ruterne og menneskene omkring dig. Her handler det ikke kun om at nå frem, men om at opleve noget undervejs.";
+  "BikeItalien arrangerer personlige cykelrejser for mennesker, der søger mere end bare en ferie. Bag BikeItalien står Joachim, som siden 2007 har skabt oplevelser med fokus på fællesskab, natur og kultur fra italienske bjergpas til eventyr i Jordan og Nepal. Turene er planlagt ned til detaljen, så du kan slippe bekymringerne og nyde rejsen, ruterne og menneskene omkring dig. Her handler det ikke kun om at nå frem, men om at opleve noget undervejs.";
 
 const TextRevealSection = () => {
   const ref = useRef(null);
@@ -14,8 +15,32 @@ const TextRevealSection = () => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 30%", "end 60%"],
+    offset: ["start 30%", "end 80%"],
   });
+
+  const stats = [
+    {
+      number: "18+",
+      title: "års erfaring",
+      text: "Personlige cykelrejser siden 2007",
+    },
+    {
+      number: "100+",
+      title: "ture gennemført",
+      text: "Gennemtestede ruter og oplevelser",
+    },
+    {
+      number: "8",
+      title: "lande",
+      text: "Fra Gardasøen til Jordan og Nepal",
+    },
+
+    // {
+    //   number: "Små",
+    //   title: "grupper",
+    //   text: "Fokus på fællesskab og nærvær",
+    // },
+  ];
 
   return (
     <section ref={ref} className="col-[full] grid grid-cols-subgrid">
@@ -24,23 +49,53 @@ const TextRevealSection = () => {
         alt=""
         width={2000}
         height={1200}
-        className="col-[full] row-start-1 h-full w-full object-cover"
+        className="col-[full] row-start-1 row-end-3 h-full w-full object-cover"
       />
 
-      <div className="col-[content] row-start-1 grid max-w-2xl gap-6 py-18 md:py-24">
-        <p>Hvad er BikeItalien?</p>
+      <div className="col-[content] row-start-1 grid py-18 md:pt-24">
+        <div className="md::grid-cols-2 grid items-end gap-10">
+          <div className="grid w-2xl gap-3">
+            <p className="font-semibold">Hvad er BikeItalien?</p>
+            <h5 className="font-medium text-[var(--h2-size)]">
+              {words.map((word, index) => (
+                <WordReveal
+                  key={`${word}-${index}`}
+                  word={word}
+                  index={index}
+                  totalWords={words.length}
+                  scrollYProgress={scrollYProgress}
+                />
+              ))}
+            </h5>
+          </div>
+          <div className="grid gap-8 md:col-start-2 md:row-start-2 md:flex md:gap-3">
+            {stats.map((item, index) => (
+              <motion.article
+                key={item.title}
+                className="rounded-3xl"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{
+                  once: false,
+                  amount: 0.3,
+                }}
+                transition={{ duration: 0.9, delay: index * 0.2 }}
+              >
+                <h4 className="mb-2 leading-none font-bold text-[var(--background-secondary)] text-[var(--h3-size)]">
+                  {item.number}
+                </h4>
 
-        <h5 className="text-[var(--h2-size)]">
-          {words.map((word, index) => (
-            <WordReveal
-              key={`${word}-${index}`}
-              word={word}
-              index={index}
-              totalWords={words.length}
-              scrollYProgress={scrollYProgress}
-            />
-          ))}
-        </h5>
+                <h6 className="mb-2 font-semibold text-[var(--h6-size)] text-[var(--text-primary)]">
+                  {item.title}
+                </h6>
+
+                <p className="leading-relaxed text-[var(--grey-400)] text-[var(--p-size)]">
+                  {item.text}
+                </p>
+              </motion.article>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
