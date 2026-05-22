@@ -1,3 +1,6 @@
+import { Accordion } from "@/components/ui/accordion";
+import Button from "./Button";
+import FaqItem from "./FaqItem";
 import {
   Accordion,
   AccordionContent,
@@ -7,11 +10,11 @@ import {
 
 import LinkButton from "./LinkButton";
 
-const Faq = ({ items, className = "" }) => {
+const Faq = ({ items = [], className = "" }) => {
   return (
     <>
       <section
-        className={`text-primary bg-primary scroll-mt-32 md:grid-cols-2 col-[content] grid grid-cols-1 gap-20 ${className || ""}`}
+        className={`text-primary bg-primary col-[content] grid scroll-mt-32 grid-cols-1 gap-20 md:grid-cols-2 ${className || ""}`}
         id="faq"
       >
         <div>
@@ -27,22 +30,8 @@ const Faq = ({ items, className = "" }) => {
           </LinkButton>
         </div>
         <Accordion type="single" collapsible className="w-full">
-          {items.map((item, index) => (
-            <AccordionItem
-              key={index}
-              value={`item-${index}`}
-              className="border-(primary) border-t"
-            >
-              <div className="cursor-pointer py-4">
-                <AccordionTrigger className="align-center cursor-pointer items-center px-2 text-left text-(length:--p-size)! font-semibold hover:bg-(--card-background)! hover:no-underline">
-                  <p className="font-bold">{item.question}</p>
-                </AccordionTrigger>
-              </div>
-
-              <AccordionContent className="px-2 pb-6 text-(length:--p-size)!">
-                <p>{item.answer}</p>
-              </AccordionContent>
-            </AccordionItem>
+          {items.map((items) => (
+            <FaqItem key={items.id} items={items} />
           ))}
         </Accordion>
       </section>
