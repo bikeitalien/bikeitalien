@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Button from "@/app/components/Button";
+import LinkButton from "@/app/components/LinkButton";
 
 const links = [
   { label: "Overblik", href: "overview" },
@@ -14,7 +14,7 @@ const links = [
   { label: "FAQ", href: "faq" },
 ];
 
-const AnchorNav = () => {
+const AnchorNav = ({ rejseId }) => {
   const [active, setActive] = useState("overview");
 
   useEffect(() => {
@@ -78,7 +78,7 @@ const AnchorNav = () => {
           );
         })}
         <div className="pb-4">
-          <Button>Book nu</Button>
+          <LinkButton href={`/booking?id=${rejseId}`}>Book nu</LinkButton>
         </div>
       </div>
     </nav>

@@ -1,6 +1,6 @@
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
-import Button from "@/app/components/Button";
+import LinkButton from "@/app/components/LinkButton";
 
 export default function BetalingSide() {
   return (
@@ -16,13 +16,13 @@ export default function BetalingSide() {
             betalingsmulighederne for at gennemføre bookingen af den valgte
             rejse.
           </p>
-          <Button
-            href="/rejser"
+          <LinkButton
+            href="/"
             variant="accent"
             className="w-fit place-content-center"
           >
             Gå tilbage til forsiden
-          </Button>
+          </LinkButton>
         </section>
       </main>
       <footer className="col-[full] grid grid-cols-subgrid">
