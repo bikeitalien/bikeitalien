@@ -35,7 +35,7 @@ const Gallery = ({ images = [] }) => {
 
   return (
     <>
-      <section className="col-[full] grid py-20" id="galleri">
+      <section className="col-[content] grid py-20" id="galleri">
         <div className="grid w-full grid-cols-1 gap-4 md:max-h-[65vh] md:grid-cols-6 md:grid-rows-2">
           {images.map((img, index) => {
             const item = layout[index % layout.length];
@@ -52,7 +52,7 @@ const Gallery = ({ images = [] }) => {
                   width={800}
                   height={600}
                   loading="eager"
-                  className="h-full w-full object-cover transition hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </button>
             );
