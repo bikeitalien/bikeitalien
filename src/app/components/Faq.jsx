@@ -1,12 +1,5 @@
 import { Accordion } from "@/components/ui/accordion";
-import Button from "./Button";
 import FaqItem from "./FaqItem";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 
 import LinkButton from "./LinkButton";
 
