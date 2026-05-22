@@ -1,6 +1,14 @@
 import { Accordion } from "@/components/ui/accordion";
 import Button from "./Button";
 import FaqItem from "./FaqItem";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+import LinkButton from "./LinkButton";
 
 const Faq = ({ items = [], className = "" }) => {
   return (
@@ -17,9 +25,9 @@ const Faq = ({ items = [], className = "" }) => {
               og ellers hjælper jeg dig gerne videre.
             </p>
           </div>
-          <Button href="/kontakt" variant="primary" className="w-fit">
+          <LinkButton href="/kontakt" variant="primary" className="w-fit">
             Gå til kontakt
-          </Button>
+          </LinkButton>
         </div>
         <Accordion type="single" collapsible className="w-full">
           {items.map((items) => (

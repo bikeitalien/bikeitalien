@@ -1,4 +1,4 @@
-import Button from "@/app/components/Button";
+import LinkButton from "@/app/components/LinkButton";
 const CtaSection = () => {
   return (
     <>
@@ -10,13 +10,13 @@ const CtaSection = () => {
           udvalgte cykelrejser for både motionister og livsnydere – klar til dit
           næste eventyr på to hjul.
         </p>
-        <Button
+        <LinkButton
           href="/rejser"
           variant="primary"
           className="mx-auto mt-8 w-fit place-content-center"
         >
           Se alle cykelrejser
-        </Button>
+        </LinkButton>
       </section>
     </>
   );

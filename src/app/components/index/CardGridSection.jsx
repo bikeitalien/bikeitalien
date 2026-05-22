@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import TravelCard from "../TravelCard";
 import { supabase } from "@/lib/supabase";
 import HeadingSection from "../HeadingSection";
-import Button from "../Button";
+import LinkButton from "../LinkButton";
 
 const CardGridSection = ({ className = "" }) => {
   return (
@@ -19,9 +19,9 @@ const CardGridSection = ({ className = "" }) => {
             </p>
           </HeadingSection>
           <div className="mt-auto">
-            <Button variant="primary" href="/rejser">
+            <LinkButton variant="primary" href="/rejser">
               Se alle rejser
-            </Button>
+            </LinkButton>
           </div>
         </div>
         <Suspense fallback={<div className="p-4">Loading rejser…</div>}>

@@ -1,4 +1,4 @@
-import Button from "./Button";
+import LinkButton from "./LinkButton";
 import HeadingSection from "./HeadingSection";
 import Image from "next/image";
 import Link from "./Link";
@@ -13,9 +13,9 @@ const ContactSection = ({ className = "" }) => {
           tagline="Har du flere spørgsmål?"
           title="Kontakt mig her, så finder vi ud af det sammen"
         >
-          <Button href="/kontakt" variant="primary" className="w-fit">
+          <LinkButton href="/kontakt" variant="primary" className="w-fit">
             Kontakt mig
-          </Button>
+          </LinkButton>
         </HeadingSection>
 
         <div className="grid items-start gap-6 md:grid-cols-[1fr_1fr]">

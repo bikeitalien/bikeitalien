@@ -2,7 +2,7 @@
 
 import { supabase } from "@/lib/supabase";
 
-export async function subscribeToNewsletter(prevState, formData) {
+export async function subscribeToNewsletter(formData) {
   const email = formData.get("email");
 
   if (!email || !email.includes("@")) {

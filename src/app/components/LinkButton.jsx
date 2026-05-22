@@ -12,7 +12,7 @@ const variants = {
   icon: "bg-(--button-dark) text-(--text-secondary) px-4 py-4 rounded-full hover:scale-[1.02]",
 };
 
-const Button = ({
+const LinkButton = ({
   variant = "primary",
   icon,
   iconPosition = "right",
@@ -29,7 +29,7 @@ const Button = ({
   const showIcon = variant === "icon" || children;
 
   return (
-    <button
+    <a
       className={`flex cursor-pointer items-center justify-center gap-2 rounded-[20px] px-4 py-3 font-medium transition-transform ${variants[variant]} ${className}`}
       {...props}
     >
@@ -39,8 +39,8 @@ const Button = ({
         <Icon size={22} />
       )}
       {Icon && variant === "icon" && <Icon size={22} />}
-    </button>
+    </a>
   );
 };
 
-export default Button;
+export default LinkButton;

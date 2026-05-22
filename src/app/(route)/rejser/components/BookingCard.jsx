@@ -1,4 +1,4 @@
-import Button from "@/app/components/Button";
+import LinkButton from "@/app/components/LinkButton";
 
 const BookingCard = ({ rejse }) => {
   return (
@@ -15,7 +15,7 @@ const BookingCard = ({ rejse }) => {
 
       <h6>{rejse.dato}</h6>
 
-      <Button>Book rejsen nu</Button>
+      <LinkButton href={`/booking?id=${rejse.id}`}>Book rejsen nu</LinkButton>
     </div>
   );
 };
