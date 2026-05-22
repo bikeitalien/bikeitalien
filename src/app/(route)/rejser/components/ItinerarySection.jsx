@@ -3,8 +3,9 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-// import { RxChevronLeft, RxChevronRight } from "react-icons/rx";
-import RoundButton from "../../../components/RoundButton";
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+// import { IoIosArrowForward, IoIosArrowBack } from "react-icons/rx";
+import Button from "@/app/components/Button";
 
 export default function RejseDageTimeline({ rejse }) {
   const dage = rejse?.dage || [];
@@ -47,16 +48,12 @@ export default function RejseDageTimeline({ rejse }) {
             <div className="pointer-events-none absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-[var(--background-primary)] to-transparent" />
           </div>
 
-          <div className="mt-10 flex gap-3">
-            <RoundButton variant="primary" iconPosition="left" onClick={prev} />
+          <div className="flex gap-3">
+            <Button variant="icon" icon={IoIosArrowBack} onClick={prev} />
 
-            <RoundButton
-              variant="primary"
-              iconPosition="right"
-              onClick={next}
-            />
+            <Button variant="icon" icon={IoIosArrowForward} onClick={next} />
           </div>
-          
+
           <p className="mt-4 font-bold text-[var(--grey-400)]! md:hidden">
             Dag {dag.dag} af {dage.length}
           </p>
