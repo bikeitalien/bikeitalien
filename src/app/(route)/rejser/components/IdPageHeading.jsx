@@ -20,7 +20,7 @@ const IdPageHeading = ({ rejse }) => {
             width={1200}
             height={800}
             alt=""
-            className="h-full w-full rounded-tl-[20px] rounded-bl-[20px] object-cover"
+            className="aspect-video h-full w-full rounded-tl-[20px] rounded-bl-[20px] object-cover"
           />
           <div className="grid grid-cols-2 grid-rows-2 gap-2">
             {remainingImages.map((img) => (
@@ -60,7 +60,7 @@ const IdPageHeading = ({ rejse }) => {
         <hr className="h-px border-0 bg-[var(--grey-100)]" />
       </div>
 
-      <div className="mt-10 grid items-top justify-between gap-10 md:grid-cols-3">
+      <div className="items-top mt-10 grid justify-between gap-10 md:grid-cols-3">
         <div className="col-start-1 col-end-3 grid max-w-[80ch] gap-5">
           <h2 className="w-full font-semibold">{rejse.titel}</h2>
           <p className="whitespace-pre-line">{rejse.beskrivelse}</p>

@@ -14,7 +14,7 @@ const CardGridSection = ({ className = "" }) => {
             title="Rejser til enhver rytter"
           >
             <p>
-              Fra familieferier til bjergpas og eventyr her er et lille udpluk
+              Fra familieferier til bjergpas og eventyr. Her er et lille udpluk
               af de cykelferier jeg har skabt til mine gæster
             </p>
           </HeadingSection>
@@ -47,7 +47,7 @@ const FetchSelectedTravels = async () => {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {rejser.map((rejse) => (
         <TravelCard key={rejse.id} rejse={rejse} isPopular />
       ))}
