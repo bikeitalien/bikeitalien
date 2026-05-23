@@ -52,14 +52,14 @@ const AnchorNav = ({ rejseId }) => {
 
   return (
     <nav className="sticky top-0 z-60 col-[content] grid grid-cols-subgrid border-b border-[var(--grey-100)] bg-[var(--background-primary)]">
-      <div className="col-[content] flex justify-between gap-6 overflow-x-auto pt-2.5">
+      <div className="col-[content] flex justify-between gap-6 overflow-x-auto">
         {links.map((link) => {
           const isActive = active === link.href;
           return (
             <button
               key={link.href}
               onClick={() => handleClick(link.href)}
-              className={`relative cursor-pointer md:pb-4 md:px-4 text-[16px] font-medium whitespace-nowrap transition-colors md:text-[20px] ${
+              className={`relative cursor-pointer text-[16px] font-medium whitespace-nowrap transition-colors md:px-4 md:text-[16px] ${
                 isActive
                   ? "text-[var(--text-primary)]"
                   : "text-[var(--grey-300)] hover:text-[var(--text-primary)]"
@@ -77,7 +77,7 @@ const AnchorNav = ({ rejseId }) => {
             </button>
           );
         })}
-        <div className="pb-4">
+        <div className="pt-2 pb-2">
           <LinkButton href={`/booking?id=${rejseId}`}>Book nu</LinkButton>
         </div>
       </div>
