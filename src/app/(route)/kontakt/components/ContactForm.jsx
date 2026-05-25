@@ -100,7 +100,7 @@ const ContactForm = () => {
                           "Fornavn kan kun indeholde bogstaver og mellemrum",
                       },
                     })}
-                    className="w-full rounded-[10px] border border-(--text-primary) bg-transparent p-2"
+                    className="w-full rounded-[10px] border border-(--text-primary) bg-(--card-background) p-2"
                   />
                   {errors.name && (
                     <span className="mt-1 text-sm text-red-400">
@@ -129,7 +129,7 @@ const ContactForm = () => {
                           "Efternavn kan kun indeholde bogstaver og mellemrum",
                       },
                     })}
-                    className="w-full rounded-[10px] border border-(--text-primary) bg-transparent p-2"
+                    className="w-full rounded-[10px] border border-(--text-primary) bg-(--card-background) p-2"
                   />
                   {errors.lastname && (
                     <span className="mt-1 text-sm text-red-400">
@@ -151,7 +151,7 @@ const ContactForm = () => {
                       message: "Ugyldig email adresse",
                     },
                   })}
-                  className="w-full rounded-[10px] border border-(--text-primary) bg-transparent p-2"
+                  className="w-full rounded-[10px] border border-(--text-primary) bg-(--card-background) p-2"
                 />
                 {errors.email && (
                   <span className="mt-1 text-sm text-red-400">
@@ -175,7 +175,7 @@ const ContactForm = () => {
                       message: "Besked må ikke overstige 1000 tegn",
                     },
                   })}
-                  className="w-full rounded-[10px] border border-(--text-primary) bg-transparent p-2"
+                  className="w-full rounded-[10px] border border-(--text-primary) bg-(--card-background) p-2 pb-30"
                 />
                 {errors.comment && (
                   <span className="mt-1 text-sm text-red-400">
