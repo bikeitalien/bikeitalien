@@ -49,9 +49,9 @@ export default function RejseDageTimeline({ rejse }) {
           </div>
 
           <div className="flex gap-3">
-            <Button variant="icon" icon={IoIosArrowBack} onClick={prev} />
+            <Button variant="icon" icon={IoIosArrowBack} onClick={prev} aria-label="Forrige dag" />
 
-            <Button variant="icon" icon={IoIosArrowForward} onClick={next} />
+            <Button variant="icon" icon={IoIosArrowForward} onClick={next} aria-label="Næste dag" />
           </div>
 
           <p className="mt-4 font-bold text-[var(--grey-400)]! md:hidden">

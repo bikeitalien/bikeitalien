@@ -8,7 +8,7 @@ const ImageCardSection = ({ rejse }) => {
       scroll-mt-32
     >
       <div className="grid gap-10">
-        <div className="grid md:grid-cols-2 grid-cols-1  items-center justify-between gap-6">
+        <div className="grid grid-cols-1 items-center justify-between gap-6 md:grid-cols-2">
           <div>
             <p>{rejse.oplevelse_tagline}</p>
             <h3 className="font-semi">{rejse.oplevelse_titel}</h3>
@@ -22,10 +22,11 @@ const ImageCardSection = ({ rejse }) => {
             <article key={oplevelse.id} className="flex flex-col gap-4">
               <Image
                 src={oplevelse.image}
-                width={400}
-                height={200}
+                width={600}
+                height={800}
                 alt={oplevelse.titel}
-                className="h-[240px] w-full rounded-[20px] object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="aspect-video w-full rounded-[20px] object-cover"
               />
 
               <h5 className="font-semibold">{oplevelse.titel}</h5>

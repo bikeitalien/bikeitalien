@@ -63,7 +63,9 @@ html {
   --h6-size: 18px;
 
   --p-size: 16px;
-  --tag-size: 16px;
+
+  --tag-size: 14px;
+
 }
 
 @media (min-width: 768px) {

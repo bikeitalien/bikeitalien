@@ -42,9 +42,10 @@ const AboutTimeline = () => {
           <Image
             src="/assets/nepal.webp"
             alt="Nepal"
-            width={1920}
-            height={1080}
-            className="h-80 rounded-[20px] object-cover"
+            width={1080}
+            height={1440}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="aspect-video w-full rounded-[20px] object-cover"
           />
         </div>
 

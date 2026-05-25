@@ -50,6 +50,7 @@ const Footer = () => {
                 href="https://www.facebook.com/bikeitalien/?locale=da_DK"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Besøg BikeItalien på Facebook"
                 className="text-(--text-secondary) transition-opacity hover:opacity-70"
               >
                 <FaSquareFacebook size={21} />
@@ -58,6 +59,7 @@ const Footer = () => {
                 href="https://www.instagram.com/joachimjerichow/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Besøg BikeItalien på Instagram"
                 className="text-(--text-secondary) transition-opacity hover:opacity-70"
               >
                 <BsInstagram size={20} />
