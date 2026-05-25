@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const PageHero = ({
   bgColor = "bg-[var(--background-card)]",
   tagline,
@@ -17,10 +19,14 @@ const PageHero = ({
         </div>
 
         {image && (
-          <img
+          <Image
             src={image}
             alt={imageAlt}
-            className="max-h-50 w-full rounded-[20px] object-cover object-top md:max-h-75"
+            width={800}
+            height={530}
+            priority
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="aspect-video w-full rounded-[20px] object-cover object-top"
           />
         )}
       </div>

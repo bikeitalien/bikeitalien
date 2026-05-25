@@ -212,6 +212,7 @@ const HeaderClient = ({ rejse }) => {
 
           {/* Mobile burger button */}
           <button
+            aria-label={mobileOpen ? "Luk menu" : "Åbn menu"}
             className="inline-flex h-10 w-10 items-center justify-center rounded-lg transition-all md:hidden"
             onClick={() => {
               setMobileOpen((prev) => !prev);

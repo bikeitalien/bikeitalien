@@ -80,6 +80,7 @@ export default function Testimonials({ testimonials }) {
               <button
                 key={index}
                 onClick={() => setCurrent(index)}
+                aria-label={`Gå til anmeldelse ${index + 1}`}
                 className={`h-2 w-2 rounded-full ${
                   current === index ? "bg-black" : "bg-neutral-300"
                 }`}
@@ -90,6 +91,7 @@ export default function Testimonials({ testimonials }) {
           <div className="flex gap-3">
             <button
               onClick={prevSlide}
+              aria-label="Forrige anmeldelse"
               className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-[var(--background-secondary)]"
             >
               <RxChevronLeft style={{ color: "#ffff" }} />
@@ -97,6 +99,7 @@ export default function Testimonials({ testimonials }) {
 
             <button
               onClick={nextSlide}
+              aria-label="Næste anmeldelse"
               className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-[var(--background-secondary)]"
             >
               <RxChevronRight style={{ color: "#ffff" }} />

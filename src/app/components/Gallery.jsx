@@ -52,6 +52,7 @@ const Gallery = ({ images = [] }) => {
                   width={800}
                   height={600}
                   loading="eager"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </button>

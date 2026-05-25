@@ -19,7 +19,7 @@ const IdPageHeading = ({ rejse }) => {
             src={firstImage.url}
             width={1200}
             height={800}
-            alt=""
+            alt={rejse.titel}
             className="aspect-video h-full w-full rounded-tl-[20px] rounded-bl-[20px] object-cover"
           />
           <div className="grid grid-cols-2 grid-rows-2 gap-2">
@@ -29,6 +29,7 @@ const IdPageHeading = ({ rejse }) => {
                 src={img.url}
                 width={600}
                 height={400}
+                alt={rejse.titel}
                 className={`h-full w-full object-cover ${img.id === "3" ? "rounded-tr-[20px]" : ""} ${img.id === "5" ? "rounded-br-[20px]" : ""} `}
               />
             ))}
