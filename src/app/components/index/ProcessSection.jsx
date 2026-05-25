@@ -14,11 +14,7 @@ const ProcessStep = ({ step }) => {
   const y = useTransform(scrollYProgress, [0, 1], [100, 0]);
 
   return (
-    <motion.div
-      ref={ref}
-      style={{ opacity, y }}
-      className="flex gap-6"
-    >
+    <motion.div ref={ref} style={{ opacity, y }} className="flex gap-6">
       <span className="text-(length:--h3-size) leading-none font-semibold text-(--text-primary)">
         {step.number}
       </span>
@@ -62,13 +58,13 @@ const ProcessSection = ({ className = "" }) => {
             title="Sådan kommer du afsted"
             children="Det er enkelt at komme afsted på cykelferie! Her kan du se, hvordan det foregår fra første klik til du sidder i sadlen."
           />
-          <div className="overflow-hidden rounded-[20px]">
+          <div className="overflow-hidden rounded-[20px] lg:max-w-120">
             <Image
               src="/assets/processbillede.webp"
               alt="Processen"
               width={800}
               height={600}
-              className="aspect-5/3 h-full w-full object-cover"
+              className="aspect-video h-full w-full object-cover"
             />
           </div>
         </div>
