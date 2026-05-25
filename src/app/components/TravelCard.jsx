@@ -50,12 +50,14 @@ const TravelCard = ({ rejse, isPopular }) => {
             </div>
           </div>
 
-          <div className="flex items-center justify-between gap-1">
-            <div className="flex items-baseline gap-1">
-              <h5>{rejse.pris} kr. </h5>
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex items-baseline gap-1 whitespace-nowrap">
+              <h5>{rejse.pris} kr.</h5>
               <p>inkl. fly</p>
             </div>
-            <Button className="group-hover:opacity-90">Se rejse</Button>
+            <Button className="shrink-0 group-hover:opacity-90">
+              Se rejse
+            </Button>
           </div>
         </section>
       </article>

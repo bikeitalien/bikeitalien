@@ -20,7 +20,7 @@ const IconGrid = ({
           src="/assets/backgroundIllu.svg"
           alt="Background illustration"
           fill
-          className="absolute inset-0 object-cover opacity-10 brightness-50"
+          className="absolute inset-0 object-cover opacity-5 brightness-50"
         />
       )}
       <div className="relative col-[content] flex flex-col gap-12 py-18 md:gap-20 md:py-24">

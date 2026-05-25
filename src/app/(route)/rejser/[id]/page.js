@@ -48,6 +48,7 @@ export default async function RejseDetalje({ params }) {
         <ImageCardSection rejse={rejse} />
         <IconGrid
           title="Hvad har vi styr på for dig?"
+          withBackground
           items={rejse.praktisk.map((item, i) => ({
             icon: [
               <IoAirplaneOutline size={30} />,

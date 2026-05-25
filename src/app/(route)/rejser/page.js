@@ -164,7 +164,7 @@ async function TravelCardContainer({ aktivFiltre }) {
             Ingen rejser matcher dit filter.
           </h6>
         ) : (
-          <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(340px,1fr))] items-stretch gap-8">
             {filtered.map((rejse) => (
               <TravelCard key={rejse.id} rejse={rejse} />
             ))}

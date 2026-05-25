@@ -83,8 +83,8 @@ export default async function OmSide() {
             },
           ]}
         />
-        <Testimonials testimonials={rejse.testimonials} />
         <Gallery images={images} />
+        <Testimonials testimonials={rejse.testimonials} />
         <ImageCardSection
           rejse={{
             oplevelse_tagline: "Vores historie",

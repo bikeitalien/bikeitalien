@@ -5,6 +5,7 @@ import { ChevronDownIcon, Menu, X } from "lucide-react";
 import Link from "next/link";
 import {
   motion,
+  AnimatePresence,
   useScroll,
   useTransform,
   useMotionValueEvent,
@@ -224,24 +225,35 @@ const HeaderClient = ({ rejse }) => {
           </button>
 
           {/* Desktop "Alle rejser" dropdown */}
-          {menuOpen && (
-            <div
-              className="absolute top-full right-0 left-0 z-50 hidden md:block"
-              style={{ color: "var(--text-primary)" }}
-            >
-              <div className="mt-1.5 overflow-hidden rounded-[20px] bg-(--background-primary) shadow-[0_0_20px_rgba(0,0,0,0.1)]">
-                <div className="p-7">
-                  <div className="flex gap-10.5">
-                    {renderKategorier(() => setMenuOpen(false))}
+          <AnimatePresence>
+            {menuOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                className="absolute top-full right-0 left-0 z-50 hidden md:block"
+                style={{ color: "var(--text-primary)" }}
+              >
+                <div className="mt-1.5 overflow-hidden rounded-[20px] bg-(--background-primary) shadow-[0_0_20px_rgba(0,0,0,0.1)]">
+                  <div className="p-7">
+                    <div className="flex gap-10.5">
+                      {renderKategorier(() => setMenuOpen(false))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          )}
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Mobile burger dropdown */}
-          {mobileOpen && (
-            <div
+          <AnimatePresence>
+            {mobileOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
               className="absolute top-full right-0 left-0 z-50 md:hidden"
               style={{ color: "var(--text-primary)" }}
             >
@@ -425,8 +437,9 @@ const HeaderClient = ({ rejse }) => {
                   </div>
                 </motion.div>
               </div>
-            </div>
-          )}
+            </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </motion.section>
     </>
