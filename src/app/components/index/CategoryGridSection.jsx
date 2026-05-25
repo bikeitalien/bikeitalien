@@ -43,7 +43,7 @@ const categories = [
 const CategoryGridSection = () => {
   return (
     <section className="col-[full] grid grid-cols-subgrid bg-(--background-tertiary)">
-      <div className="col-[content] flex flex-col gap-12 py-18 md:gap-20 md:py-24">
+      <div className="col-[content] flex flex-col gap-12 py-18 md:py-24">
         <HeadingSection
           tagline="Kategorier"
           title="Find den cykelferie, der passer til dig"
@@ -56,7 +56,7 @@ const CategoryGridSection = () => {
             i centrum.
           </p>
         </HeadingSection>
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map((card) => (
             <CategoryCard key={card.label} {...card} />
           ))}

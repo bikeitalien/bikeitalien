@@ -5,9 +5,14 @@ import { motion, animate } from "framer-motion";
 
 const IndexHero = () => {
   const handleScroll = () => {
+    document.documentElement.style.scrollBehavior = "auto";
     animate(window.scrollY, window.innerHeight * 0.8, {
-      duration: 0.7,
+      duration: 1,
+      ease: "easeInOut",
       onUpdate: (position) => window.scrollTo(0, position),
+      onComplete: () => {
+        document.documentElement.style.scrollBehavior = "";
+      },
     });
   };
   return (

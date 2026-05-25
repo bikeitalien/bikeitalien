@@ -1,5 +1,34 @@
+"use client";
 import Image from "next/image";
 import HeadingSection from "../HeadingSection";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
+const ProcessStep = ({ step }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start 95%", "center 70%"],
+  });
+  const opacity = useTransform(scrollYProgress, [0, 0.6, 1], [0, 0, 1]);
+  const y = useTransform(scrollYProgress, [0, 1], [100, 0]);
+
+  return (
+    <motion.div
+      ref={ref}
+      style={{ opacity, y }}
+      className="flex gap-6"
+    >
+      <span className="text-(length:--h3-size) leading-none font-semibold text-(--text-primary)">
+        {step.number}
+      </span>
+      <div className="flex flex-col gap-4">
+        <h5 className="font-medium">{step.undertitle}</h5>
+        <p>{step.text}</p>
+      </div>
+    </motion.div>
+  );
+};
 
 const steps = [
   {
@@ -45,15 +74,7 @@ const ProcessSection = ({ className = "" }) => {
         </div>
         <div className="flex flex-col gap-8">
           {steps.map((step) => (
-            <div key={step.number} className="flex gap-6">
-              <span className="text-(length:--h3-size) leading-none font-semibold text-(--text-primary)">
-                {step.number}
-              </span>
-              <div className="flex flex-col gap-4">
-                <h5 className="font-medium">{step.undertitle}</h5>
-                <p>{step.text}</p>
-              </div>
-            </div>
+            <ProcessStep key={step.number} step={step} />
           ))}
         </div>
       </div>
