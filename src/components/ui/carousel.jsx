@@ -4,8 +4,8 @@ import useEmblaCarousel from "embla-carousel-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-import { IoIosArrowBack } from "react-icons/io";
+// import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
 const CarouselContext = React.createContext(null);
 
@@ -172,7 +172,7 @@ function CarouselPrevious({
       onClick={scrollPrev}
       {...props}
     >
-      <ChevronLeftIcon />
+      <IoIosArrowBack />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -202,7 +202,7 @@ function CarouselNext({
       onClick={scrollNext}
       {...props}
     >
-      <ChevronRightIcon />
+      <IoIosArrowForward size={22} />
       <span className="sr-only">Next slide</span>
     </Button>
   );
