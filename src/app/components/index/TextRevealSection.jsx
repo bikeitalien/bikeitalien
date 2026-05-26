@@ -56,7 +56,7 @@ const TextRevealSection = () => {
         <div className="md::grid-cols-2 grid items-end gap-10">
           <div className="grid md:w-2xl gap-3">
             <p className="font-semibold">Hvad er BikeItalien?</p>
-            <h5 className="font-medium text-[var(--h2-size)]">
+            <h5 >
               {words.map((word, index) => (
                 <WordReveal
                   key={`${word}-${index}`}

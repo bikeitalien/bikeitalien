@@ -13,7 +13,7 @@ const CardGridSection = ({ className = "" }) => {
             tagline="Udvalgte rejser"
             title="Rejser til enhver rytter"
           >
-            <p>
+            <p className="max-w-[65ch]">
               Fra familieferier til bjergpas og eventyr. Her er et lille udpluk
               af de cykelferier jeg har skabt til mine gæster
             </p>

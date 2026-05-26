@@ -41,8 +41,8 @@ export default async function Home() {
         <AboutSection />
         <Testimonials />
         <CardGridSection className="my-32" />
-        <ContactSection />
         <Faq items={data} className="py-18 md:my-32" />
+        <ContactSection />
       </main>
 
       <footer className="col-[full] grid grid-cols-subgrid">

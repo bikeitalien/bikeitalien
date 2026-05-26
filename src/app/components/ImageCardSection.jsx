@@ -3,15 +3,14 @@ import Image from "next/image";
 const ImageCardSection = ({ rejse }) => {
   return (
     <section
-      className="col-[content] py-18 md:py-36"
+      className="col-[content] scroll-mt-32 py-18 md:py-36"
       id="oplevelser"
-      scroll-mt-32
     >
-      <div className="grid gap-10">
+      <div className="grid gap-20">
         <div className="grid grid-cols-1 items-center justify-between gap-6 md:grid-cols-2">
           <div>
             <p>{rejse.oplevelse_tagline}</p>
-            <h3 className="font-semi">{rejse.oplevelse_titel}</h3>
+            <h3 className="font-semibold">{rejse.oplevelse_titel}</h3>
           </div>
 
           <p className="max-w-[65ch]">{rejse.oplevelse_beskrivelse}</p>

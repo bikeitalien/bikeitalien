@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import LinkButton from "@/app/components/LinkButton";
 
 const links = [
-  { label: "Overblik", href: "overview" },
+  { label: "Overblik", href: "overblik" },
   { label: "Dagsplan", href: "dagsplan" },
   { label: "Oplevelser", href: "oplevelser" },
   { label: "Praktisk info", href: "praktisk" },

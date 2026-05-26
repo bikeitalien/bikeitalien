@@ -43,12 +43,12 @@ const categories = [
 const CategoryGridSection = () => {
   return (
     <section className="col-[full] grid grid-cols-subgrid bg-(--background-tertiary)">
-      <div className="col-[content] flex flex-col gap-12 py-18 md:py-24">
+      <div className="col-[content] flex flex-col gap-12 py-18 md:py-25">
         <HeadingSection
           tagline="Kategorier"
           title="Find den cykelferie, der passer til dig"
         >
-          <p>
+          <p className="max-w-[65ch]">
             Uanset om du drømmer om hyggelige familieoplevelser, store
             naturoplevelser eller udfordrende dage i sadlen, finder du en rejse,
             der matcher dig. Jeg tilbyder både afslappede cykelferier med fokus
