@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
+import Button from "./Button";
 import { useState } from "react";
-import { RxChevronLeft, RxChevronRight } from "react-icons/rx";
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import {
   Carousel,
@@ -67,12 +68,9 @@ const Gallery = ({ images = [] }) => {
           >
             <DialogTitle className="hidden">Galleri</DialogTitle>
             <Carousel opts={{ startIndex: selectedIndex }}>
-              <CarouselPrevious className="z-50 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-(--background-secondary) text-(--text-secondary)">
-                <RxChevronLeft />
-              </CarouselPrevious>
-              <CarouselNext className="z-50 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-(--background-secondary) text-(--text-secondary)">
-                <RxChevronRight />
-              </CarouselNext>
+              <CarouselPrevious className="z-50 h-14 w-14 cursor-pointer rounded-full border-0 bg-(--button-dark) text-(--text-secondary) transition-transform hover:scale-[1.02]" />
+              <CarouselNext className="z-50 h-14 w-14 cursor-pointer rounded-full border-0 bg-(--button-dark) text-(--text-secondary) transition-transform hover:scale-[1.02]" />
+
               <CarouselContent className="max-h-[65vh] max-w-[70vw] md:max-h-[75vh] md:max-w-[55vw]">
                 {images.map((img, index) => (
                   <CarouselItem key={index}>
