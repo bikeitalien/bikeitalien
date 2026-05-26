@@ -68,8 +68,8 @@ const Gallery = ({ images = [] }) => {
           >
             <DialogTitle className="hidden">Galleri</DialogTitle>
             <Carousel opts={{ startIndex: selectedIndex }}>
-              <CarouselPrevious className="z-50 h-14 w-14 cursor-pointer rounded-full border-0 bg-(--button-dark) text-(--text-secondary) transition-transform hover:scale-[1.02]" />
-              <CarouselNext className="z-50 h-14 w-14 cursor-pointer rounded-full border-0 bg-(--button-dark) text-(--text-secondary) transition-transform hover:scale-[1.02]" />
+              <CarouselPrevious className="z-50 cursor-pointer rounded-full border-0 bg-(--button-dark) text-(--text-secondary) transition-transform hover:scale-[1.02] md:h-14 md:w-14" />
+              <CarouselNext className="z-50 cursor-pointer rounded-full border-0 bg-(--button-dark) text-(--text-secondary) transition-transform hover:scale-[1.02] md:h-14 md:w-14" />
 
               <CarouselContent className="max-h-[65vh] max-w-[70vw] md:max-h-[75vh] md:max-w-[55vw]">
                 {images.map((img, index) => (
