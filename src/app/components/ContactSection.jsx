@@ -6,7 +6,7 @@ import Link from "./Link";
 const ContactSection = ({ className = "" }) => {
   return (
     <section
-      className={`col-[full] grid grid-cols-subgrid bg-(--background-alternate) ${className || ""}`}
+      className={`col-[full] grid md:mb-20 grid-cols-subgrid bg-(--background-alternate) ${className || ""}`}
     >
       <div className="col-[content] grid items-start gap-8 py-18 md:py-24 xl:grid-cols-2 xl:gap-28">
         <HeadingSection
