@@ -183,17 +183,13 @@ const ContactForm = () => {
                   </span>
                 )}
               </div>
-              {/* <Button
+              <Button
                 type="submit"
                 variant="primary"
-                disabled={isSubmitting}
-                className="w-fit"
+                className="w-fit place-self-end"
               >
                 {isSubmitting ? "Sender..." : "Send besked"}
-              </Button> */}
-              <button className="place-self-end" type="submit">
-                {isSubmitting ? "Sender..." : "Send besked"}
-              </button>
+              </Button>
             </form>
           </div>
         </div>
