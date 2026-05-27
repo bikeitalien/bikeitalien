@@ -22,11 +22,14 @@ const KontaktSide = async () => {
       </header>
       <main className="flex w-full max-w-3xl flex-1 flex-col items-center justify-between bg-white sm:items-start dark:bg-black">
         <ContactForm />
-        <section className="col-[full] grid grid-cols-subgrid bg-(--background-alternate)">
-          <Faq items={data} className="py-18 md:my-32" />
-        </section>
+
+        <Faq
+          items={data}
+          hoverClassName="hover:bg-[#B8D9F8]"
+          className="bg-(--background-alternate)"
+        />
+
         <IconGrid
-          className="my-32 font-bold"
           title="Har du stadig spørgsmål?"
           items={[
             {

@@ -1,6 +1,7 @@
 "use server";
 
-import { supabaseAdmin } from "@/lib/supabaseServer";
+// import { supabaseAdmin } from "@/lib/supabaseServer";
+import { supabase } from "@/lib/supabase";
 
 export const submitBesked = async (formData) => {
   try {
@@ -37,7 +38,7 @@ export const submitBesked = async (formData) => {
       };
     }
 
-    const { error } = await supabaseAdmin
+    const { error } = await supabase
       .from("contact_messages")
       .insert([
         {
