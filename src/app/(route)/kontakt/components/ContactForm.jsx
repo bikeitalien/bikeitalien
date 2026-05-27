@@ -7,7 +7,7 @@ import { submitBesked } from "../action/action";
 
 const ContactForm = () => {
   const [serverError, setServerError] = useState("");
-  const [serverSuccess, setServerSuccess] = useState("");
+  const [serverSuccess, setServerSuccess] = useState(false);
 
   const {
     register,
@@ -26,7 +26,7 @@ const ContactForm = () => {
     const result = await submitBesked(formData);
 
     if (result.success) {
-      setServerSuccess("Din besked er blevet sendt.");
+      setServerSuccess(true);
       reset();
     } else {
       setServerError(result.error);
@@ -57,28 +57,19 @@ const ContactForm = () => {
           </div>
 
           <div>
-            <form
-              onSubmit={handleSubmit(onSubmit)}
-              className="grid gap-4 rounded-[20px]"
-            >
+            <form onSubmit={handleSubmit(onSubmit)} className="grid gap-6">
               {/* {isSubmitSuccessful && (
                 <div className="text-md rounded-[20px] border border-green-500/30 bg-green-500/10 px-2 py-3 text-green-400">
                   Din besked er blevet sendt.
                 </div>
               )} */}
 
-              {serverSuccess && (
-                <div className="rounded-[20px] border border-green-500/30 bg-green-500/10 px-3 py-3 text-green-400">
-                  {serverSuccess}
-                </div>
-              )}
-
               {serverError && (
                 <div className="rounded-[20px] border border-red-500/30 bg-red-500/10 px-3 py-3 text-red-400">
                   {serverError}
                 </div>
               )}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-6">
                 <div>
                   <p className="pb-2 text-(--text-primary)">Fornavn</p>
                   <input
@@ -183,13 +174,14 @@ const ContactForm = () => {
                   </span>
                 )}
               </div>
-              <Button
-                type="submit"
-                variant="primary"
-                className="w-fit place-self-end"
-              >
-                {isSubmitting ? "Sender..." : "Send besked"}
-              </Button>
+              <div className="mt-5 flex items-center justify-between gap-4">
+                {serverSuccess && (
+                  <p className="text-green-700!">Din besked er blevet sendt.</p>
+                )}
+                <Button type="submit" variant="primary" className="ml-auto w-fit">
+                  {isSubmitting ? "Sender..." : "Send besked"}
+                </Button>
+              </div>
             </form>
           </div>
         </div>
