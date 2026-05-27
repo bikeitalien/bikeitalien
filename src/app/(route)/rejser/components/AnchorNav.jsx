@@ -51,7 +51,7 @@ const AnchorNav = ({ rejseId }) => {
   };
 
   return (
-    <nav className="sticky top-0 z-60 col-[content] grid grid-cols-subgrid border-b border-[var(--grey-100)] bg-[var(--background-primary)]">
+    <nav className="sticky top-0 z-60 col-[full] grid grid-cols-subgrid border-b border-[var(--grey-100)] bg-[var(--background-primary)] py-0">
       <div className="col-[content] flex justify-between gap-6 overflow-x-auto">
         {links.map((link) => {
           const isActive = active === link.href;
@@ -77,7 +77,7 @@ const AnchorNav = ({ rejseId }) => {
             </button>
           );
         })}
-        <div className="pt-2 pb-2">
+        <div className="whitespace-nowrap md:pt-2 md:pb-2">
           <LinkButton href={`/booking?id=${rejseId}`}>Book nu</LinkButton>
         </div>
       </div>
