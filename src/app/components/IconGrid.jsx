@@ -1,4 +1,3 @@
-import Link from "./Link";
 import Image from "next/image";
 
 const IconGrid = ({
@@ -28,19 +27,19 @@ const IconGrid = ({
         <div className={`grid grid-cols-1 gap-13 md:grid-cols-2 ${colsClass}`}>
           {items.map((item, i) =>
             item.href ? (
-              <Link
+              <a
                 key={i}
                 href={item.href}
                 target={item.target}
                 rel={item.rel}
-                className="flex flex-col gap-4"
+                className="flex flex-col gap-4 rounded-[20px] p-6 transition-colors duration-200 hover:bg-(--card-background)"
               >
                 {item.icon}
                 <h5 className="font-medium">{item.undertitle}</h5>
                 <p>{item.beskrivelse}</p>
-              </Link>
+              </a>
             ) : (
-              <div key={i} className="flex flex-col gap-4">
+              <div key={i} className="flex flex-col gap-4 rounded-[20px] p-6">
                 {item.icon}
                 <h5 className="font-medium">{item.undertitle}</h5>
                 <p>{item.beskrivelse}</p>

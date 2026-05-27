@@ -38,22 +38,15 @@ const ContactSection = ({ className = "" }) => {
             </div>
 
             <div className="flex flex-col gap-1">
-              <Link
-                href="mailto:joachimjerichow@hotmail.com"
-                variant="underline"
-              >
+              <Link href="mailto:joachimjerichow@hotmail.com" variant="p">
                 joachimjerichow@hotmail.com
               </Link>
-              <Link
-                href="tel:+3939493672104"
-                className="block"
-                variant="underline"
-              >
+              <Link href="tel:+3939493672104" variant="p">
                 +39-3493672104
               </Link>
               <Link
                 href="https://www.facebook.com/bikeitalien/?locale=da_DK"
-                variant="external"
+                variant="p"
                 target="_blank"
                 rel="noopener noreferrer"
               >

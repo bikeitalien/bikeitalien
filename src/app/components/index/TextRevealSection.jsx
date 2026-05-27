@@ -7,7 +7,7 @@ import WordReveal from "./WordReveal";
 import { motion } from "framer-motion";
 
 const text =
-  "BikeItalien arrangerer personlige cykelrejser for mennesker, der søger mere end bare en ferie. Bag BikeItalien står Joachim, som siden 2007 har skabt oplevelser med fokus på fællesskab, natur og kultur fra italienske bjergpas til eventyr i Jordan og Nepal. Turene er planlagt ned til detaljen, så du kan slippe bekymringerne og nyde rejsen, ruterne og menneskene omkring dig. Her handler det ikke kun om at nå frem, men om at opleve noget undervejs.";
+  "BikeItalien arrangerer personlige cykelrejser for mennesker, der søger mere end bare en ferie. Bag BikeItalien står jeg, Joachim, som siden 2007 har skabt oplevelser med fokus på fællesskab, natur og kultur fra italienske bjergpas til eventyr i Vietnam og Cambodia. Turene er planlagt ned til mindste detalje, så du kan slippe bekymringerne og nyde rejsen, ruterne og menneskene omkring dig. Her handler det ikke kun om at nå frem, men om at opleve noget undervejs.";
 
 const TextRevealSection = () => {
   const ref = useRef(null);
@@ -30,9 +30,9 @@ const TextRevealSection = () => {
       text: "Gennemtestede ruter og oplevelser",
     },
     {
-      number: "8",
+      number: "6+",
       title: "lande",
-      text: "Fra Gardasøen til Jordan og Nepal",
+      text: "Fra Gardasøen til Vietnam og Cambodia",
     },
 
     // {
@@ -54,9 +54,9 @@ const TextRevealSection = () => {
 
       <div className="col-[content] row-start-1 grid py-18 md:pt-24">
         <div className="md::grid-cols-2 grid items-end gap-10">
-          <div className="grid md:w-2xl gap-3">
+          <div className="grid gap-3 md:w-2xl">
             <p className="font-semibold">Hvad er BikeItalien?</p>
-            <h5 >
+            <h5>
               {words.map((word, index) => (
                 <WordReveal
                   key={`${word}-${index}`}

@@ -52,7 +52,7 @@ const Newsletter = () => {
                 name="email"
                 placeholder="Skriv din email"
                 required
-                className="w-full min-w-0 flex-1 rounded-[20px] border border-(--button-dark) bg-(--background-tertiary) px-4 py-3 [font-size:var(--p-size)] outline-none"
+                className="w-full min-w-0 flex-1 rounded-[20px] border border-(--grey-200) bg-(--background-tertiary) px-4 py-3 [font-size:var(--p-size)] outline-none"
               />
               <Button
                 type="submit"

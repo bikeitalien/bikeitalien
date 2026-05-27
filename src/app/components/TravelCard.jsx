@@ -55,7 +55,7 @@ const TravelCard = ({ rejse, isPopular }) => {
               <h5>{rejse.pris} kr.</h5>
               <p>inkl. fly</p>
             </div>
-            <Button className="shrink-0 group-hover:opacity-90">
+            <Button className="shrink-0">
               Se rejse
             </Button>
           </div>
