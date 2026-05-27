@@ -59,16 +59,22 @@ const ContactForm = () => {
           <div>
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className="grid gap-4 rounded-[10px]"
+              className="grid gap-4 rounded-[20px]"
             >
+              {/* {isSubmitSuccessful && (
+                <div className="text-md rounded-[20px] border border-green-500/30 bg-green-500/10 px-2 py-3 text-green-400">
+                  Din besked er blevet sendt.
+                </div>
+              )} */}
+
               {serverSuccess && (
-                <div className="rounded-[10px] border border-green-500/30 bg-green-500/10 px-3 py-3 text-green-400">
+                <div className="rounded-[20px] border border-green-500/30 bg-green-500/10 px-3 py-3 text-green-400">
                   {serverSuccess}
                 </div>
               )}
 
               {serverError && (
-                <div className="rounded-[10px] border border-red-500/30 bg-red-500/10 px-3 py-3 text-red-400">
+                <div className="rounded-[20px] border border-red-500/30 bg-red-500/10 px-3 py-3 text-red-400">
                   {serverError}
                 </div>
               )}
@@ -94,7 +100,7 @@ const ContactForm = () => {
                           "Fornavn kan kun indeholde bogstaver og mellemrum",
                       },
                     })}
-                    className="w-full rounded-[10px] border border-(--text-primary) bg-(--card-background) p-2"
+                    className="w-full rounded-[20px] border border-(--grey-200) bg-(--card-background) px-4 py-3"
                   />
                   {errors.name && (
                     <span className="mt-1 text-sm text-red-400">
@@ -123,7 +129,7 @@ const ContactForm = () => {
                           "Efternavn kan kun indeholde bogstaver og mellemrum",
                       },
                     })}
-                    className="w-full rounded-[10px] border border-(--text-primary) bg-(--card-background) p-2"
+                    className="w-full rounded-[20px] border border-(--grey-200) bg-(--card-background) px-4 py-3"
                   />
                   {errors.lastname && (
                     <span className="mt-1 text-sm text-red-400">
@@ -145,7 +151,7 @@ const ContactForm = () => {
                       message: "Ugyldig email adresse",
                     },
                   })}
-                  className="w-full rounded-[10px] border border-(--text-primary) bg-(--card-background) p-2"
+                  className="w-full rounded-[20px] border border-(--grey-200) bg-(--card-background) px-4 py-3"
                 />
                 {errors.email && (
                   <span className="mt-1 text-sm text-red-400">
@@ -169,7 +175,7 @@ const ContactForm = () => {
                       message: "Besked må ikke overstige 1000 tegn",
                     },
                   })}
-                  className="w-full rounded-[10px] border border-(--text-primary) bg-(--card-background) p-2 pb-30"
+                  className="w-full rounded-[20px] border border-(--grey-200) bg-(--card-background) px-4 py-3 pb-30"
                 />
                 {errors.comment && (
                   <span className="mt-1 text-sm text-red-400">

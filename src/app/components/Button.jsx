@@ -28,17 +28,47 @@ const Button = ({
 
   const showIcon = variant === "icon" || children;
 
+  if (variant === "icon") {
+    return (
+      <button
+        className={`cursor-pointer flex items-center justify-center rounded-full p-4 bg-(--button-dark) text-(--text-secondary) hover:scale-[1.02] transition-transform ${className}`}
+        {...props}
+      >
+        <span className="pointer-events-none inline-flex">
+          {Icon && <Icon size={22} />}
+        </span>
+      </button>
+    );
+  }
+
   return (
     <button
-      className={`flex cursor-pointer items-center justify-center gap-2 rounded-[20px] px-4 py-3 font-medium transition-transform ${variants[variant]} ${className}`}
+      className={`group flex cursor-pointer items-center justify-center gap-2 rounded-[20px] px-4 py-3 font-medium transition-transform ${variants[variant]} ${className}`}
       {...props}
     >
-      {Icon && iconPosition === "left" && showIcon && <Icon size={22} />}
-      {children}
-      {Icon && iconPosition === "right" && showIcon && variant !== "icon" && (
-        <Icon size={22} />
+      {Icon && iconPosition === "left" && showIcon && (
+        <span className="-ml-1 inline-flex transition-transform duration-200 group-hover:-translate-x-1">
+          <Icon size={22} />
+        </span>
       )}
-      {Icon && variant === "icon" && <Icon size={22} />}
+      {children && (
+        <span
+          className={`inline-flex transition-transform duration-200 ${
+            Icon && iconPosition === "left"
+              ? "group-hover:translate-x-1"
+              : Icon && iconPosition === "right"
+                ? "group-hover:-translate-x-1"
+                : ""
+          }`}
+        >
+          {children}
+        </span>
+      )}
+      {Icon && iconPosition === "right" && showIcon && (
+        <span className="inline-flex transition-transform duration-200 group-hover:translate-x-1">
+          <Icon size={22} />
+        </span>
+      )}
     </button>
   );
 };

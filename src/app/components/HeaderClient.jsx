@@ -41,6 +41,9 @@ const HeaderClient = ({ rejse }) => {
   const { scrollY } = useScroll();
   const pathname = usePathname();
   const isIndex = pathname === "/";
+  const isRejser = pathname === "/rejser" || pathname.startsWith("/rejser/");
+  const isOm = pathname === "/om";
+  const isKontakt = pathname === "/kontakt";
 
   // --- Luk alle menuer og nulstil state ---
   const closeAll = () => {
@@ -180,33 +183,44 @@ const HeaderClient = ({ rejse }) => {
             <div className="px-2 md:px-6">
               <button
                 onMouseEnter={() => setMenuOpen(true)}
-                className="inline-flex h-9 items-center justify-center rounded-lg px-2.5 py-1.5 text-sm hover:bg-(--nav-hover-bg)"
+                className="group flex w-fit flex-col items-start px-5 py-2.5"
               >
-                <p className="font-semibold">Alle rejser</p>
-                <ChevronDownIcon
-                  className={`ml-1 size-6 transition duration-300 ${menuOpen ? "rotate-180" : ""}`}
-                  aria-hidden="true"
+                <span className="-mr-1 inline-flex items-center gap-1">
+                  <p className="font-semibold">Alle rejser</p>
+                  <ChevronDownIcon
+                    className={`size-6 transition duration-300 ${menuOpen ? "rotate-180" : ""}`}
+                    aria-hidden="true"
+                  />
+                </span>
+                <div
+                  className={`h-px w-full origin-left rounded-full ${isLight ? "bg-(--text-secondary)" : "bg-(--text-primary)"} transition-transform duration-300 ease-out ${isRejser ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
                 />
               </button>
             </div>
             <div className="px-2 md:px-6">
               <Link
                 href="/om"
-                className="inline-flex h-9 items-center justify-center rounded-lg px-2.5 py-1.5 text-sm hover:bg-(--nav-hover-bg)"
+                className="group flex flex-col items-start px-5 py-2.5"
                 onMouseEnter={() => setMenuOpen(false)}
                 onClick={closeAll}
               >
                 <p className="font-semibold">Om BikeItalien</p>
+                <div
+                  className={`h-px w-full origin-left rounded-full ${isLight ? "bg-(--text-secondary)" : "bg-(--text-primary)"} transition-transform duration-300 ease-out ${isOm ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
+                />
               </Link>
             </div>
             <div className="pl-2 md:pl-6">
               <Link
                 href="/kontakt"
-                className="inline-flex h-9 items-center justify-center rounded-lg px-2.5 py-1.5 hover:bg-(--nav-hover-bg)"
+                className="group flex flex-col items-start px-5 py-2.5"
                 onMouseEnter={() => setMenuOpen(false)}
                 onClick={closeAll}
               >
                 <p className="font-semibold">Kontakt</p>
+                <div
+                  className={`h-px w-full origin-left rounded-full ${isLight ? "bg-(--text-secondary)" : "bg-(--text-primary)"} transition-transform duration-300 ease-out ${isKontakt ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
+                />
               </Link>
             </div>
           </div>
@@ -249,195 +263,197 @@ const HeaderClient = ({ rejse }) => {
           {/* Mobile burger dropdown */}
           <AnimatePresence>
             {mobileOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-              className="absolute top-full right-0 left-0 z-50 md:hidden"
-              style={{ color: "var(--text-primary)" }}
-            >
-              <div className="mt-1.5 overflow-hidden rounded-[20px] bg-(--background-primary) shadow-[0_0_20px_rgba(0,0,0,0.1)]">
-                <motion.div
-                  className="flex"
-                  animate={{ x: `${-mobilePanel * (100 / 3)}%` }}
-                  transition={{
-                    type: "tween",
-                    ease: "easeInOut",
-                    duration: 0.3,
-                  }}
-                  style={{ width: "300%" }}
-                >
-                  {/* Panel 0: Hoved-navigation */}
-                  <div
-                    className="flex flex-col overflow-y-auto"
-                    style={{
-                      width: "33.333%",
-                      maxHeight: "calc(100dvh - 70px)",
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                className="absolute top-full right-0 left-0 z-50 md:hidden"
+                style={{ color: "var(--text-primary)" }}
+              >
+                <div className="mt-1.5 overflow-hidden rounded-[20px] bg-(--background-primary) shadow-[0_0_20px_rgba(0,0,0,0.1)]">
+                  <motion.div
+                    className="flex"
+                    animate={{ x: `${-mobilePanel * (100 / 3)}%` }}
+                    transition={{
+                      type: "tween",
+                      ease: "easeInOut",
+                      duration: 0.3,
                     }}
+                    style={{ width: "300%" }}
                   >
-                    <button
-                      onClick={() => setMobilePanel(1)}
-                      className="flex w-full items-center justify-between border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
+                    {/* Panel 0: Hoved-navigation */}
+                    <div
+                      className="flex flex-col overflow-y-auto"
+                      style={{
+                        width: "33.333%",
+                        maxHeight: "calc(100dvh - 70px)",
+                      }}
                     >
-                      <p
-                        className="font-semibold"
-                        style={{ fontSize: "var(--p-size)" }}
-                      >
-                        Alle rejser
-                      </p>
-                      <IoIosArrowForward
-                        color="var(--text-primary)"
-                        size={20}
-                      />
-                    </button>
-                    <Link
-                      href="/om"
-                      className="flex items-center justify-between border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
-                      onClick={closeAll}
-                    >
-                      <p
-                        className="font-semibold"
-                        style={{ fontSize: "var(--p-size)" }}
-                      >
-                        Om BikeItalien
-                      </p>
-                      <IoIosArrowForward
-                        color="var(--text-primary)"
-                        size={20}
-                      />
-                    </Link>
-                    <Link
-                      href="/kontakt"
-                      className="flex items-center justify-between border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
-                      onClick={closeAll}
-                    >
-                      <p
-                        className="font-semibold"
-                        style={{ fontSize: "var(--p-size)" }}
-                      >
-                        Kontakt
-                      </p>
-                      <IoIosArrowForward
-                        color="var(--text-primary)"
-                        size={20}
-                      />
-                    </Link>
-                  </div>
-
-                  {/* Panel 1: Kategorier */}
-                  <div
-                    className="flex flex-col overflow-y-auto"
-                    style={{
-                      width: "33.333%",
-                      maxHeight: "calc(100dvh - 70px)",
-                    }}
-                  >
-                    <button
-                      onClick={() => setMobilePanel(0)}
-                      className="flex w-full items-center gap-2 border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
-                    >
-                      <IoIosArrowBack color="var(--text-primary)" size={20} />
-                      <span
-                        className="font-semibold"
-                        style={{ fontSize: "var(--p-size)" }}
-                      >
-                        Gå tilbage til oversigten
-                      </span>
-                    </button>
-                    <Link
-                      href="/rejser"
-                      className="flex items-center justify-between border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
-                      onClick={closeAll}
-                    >
-                      <p
-                        className="font-semibold"
-                        style={{ fontSize: "var(--p-size)" }}
-                      >
-                        Se alle rejser
-                      </p>
-                      <IoIosArrowForward
-                        color="var(--text-primary)"
-                        size={20}
-                      />
-                    </Link>
-                    {KATEGORIER.map((kategori) => (
                       <button
-                        key={kategori}
-                        onClick={() => {
-                          setSelectedKategori(kategori);
-                          setMobilePanel(2);
-                        }}
+                        onClick={() => setMobilePanel(1)}
                         className="flex w-full items-center justify-between border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
                       >
-                        <p style={{ fontSize: "var(--p-size)" }}>{kategori}</p>
+                        <p
+                          className="font-semibold"
+                          style={{ fontSize: "var(--p-size)" }}
+                        >
+                          Alle rejser
+                        </p>
                         <IoIosArrowForward
                           color="var(--text-primary)"
                           size={20}
                         />
                       </button>
-                    ))}
-                  </div>
+                      <Link
+                        href="/om"
+                        className="flex items-center justify-between border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
+                        onClick={closeAll}
+                      >
+                        <p
+                          className="font-semibold"
+                          style={{ fontSize: "var(--p-size)" }}
+                        >
+                          Om BikeItalien
+                        </p>
+                        <IoIosArrowForward
+                          color="var(--text-primary)"
+                          size={20}
+                        />
+                      </Link>
+                      <Link
+                        href="/kontakt"
+                        className="flex items-center justify-between border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
+                        onClick={closeAll}
+                      >
+                        <p
+                          className="font-semibold"
+                          style={{ fontSize: "var(--p-size)" }}
+                        >
+                          Kontakt
+                        </p>
+                        <IoIosArrowForward
+                          color="var(--text-primary)"
+                          size={20}
+                        />
+                      </Link>
+                    </div>
 
-                  {/* Panel 2: Rejser i valgt kategori */}
-                  <div
-                    className="flex flex-col overflow-y-auto"
-                    style={{
-                      width: "33.333%",
-                      maxHeight: "calc(100dvh - 70px)",
-                    }}
-                  >
-                    <button
-                      onClick={() => setMobilePanel(1)}
-                      className="flex w-full items-center gap-2 border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
+                    {/* Panel 1: Kategorier */}
+                    <div
+                      className="flex flex-col overflow-y-auto"
+                      style={{
+                        width: "33.333%",
+                        maxHeight: "calc(100dvh - 70px)",
+                      }}
                     >
-                      <IoIosArrowBack color="var(--text-primary)" size={20} />
-                      <span
-                        className="font-semibold"
-                        style={{ fontSize: "var(--p-size)" }}
+                      <button
+                        onClick={() => setMobilePanel(0)}
+                        className="flex w-full items-center gap-2 border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
                       >
-                        Gå tilbage til kategorierne
-                      </span>
-                    </button>
-                    <Link
-                      href={`/rejser?kategori=${encodeURIComponent(selectedKategori ?? "")}`}
-                      className="flex items-center justify-between border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
-                      onClick={closeAll}
-                    >
-                      <p
-                        className="font-semibold"
-                        style={{ fontSize: "var(--p-size)" }}
+                        <IoIosArrowBack color="var(--text-primary)" size={20} />
+                        <span
+                          className="font-semibold"
+                          style={{ fontSize: "var(--p-size)" }}
+                        >
+                          Gå tilbage til oversigten
+                        </span>
+                      </button>
+                      <Link
+                        href="/rejser"
+                        className="flex items-center justify-between border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
+                        onClick={closeAll}
                       >
-                        Se alle rejser i kategorien, {selectedKategori}
-                      </p>
-                      <IoIosArrowForward
-                        color="var(--text-primary)"
-                        size={20}
-                      />
-                    </Link>
-                    {rejse
-                      ?.filter((item) => item.kategori === selectedKategori)
-                      .slice(0, 5)
-                      .map((item) => (
-                        <Link
-                          key={item.id}
-                          href={`/rejser/${KATEGORI_ID[item.kategori] ?? item.id}`}
-                          className="flex items-center justify-between border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
-                          onClick={closeAll}
+                        <p
+                          className="font-semibold"
+                          style={{ fontSize: "var(--p-size)" }}
+                        >
+                          Se alle rejser
+                        </p>
+                        <IoIosArrowForward
+                          color="var(--text-primary)"
+                          size={20}
+                        />
+                      </Link>
+                      {KATEGORIER.map((kategori) => (
+                        <button
+                          key={kategori}
+                          onClick={() => {
+                            setSelectedKategori(kategori);
+                            setMobilePanel(2);
+                          }}
+                          className="flex w-full items-center justify-between border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
                         >
                           <p style={{ fontSize: "var(--p-size)" }}>
-                            {item.titel}
+                            {kategori}
                           </p>
                           <IoIosArrowForward
                             color="var(--text-primary)"
                             size={20}
                           />
-                        </Link>
+                        </button>
                       ))}
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
+                    </div>
+
+                    {/* Panel 2: Rejser i valgt kategori */}
+                    <div
+                      className="flex flex-col overflow-y-auto"
+                      style={{
+                        width: "33.333%",
+                        maxHeight: "calc(100dvh - 70px)",
+                      }}
+                    >
+                      <button
+                        onClick={() => setMobilePanel(1)}
+                        className="flex w-full items-center gap-2 border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
+                      >
+                        <IoIosArrowBack color="var(--text-primary)" size={20} />
+                        <span
+                          className="font-semibold"
+                          style={{ fontSize: "var(--p-size)" }}
+                        >
+                          Gå tilbage til kategorierne
+                        </span>
+                      </button>
+                      <Link
+                        href={`/rejser?kategori=${encodeURIComponent(selectedKategori ?? "")}`}
+                        className="flex items-center justify-between border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
+                        onClick={closeAll}
+                      >
+                        <p
+                          className="font-semibold"
+                          style={{ fontSize: "var(--p-size)" }}
+                        >
+                          Se alle rejser i kategorien, {selectedKategori}
+                        </p>
+                        <IoIosArrowForward
+                          color="var(--text-primary)"
+                          size={20}
+                        />
+                      </Link>
+                      {rejse
+                        ?.filter((item) => item.kategori === selectedKategori)
+                        .slice(0, 5)
+                        .map((item) => (
+                          <Link
+                            key={item.id}
+                            href={`/rejser/${KATEGORI_ID[item.kategori] ?? item.id}`}
+                            className="flex items-center justify-between border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
+                            onClick={closeAll}
+                          >
+                            <p style={{ fontSize: "var(--p-size)" }}>
+                              {item.titel}
+                            </p>
+                            <IoIosArrowForward
+                              color="var(--text-primary)"
+                              size={20}
+                            />
+                          </Link>
+                        ))}
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
             )}
           </AnimatePresence>
         </div>

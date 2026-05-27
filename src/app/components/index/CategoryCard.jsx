@@ -11,12 +11,14 @@ const CategoryCard = ({ href, src, alt, label }) => {
         src={src}
         alt={alt}
         fill
-        className="object-cover transition-transform duration-500 group-hover:scale-105"
+        className="object-cover transition-transform duration-400 group-hover:scale-103"
       />
       <div className="absolute inset-0 bg-linear-to-t from-(--text-primary)/50 to-transparent" />
       <div className="absolute bottom-0 flex w-full items-center justify-between px-5 py-5">
-        <h6 className="font-bold text-(--text-secondary)!">{label}</h6>
-        <IoIosArrowForward size={30} className="text-(--text-secondary)" />
+        <h6 className="font-bold text-(--text-secondary)! transition-transform duration-200 group-hover:-translate-x-1">{label}</h6>
+        <span className="transition-transform duration-200 group-hover:translate-x-1">
+          <IoIosArrowForward size={30} className="text-(--text-secondary)" />
+        </span>
       </div>
     </a>
   );
