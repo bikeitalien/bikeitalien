@@ -41,6 +41,7 @@ const ContactForm = () => {
           alt="Contact"
           width={800}
           height={600}
+          loading="eager"
           className="h-full max-h-[55vh] w-full rounded-[20px] object-cover"
         />
         <div className="mt-8 grid gap-20 py-20 md:grid-cols-2 md:py-27">
