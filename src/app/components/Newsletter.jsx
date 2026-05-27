@@ -46,7 +46,7 @@ const Newsletter = () => {
             onSubmit={handleSubmit}
             className="flex w-full flex-col gap-6 md:max-w-140"
           >
-            <div className="flex flex-col gap-4 md:flex-row md:items-stretch">
+            <div className="flex flex-row gap-4 md:items-stretch">
               <input
                 type="text"
                 name="email"
