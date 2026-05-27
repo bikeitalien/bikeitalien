@@ -2,7 +2,7 @@ import Image from "next/image";
 const OurVision = () => {
   return (
     <>
-      <section className="relative col-[full] grid grid-cols-subgrid bg-(--background-tertiary)">
+      <section className="relative col-[full] grid grid-cols-subgrid bg-(--background-tertiary) py-20 md:py-27">
         <Image
           src="/assets/backgroundIllu.svg"
           alt="Background illustration"

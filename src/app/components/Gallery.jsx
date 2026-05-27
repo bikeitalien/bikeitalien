@@ -36,7 +36,7 @@ const Gallery = ({ images = [] }) => {
 
   return (
     <>
-      <section className="col-[content] grid py-20" id="galleri">
+      <section className="col-[content] grid py-20 md:py-27" id="galleri">
         <div className="grid w-full grid-cols-1 gap-4 md:max-h-[65vh] md:grid-cols-6 md:grid-rows-2">
           {images.map((img, index) => {
             const item = layout[index % layout.length];

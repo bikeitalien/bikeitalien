@@ -52,8 +52,8 @@ export default async function OmSide() {
           image="/assets/joachimContact.webp"
           imageAlt="Cykelrejse"
         />
-        <AboutTimeline className="py-18 md:my-36" />
-        <OurVision className="py-18 md:my-24" />
+        <AboutTimeline />
+        <OurVision />
         <IconGrid
           title="Hvad gør BikeItalien unikt?"
           items={[
@@ -112,7 +112,7 @@ export default async function OmSide() {
 
         <CtaSection />
 
-        <Faq items={data} className="py-18 md:my-36" />
+        <Faq items={data} hoverClassName="hover:bg-(--card-background)" />
       </main>
       <footer className="col-[full] grid grid-cols-subgrid">
         <Footer />

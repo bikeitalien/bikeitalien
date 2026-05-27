@@ -44,9 +44,9 @@ const ContactForm = () => {
           loading="eager"
           className="h-full max-h-[55vh] w-full rounded-[20px] object-cover"
         />
-        <div className="mt-8 grid gap-20 md:grid-cols-2">
+        <div className="mt-8 grid gap-20 py-20 md:grid-cols-2 md:py-27">
           <div>
-            <h3>Kontaktformular</h3>
+            <h3 className="pb-2 font-semibold">Kontaktformular</h3>
             <p>
               Har du spørgsmål, feedback eller ønsker du at høre mere, er du
               meget velkommen til at skrive via formularen. Jeg laver også
