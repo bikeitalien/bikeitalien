@@ -1,28 +1,38 @@
 "use client";
 
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { IoIosArrowForward } from "react-icons/io";
 import { subscribeToNewsletter } from "@/app/actions/action";
 import Button from "./Button";
 
 const Newsletter = () => {
-  const [isPending, setIsPending] = useState(false);
-  const [error, setError] = useState(null);
+  const [serverError, setServerError] = useState(null);
   const [success, setSuccess] = useState(false);
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    setIsPending(true);
-    setError(null);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm({ mode: "onChange" });
 
-    const formData = new FormData(e.target);
-    const result = await subscribeToNewsletter(null, formData);
+  const onSubmit = async (data) => {
+    setServerError(null);
+    const formData = new FormData();
+    formData.append("email", data.email);
 
-    setIsPending(false);
-
-    if (result.success) setSuccess(true);
-    if (result.error) setError(result.error);
-  }
+    try {
+      const result = await subscribeToNewsletter(formData);
+      if (result.success) {
+        setSuccess(true);
+        reset();
+      }
+      if (result.error) setServerError(result.error);
+    } catch (err) {
+      setServerError("Noget gik galt. Prøv igen senere.");
+    }
+  };
 
   return (
     <div
@@ -37,36 +47,51 @@ const Newsletter = () => {
           Tilmeld dig nyhedsbrevet og lad os holde dig opdateret med nye
           eventyr, destinationer og ledige pladser direkte i din indbakke.
         </p>
-        {success ? (
-          <p className="max-w-160 text-center text-green-700!">
-            Din tilmelding er blevet bekræftet.
-          </p>
-        ) : (
-          <form
-            onSubmit={handleSubmit}
-            className="flex w-full flex-col gap-6 md:max-w-140"
-          >
-            <div className="flex flex-row gap-4 md:items-stretch">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex w-full flex-col gap-6 md:max-w-140"
+        >
+          <div className="flex flex-row items-start gap-4">
+            <div className="grid min-w-0 flex-1 gap-1.5">
               <input
                 type="text"
-                name="email"
                 placeholder="Skriv din email"
-                required
-                className="w-full min-w-0 flex-1 rounded-[20px] border border-(--grey-200) bg-(--background-tertiary) px-4 py-3 [font-size:var(--p-size)] outline-none"
+                {...register("email", {
+                  required: "Email er påkrævet",
+                  pattern: {
+                    value: /^\S+@\S+\.\S+$/i,
+                    message: "Indtast en gyldig email-adresse",
+                  },
+                })}
+                className="w-full rounded-[20px] border border-(--grey-200) bg-(--background-tertiary) px-4 py-3 [font-size:var(--p-size)] outline-none"
               />
-              <Button
-                type="submit"
-                variant="primary"
-                icon={IoIosArrowForward}
-                disabled={isPending}
-                className="self-center md:self-stretch"
-              >
-                {isPending ? "Tilmelder..." : "Tilmeld nu"}
-              </Button>
+              {errors.email && (
+                <p className="text-red-500!" style={{ fontSize: "var(--tag-size)" }}>
+                  {errors.email.message}
+                </p>
+              )}
+              {serverError && (
+                <p className="text-red-500!" style={{ fontSize: "var(--tag-size)" }}>
+                  {serverError}
+                </p>
+              )}
             </div>
-            {error && <p className="text-center text-red-600!">{error}</p>}
-          </form>
-        )}
+            <Button
+              type="submit"
+              variant="primary"
+              icon={IoIosArrowForward}
+              disabled={isSubmitting}
+              className="self-start"
+            >
+              {isSubmitting ? "Tilmelder..." : "Tilmeld nu"}
+            </Button>
+          </div>
+          {success && (
+            <p className="max-w-160 text-center text-green-700!">
+              Din tilmelding er bekræftet.
+            </p>
+          )}
+        </form>
       </div>
     </div>
   );
