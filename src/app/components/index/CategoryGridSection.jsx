@@ -42,8 +42,8 @@ const categories = [
 
 const CategoryGridSection = () => {
   return (
-    <section className="col-[full] grid grid-cols-subgrid bg-(--background-tertiary)">
-      <div className="col-[content] flex flex-col gap-12 py-18 md:py-25">
+    <section className="col-[full] grid grid-cols-subgrid bg-(--background-tertiary) md:py-27 py-20">
+      <div className="col-[content] flex flex-col gap-12">
         <HeadingSection
           tagline="Kategorier"
           title="Find den cykelferie, der passer til dig"

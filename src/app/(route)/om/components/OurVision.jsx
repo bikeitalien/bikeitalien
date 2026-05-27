@@ -10,7 +10,7 @@ const OurVision = () => {
           className="absolute inset-0 object-cover opacity-10 brightness-50"
         />
 
-        <div className="col-[content] py-18 text-center md:py-28">
+        <div className="col-[content] text-center">
           <p className="mb-4 font-medium">Vores vision</p>
           <h5 className="mx-auto mb-6 md:w-[50ch]">
             I dag handler Bike Italien om kombinationen af cykling, natur,

@@ -49,9 +49,9 @@ const steps = [
   },
 ];
 
-const ProcessSection = ({ className = "" }) => {
+const ProcessSection = () => {
   return (
-    <section className={`col-[full] grid grid-cols-subgrid ${className || ""}`}>
+    <section className={`col-[full] grid grid-cols-subgrid md:py-27 py-20`}> 
       <div className="col-[content] grid gap-12 lg:grid-cols-2 lg:gap-20">
         <div className="flex flex-col gap-12">
           <HeadingSection

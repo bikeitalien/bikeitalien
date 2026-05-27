@@ -3,12 +3,12 @@ import HeadingSection from "./HeadingSection";
 import Image from "next/image";
 import Link from "./Link";
 
-const ContactSection = ({ className = "" }) => {
+const ContactSection = () => {
   return (
     <section
-      className={`col-[full] grid md:mb-20 grid-cols-subgrid bg-(--background-alternate) ${className || ""}`}
+      className={`col-[full] grid md:py-27 py-20 md:mb-27 mb-20  grid-cols-subgrid bg-(--background-alternate)`}
     >
-      <div className="col-[content] grid items-start gap-8 py-18 md:py-24 xl:grid-cols-2 xl:gap-28">
+      <div className="col-[content] grid items-start gap-8 xl:grid-cols-2 xl:gap-28">
         <HeadingSection
           tagline="Har du flere spørgsmål?"
           title="Kontakt mig her, så finder vi ud af det sammen"

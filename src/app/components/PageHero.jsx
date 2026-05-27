@@ -8,7 +8,7 @@ const PageHero = ({
   imageAlt = "",
 }) => {
   return (
-    <section className={`col-[content] rounded-[20px] p-6 md:p-8 ${bgColor}`}>
+    <section className={`col-[content] rounded-[20px] md:mb-10 mb-5 p-6 md:p-8 ${bgColor}`}>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-center">
         <div className="flex flex-col gap-2">
           {tagline && <p className="text-(--tag-size)]">{tagline}</p>}

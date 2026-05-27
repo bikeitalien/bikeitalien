@@ -4,9 +4,9 @@ import { supabase } from "@/lib/supabase";
 import HeadingSection from "../HeadingSection";
 import LinkButton from "../LinkButton";
 
-const CardGridSection = ({ className = "" }) => {
+const CardGridSection = () => {
   return (
-    <section className={`col-[content] ${className || ""}`}>
+    <section className={`col-[content] md:py-27 py-20`}>
       <div className="grid gap-8">
         <div className="flex flex-col items-baseline justify-between gap-4 md:flex-row">
           <HeadingSection

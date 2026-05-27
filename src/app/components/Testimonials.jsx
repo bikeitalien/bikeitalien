@@ -36,7 +36,7 @@ export default function Testimonials({ testimonials }) {
 
   return (
     <section
-      className="col-[full] grid scroll-mt-32 grid-cols-subgrid overflow-x-hidden py-16 md:py-24 lg:py-28"
+      className="col-[full] grid scroll-mt-32 grid-cols-subgrid overflow-x-hidden py-20 md:py-27"
       id="anmeldelser"
     >
       <div className="col-[content]">
