@@ -16,10 +16,22 @@ import { supabase } from "@/lib/supabase";
 export default async function Home() {
   const { data, error } = await supabase.from("faq").select("*");
 
+    const { data: rejse, error: rejseError } = await supabase
+      .from("cykelrejser")
+      .select("testimonials")
+      .eq("id", 1)
+      .single();
+
   if (error || !data) {
     console.error(error);
     return <p>FAQ kunne ikke indlæses</p>;
   }
+
+    if (rejseError || !rejse) {
+      console.error(rejseError);
+      return <p>Testimonials kunne ikke indlæses</p>;
+    }
+
 
   return (
     <>
@@ -35,13 +47,12 @@ export default async function Home() {
         >
           <TextRevealSection />
         </section>
-        {/* <ImageCardSection /> */}
         <CategoryGridSection />
-        <ProcessSection className="my-32" />
+        <ProcessSection />
         <AboutSection />
-        <Testimonials />
-        <CardGridSection className="my-32" />
-        <Faq items={data} className="py-18 md:my-32" />
+        <Testimonials testimonials={rejse.testimonials} />
+        <CardGridSection />
+        <Faq items={data} />
         <ContactSection />
       </main>
 

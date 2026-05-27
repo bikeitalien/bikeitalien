@@ -22,7 +22,7 @@ export default function RejseDageTimeline({ rejse }) {
     dage.length > 1 ? `${(active / (dage.length - 1)) * 100}%` : "0%";
 
   return (
-    <section className="col-[content] py-16 md:py-24" id="dagsplan">
+    <section className="col-[content] py-20 md:py-27" id="dagsplan">
       <div className="grid gap-12 md:grid-cols-2 md:items-center lg:gap-20">
         <div>
           <div className="relative">

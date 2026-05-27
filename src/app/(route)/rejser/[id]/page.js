@@ -63,8 +63,8 @@ export default async function RejseDetalje({ params }) {
 
         <Testimonials testimonials={rejse.testimonials} />
         <Gallery images={galleryImages} />
-        <Faq items={faqItems} className="my-32" />
-        <ContactSection className="my-32" />
+        <Faq items={faqItems} />
+        <ContactSection />
       </main>
       <footer className="col-[full] grid grid-cols-subgrid">
         <Footer />

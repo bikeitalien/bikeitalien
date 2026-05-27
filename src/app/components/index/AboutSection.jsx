@@ -4,8 +4,8 @@ import LinkButton from "../LinkButton";
 
 const AboutSection = () => {
   return (
-    <section className="col-[full] grid grid-cols-subgrid bg-(--background-alternate)">
-      <div className="col-[content] grid gap-12 py-18 lg:grid-cols-2 lg:gap-20 lg:py-24">
+    <section className="col-[full] grid grid-cols-subgrid bg-(--background-alternate) md:py-27 py-20">
+      <div className="col-[content] grid gap-12 lg:grid-cols-2 lg:gap-20">
         <HeadingSection title="Velkommen til Joachims cykelferieunivers">
           <p className="pt-2 pb-6">
             Hvis du leder efter en cykelferie med gode oplevelser, nærvær og

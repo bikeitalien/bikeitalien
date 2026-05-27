@@ -10,7 +10,7 @@ const Faq = ({ items = [], className = "", hoverClassName }) => {
         className={`text-primary bg-primary col-[full] grid scroll-mt-32 grid-cols-subgrid py-20 md:py-27 ${className || ""}`}
         id="faq"
       >
-        <div className="col-[content] grid grid-cols-1 gap-20 py-20 md:grid-cols-2">
+        <div className="col-[content] grid grid-cols-1 gap-20 md:grid-cols-2">
           <div>
             <div className="flex flex-col gap-6 pb-8">
               <h3 className="font-semibold">Ofte stillede spørgsmål</h3>
