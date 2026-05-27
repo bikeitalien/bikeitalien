@@ -41,12 +41,11 @@ const ContactForm = () => {
           alt="Contact"
           width={800}
           height={600}
-          loading="eager"
           className="h-full max-h-[55vh] w-full rounded-[20px] object-cover"
         />
-        <div className="mt-8 grid gap-20 md:grid-cols-2">
+        <div className="mt-8 grid gap-20 py-20 md:grid-cols-2 md:py-27">
           <div>
-            <h3>Kontaktformular</h3>
+            <h3 className="pb-2 font-semibold">Kontaktformular</h3>
             <p>
               Har du spørgsmål, feedback eller ønsker du at høre mere, er du
               meget velkommen til at skrive via formularen. Jeg laver også
@@ -61,12 +60,6 @@ const ContactForm = () => {
               onSubmit={handleSubmit(onSubmit)}
               className="grid gap-4 rounded-[10px]"
             >
-              {/* {isSubmitSuccessful && (
-                <div className="text-md rounded-[10px] border border-green-500/30 bg-green-500/10 px-2 py-3 text-green-400">
-                  Din besked er blevet sendt.
-                </div>
-              )} */}
-
               {serverSuccess && (
                 <div className="rounded-[10px] border border-green-500/30 bg-green-500/10 px-3 py-3 text-green-400">
                   {serverSuccess}

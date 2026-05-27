@@ -29,7 +29,7 @@ const items = [
 const AboutTimeline = () => {
   return (
     <>
-      <section className="col-[content] grid grid-cols-1 gap-20 py-18 md:my-26 md:grid-cols-2">
+      <section className="col-[content] grid grid-cols-1 gap-20 py-20 md:grid-cols-2 md:py-27">
         <div className="h-fit md:sticky md:top-24">
           <p className="mb-4 font-semibold">Vores historie</p>
           <h3 className="mb-4 font-semibold">Historien bag BikeItalien</h3>
