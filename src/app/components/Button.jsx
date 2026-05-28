@@ -7,8 +7,6 @@ const variants = {
     "bg-(--button-light) text-(--text-primary) [font-size:var(--p-size)] hover:bg-(--card-background) hover:scale-[1.02] border border-(--button-dark)",
   accent:
     "bg-(--accent) text-(--text-primary) [font-size:var(--p-size)] hover:scale-[1.02]",
-  large:
-    "bg-(--accent) text-(--text-primary) [font-size:var(--h6-size)] hover:scale-[1.02]",
   icon: "bg-(--button-dark) text-(--text-secondary) px-4 py-4 rounded-full hover:scale-[1.02]",
 };
 

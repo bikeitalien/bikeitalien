@@ -51,8 +51,8 @@ const Newsletter = () => {
           onSubmit={handleSubmit(onSubmit)}
           className="flex w-full flex-col gap-6 md:max-w-140"
         >
-          <div className="flex flex-row items-start gap-4">
-            <div className="grid min-w-0 flex-1 gap-1.5">
+          <div className="flex flex-col gap-4 md:flex-row md:items-start">
+            <div className="grid w-full min-w-0 gap-1.5 md:flex-1">
               <input
                 type="text"
                 placeholder="Skriv din email"
@@ -66,12 +66,18 @@ const Newsletter = () => {
                 className="w-full rounded-[20px] border border-(--grey-200) bg-(--background-tertiary) px-4 py-3 [font-size:var(--p-size)] outline-none"
               />
               {errors.email && (
-                <p className="text-red-500!" style={{ fontSize: "var(--tag-size)" }}>
+                <p
+                  className="text-red-500!"
+                  style={{ fontSize: "var(--tag-size)" }}
+                >
                   {errors.email.message}
                 </p>
               )}
               {serverError && (
-                <p className="text-red-500!" style={{ fontSize: "var(--tag-size)" }}>
+                <p
+                  className="text-red-500!"
+                  style={{ fontSize: "var(--tag-size)" }}
+                >
                   {serverError}
                 </p>
               )}
@@ -81,7 +87,7 @@ const Newsletter = () => {
               variant="primary"
               icon={IoIosArrowForward}
               disabled={isSubmitting}
-              className="self-start"
+              className="w-full md:w-auto md:self-start"
             >
               {isSubmitting ? "Tilmelder..." : "Tilmeld nu"}
             </Button>
