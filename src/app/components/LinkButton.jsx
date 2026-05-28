@@ -3,13 +3,8 @@ import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 const variants = {
   primary:
     "bg-(--button-dark) text-(--text-secondary) [font-size:var(--p-size)] ",
-  secondary:
-    "bg-(--button-light) text-(--text-primary) [font-size:var(--p-size)] hover:bg-(--card-background)  border border-(--button-dark)",
   accent:
     "bg-(--accent) text-(--text-primary) [font-size:var(--p-size)] ",
-  large:
-    "bg-(--accent) text-(--text-primary) [font-size:var(--h6-size)] ",
-  icon: "bg-(--button-dark) text-(--text-secondary) px-4 py-4 rounded-full ",
 };
 
 const LinkButton = ({

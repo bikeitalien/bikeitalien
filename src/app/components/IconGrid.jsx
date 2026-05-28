@@ -1,16 +1,12 @@
 import Image from "next/image";
 
-const IconGrid = ({
-  title,
-  items = [],
-  withBackground = false,
-}) => {
+const IconGrid = ({ title, items = [], withBackground = false }) => {
   const hasLinks = items.some((item) => item.href);
   const colsClass = hasLinks ? "xl:grid-cols-3" : "xl:grid-cols-4";
 
   return (
     <section
-      className={`relative md:py-27 py-20 col-[full] grid scroll-mt-32 grid-cols-subgrid ${withBackground ? "bg-(--background-alternate)" : ""} `}
+      className={`relative col-[full] grid scroll-mt-32 grid-cols-subgrid py-20 md:py-27 ${withBackground ? "bg-(--background-alternate)" : ""} `}
       id="praktisk"
     >
       {withBackground && (
@@ -22,7 +18,7 @@ const IconGrid = ({
         />
       )}
       <div className="relative col-[content] flex flex-col gap-12 md:gap-20">
-        <h3>{title}</h3>
+        <h3 className="font-semibold">{title}</h3>
         <div className={`grid grid-cols-1 gap-13 md:grid-cols-2 ${colsClass}`}>
           {items.map((item, i) =>
             item.href ? (

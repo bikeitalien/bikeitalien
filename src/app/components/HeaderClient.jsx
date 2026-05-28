@@ -307,7 +307,7 @@ const HeaderClient = ({ rejse }) => {
                       </button>
                       <Link
                         href="/om"
-                        className="flex items-center justify-between border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
+                        className="flex items-center border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
                         onClick={closeAll}
                       >
                         <p
@@ -316,14 +316,10 @@ const HeaderClient = ({ rejse }) => {
                         >
                           Om BikeItalien
                         </p>
-                        <IoIosArrowForward
-                          color="var(--text-primary)"
-                          size={20}
-                        />
                       </Link>
                       <Link
                         href="/kontakt"
-                        className="flex items-center justify-between border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
+                        className="flex items-center border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
                         onClick={closeAll}
                       >
                         <p
@@ -332,10 +328,6 @@ const HeaderClient = ({ rejse }) => {
                         >
                           Kontakt
                         </p>
-                        <IoIosArrowForward
-                          color="var(--text-primary)"
-                          size={20}
-                        />
                       </Link>
                     </div>
 
