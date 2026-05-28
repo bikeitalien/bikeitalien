@@ -3,7 +3,7 @@ import FaqItem from "./FaqItem";
 
 import LinkButton from "./LinkButton";
 
-const Faq = ({ items = [], className = "", hoverClassName }) => {
+const Faq = ({ items = [], className = "", hoverClassName, showKontaktButton = true }) => {
   return (
     <>
       <section
@@ -19,9 +19,11 @@ const Faq = ({ items = [], className = "", hoverClassName }) => {
                 svar og ellers hjælper jeg dig gerne videre.
               </p>
             </div>
-            <LinkButton href="/kontakt" variant="primary" className="w-fit">
-              Gå til kontakt
-            </LinkButton>
+            {showKontaktButton && (
+              <LinkButton href="/kontakt" variant="primary" className="w-fit">
+                Gå til kontakt
+              </LinkButton>
+            )}
           </div>
           <Accordion type="single" collapsible className="w-full">
             {items.map((items) => (

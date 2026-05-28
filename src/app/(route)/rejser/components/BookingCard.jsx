@@ -2,7 +2,7 @@ import LinkButton from "@/app/components/LinkButton";
 
 const BookingCard = ({ rejse }) => {
   return (
-    <div className="grid h-fill w-fill min-w-[250px] gap-7 rounded-[20px] border border-[var(--grey-100)] bg-[var(--card-background)] p-6">
+    <div className="grid min-w-[320px] gap-7 rounded-[20px] border border-(--grey-100) bg-(--card-background) p-6 md:w-full">
       <div className="flex gap-2">
         <h6>{rejse.pris} kr.</h6>
         <p>inkl. fly</p>

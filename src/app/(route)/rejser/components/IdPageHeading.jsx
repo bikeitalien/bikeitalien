@@ -61,7 +61,7 @@ const IdPageHeading = ({ rejse }) => {
         <hr className="h-px border-0 bg-[var(--grey-100)]" />
       </div>
 
-      <div className="items-top mt-10 grid justify-between gap-10 md:grid-cols-3">
+      <div className="items-top mt-10 flex flex-col gap-10 md:flex-row">
         <div className="col-start-1 col-end-3 grid max-w-[80ch] gap-5">
           <h2 className="w-full font-semibold">{rejse.titel}</h2>
           <p className="whitespace-pre-line">{rejse.beskrivelse}</p>

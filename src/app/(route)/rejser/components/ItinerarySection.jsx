@@ -22,11 +22,11 @@ export default function RejseDageTimeline({ rejse }) {
     dage.length > 1 ? `${(active / (dage.length - 1)) * 100}%` : "0%";
 
   return (
-    <section className="col-[content] py-20 md:py-27" id="dagsplan">
+    <section className="col-[content] py-16 md:py-24" id="dagsplan">
       <div className="grid gap-12 md:grid-cols-2 md:items-center lg:gap-20">
         <div>
           <div className="relative">
-            <div className="custom-scroll h-[200px] overflow-y-auto pr-4 pb-10 md:h-[400px]">
+            <div className="custom-scroll h-50 overflow-y-auto pr-4 pb-10 md:h-100">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active}
@@ -38,28 +38,38 @@ export default function RejseDageTimeline({ rejse }) {
                   <h4 className="font-semibold">Dag {dag.dag}</h4>
                   <h5 className="mb-3">{dag.dato || rejse.dato}</h5>
                   <h6 className="mb-5">{dag.heading}</h6>
-                  <p className="max-w-[var(--text-max-width)] whitespace-pre-line">
+                  <p className="max-w-(--text-max-width) whitespace-pre-line">
                     {dag.beskrivelse}
                   </p>
                 </motion.div>
               </AnimatePresence>
             </div>
 
-            <div className="pointer-events-none absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-[var(--background-primary)] to-transparent" />
+            <div className="from-var(--background-primary) pointer-events-none absolute bottom-0 left-0 h-24 w-full bg-linear-to-t to-transparent" />
           </div>
 
           <div className="flex gap-3">
-            <Button variant="icon" icon={IoIosArrowBack} onClick={prev} aria-label="Forrige dag" />
+            <Button
+              variant="icon"
+              icon={IoIosArrowBack}
+              onClick={prev}
+              aria-label="Forrige dag"
+            />
 
-            <Button variant="icon" icon={IoIosArrowForward} onClick={next} aria-label="Næste dag" />
+            <Button
+              variant="icon"
+              icon={IoIosArrowForward}
+              onClick={next}
+              aria-label="Næste dag"
+            />
           </div>
 
-          <p className="mt-4 font-bold text-[var(--grey-400)]! md:hidden">
+          <p className="text-var(--grey-400)! mt-4 font-bold md:hidden">
             Dag {dag.dag} af {dage.length}
           </p>
         </div>
 
-        <div className="relative h-[500px] w-full overflow-hidden rounded-[10px] md:rounded-[20px]">
+        <div className="relative h-125 w-full overflow-hidden rounded-[10px] md:rounded-[20px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={`img-${active}`}

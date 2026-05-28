@@ -68,7 +68,7 @@ const TextRevealSection = () => {
               ))}
             </h5>
           </div>
-          <div className="grid gap-8 md:col-start-2 md:row-start-2 md:flex md:gap-3">
+          <div className="grid gap-8 md:flex xl:col-start-2 xl:row-start-2 xl:gap-3">
             {stats.map((item, index) => (
               <motion.article
                 key={item.title}

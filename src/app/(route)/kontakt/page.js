@@ -35,6 +35,7 @@ const KontaktSide = async () => {
           items={data}
           hoverClassName="hover:bg-[#B8D9F8]"
           className="bg-(--background-alternate)"
+          showKontaktButton={false}
         />
 
         <IconGrid
