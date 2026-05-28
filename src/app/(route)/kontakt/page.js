@@ -6,6 +6,7 @@ import IconGrid from "@/app/components/IconGrid";
 import Faq from "@/app/components/Faq";
 import { AiOutlineMail } from "react-icons/ai";
 import { FiMapPin, FiPhone } from "react-icons/fi";
+import PageHero from "@/app/components/PageHero";
 
 const KontaktSide = async () => {
   const { data, error } = await supabase.from("faq").select("*");
@@ -20,9 +21,16 @@ const KontaktSide = async () => {
       <header className="sticky top-0 z-60 col-[full] grid grid-cols-subgrid">
         <Header />
       </header>
-      <main className="flex w-full max-w-3xl flex-1 flex-col items-center justify-between bg-white sm:items-start dark:bg-black">
+      <main>
+        <PageHero
+          bgColor="bg-[var(--background-tertiary)]"
+          tagline="Vi hjælper dig hele vejen"
+          heading="Kontakt os og få hjælp til at finde den cykelrejse, der passer bedst til dig."
+          image="/assets/kontakt-image.webp"
+          imageAlt="kontakt"
+          className="h-0"
+        />
         <ContactForm />
-
         <Faq
           items={data}
           hoverClassName="hover:bg-[#B8D9F8]"
