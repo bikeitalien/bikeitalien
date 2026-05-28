@@ -11,6 +11,10 @@ const inter = Inter({
 export const metadata = {
   title: "BikeItalien",
   description: "By Lærke, Helene & Klara",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({ children }) {
