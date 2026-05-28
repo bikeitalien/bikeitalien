@@ -173,7 +173,7 @@ const HeaderClient = ({ rejse }) => {
         }}
       >
         <Link href="/">
-          <h5 className="text-(--text-secondary)!">
+          <h5>
             <span className="font-semibold">Bike</span>
             <span className="font italic">Italien</span>
           </h5>

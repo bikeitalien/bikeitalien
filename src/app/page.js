@@ -16,22 +16,21 @@ import { supabase } from "@/lib/supabase";
 export default async function Home() {
   const { data, error } = await supabase.from("faq").select("*");
 
-    const { data: rejse, error: rejseError } = await supabase
-      .from("cykelrejser")
-      .select("testimonials")
-      .eq("id", 1)
-      .single();
+  const { data: rejse, error: rejseError } = await supabase
+    .from("cykelrejser")
+    .select("testimonials")
+    .eq("id", 1)
+    .single();
 
   if (error || !data) {
     console.error(error);
     return <p>FAQ kunne ikke indlæses</p>;
   }
 
-    if (rejseError || !rejse) {
-      console.error(rejseError);
-      return <p>Testimonials kunne ikke indlæses</p>;
-    }
-
+  if (rejseError || !rejse) {
+    console.error(rejseError);
+    return <p>Testimonials kunne ikke indlæses</p>;
+  }
 
   return (
     <>
@@ -41,12 +40,7 @@ export default async function Home() {
 
       <main className="top-0 col-[full] grid">
         <IndexHero />
-        <section
-          className="col-[full] grid grid-cols-subgrid"
-          id="next-section"
-        >
-          <TextRevealSection />
-        </section>
+        <TextRevealSection />
         <CategoryGridSection />
         <ProcessSection />
         <AboutSection />
