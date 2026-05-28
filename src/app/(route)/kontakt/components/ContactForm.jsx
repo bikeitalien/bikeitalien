@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Button from "@/app/components/Button";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -36,17 +35,9 @@ const ContactForm = () => {
   return (
     <>
       <section className="col-[content] grid">
-        <Image
-          src="/assets/nepal-1.webp"
-          alt="Contact"
-          width={800}
-          height={600}
-          loading="eager"
-          className="h-full max-h-[55vh] w-full rounded-[20px] object-cover"
-        />
-        <div className="mt-8 grid gap-20 py-20 md:grid-cols-2 md:py-27">
+        <div className="grid gap-20 py-20 md:grid-cols-2 md:py-27">
           <div>
-            <h3 className="pb-2 font-semibold">Kontaktformular</h3>
+            <h3 className="pb-4 font-semibold">Kontaktformular</h3>
             <p>
               Har du spørgsmål, feedback eller ønsker du at høre mere, er du
               meget velkommen til at skrive via formularen. Jeg laver også
