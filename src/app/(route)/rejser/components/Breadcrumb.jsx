@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
 
 const Breadcrumb = ({ current }) => {
   return (

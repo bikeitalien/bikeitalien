@@ -1,7 +1,5 @@
-import Image from "next/image";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
-import ImageCardSection from "./components/ImageCardSection";
 import Testimonials from "./components/Testimonials";
 import CategoryGridSection from "./components/index/CategoryGridSection";
 import CardGridSection from "./components/index/CardGridSection";
