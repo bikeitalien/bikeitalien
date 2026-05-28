@@ -353,7 +353,7 @@ const HeaderClient = ({ rejse }) => {
                       </button>
                       <Link
                         href="/rejser"
-                        className="flex items-center justify-between border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
+                        className="flex items-center border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
                         onClick={closeAll}
                       >
                         <p
@@ -362,10 +362,6 @@ const HeaderClient = ({ rejse }) => {
                         >
                           Se alle rejser
                         </p>
-                        <IoIosArrowForward
-                          color="var(--text-primary)"
-                          size={20}
-                        />
                       </Link>
                       {KATEGORIER.map((kategori) => (
                         <button
@@ -409,7 +405,7 @@ const HeaderClient = ({ rejse }) => {
                       </button>
                       <Link
                         href={`/rejser?kategori=${encodeURIComponent(selectedKategori ?? "")}`}
-                        className="flex items-center justify-between border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
+                        className="flex items-center border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
                         onClick={closeAll}
                       >
                         <p
@@ -418,10 +414,6 @@ const HeaderClient = ({ rejse }) => {
                         >
                           Se alle rejser i kategorien, {selectedKategori}
                         </p>
-                        <IoIosArrowForward
-                          color="var(--text-primary)"
-                          size={20}
-                        />
                       </Link>
                       {rejse
                         ?.filter((item) => item.kategori === selectedKategori)
@@ -430,16 +422,12 @@ const HeaderClient = ({ rejse }) => {
                           <Link
                             key={item.id}
                             href={`/rejser/${KATEGORI_ID[item.kategori] ?? item.id}`}
-                            className="flex items-center justify-between border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
+                            className="flex items-center border-b border-(--grey-200) px-5 py-5 hover:bg-(--card-background)"
                             onClick={closeAll}
                           >
                             <p style={{ fontSize: "var(--p-size)" }}>
                               {item.titel}
                             </p>
-                            <IoIosArrowForward
-                              color="var(--text-primary)"
-                              size={20}
-                            />
                           </Link>
                         ))}
                     </div>
